@@ -1,4 +1,6 @@
-
+<p align="center">
+  <b>🇬🇧 English</b> · <a href="docs/README.ru.md">🇷🇺 Русский</a>
+</p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/tjackenpacken/taskbar-groups/master/main/Icon.ico" alt="Logo" width="150" height="150" />
