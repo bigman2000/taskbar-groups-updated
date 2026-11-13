@@ -15,6 +15,9 @@ namespace client.Classes
         public string Name;
         public string ColorString = System.Drawing.ColorTranslator.ToHtml(Color.FromArgb(31, 31, 31));
         public bool allowOpenAll = false;
+        public bool activateRunningWindow = false;
+        public int IconSizeMode = 1;
+        public bool showLabels = false;
         public List<ProgramShortcut> ShortcutList;
         public int Width; // not used aon
         public double Opacity = 10;
@@ -51,6 +54,9 @@ namespace client.Classes
                 this.ColorString = category.ColorString;
                 this.Opacity = category.Opacity;
                 this.allowOpenAll = category.allowOpenAll;
+                this.activateRunningWindow = category.activateRunningWindow;
+                this.IconSizeMode = category.IconSizeMode;
+                this.showLabels = category.showLabels;
             }
         }
 
@@ -223,27 +229,76 @@ namespace client.Classes
             // Loops through each shortcut added by the user and gets the icon
             // Writes the icon to the new folder in a .jpg format
             // Namign scheme for the files are done through Path.GetFileNameWithoutExtension()
-            for (int i = ShortcutList.Count; i < 0; i--)
-            {
-                String filePath = ShortcutList[i].FilePath;
+            if (ShortcutList == null)
+                return;
 
-                ucProgramShortcut programShortcutControl = Application.OpenForms["frmGroup"].Controls["pnlShortcuts"].Controls[i] as ucProgramShortcut;
+            Forms.frmGroup openGroupForm = Application.OpenForms["frmGroup"] as Forms.frmGroup;
+            Panel shortcutsPanel = openGroupForm?.Controls["pnlShortcuts"] as Panel;
+
+            for (int i = 0; i < ShortcutList.Count; i++)
+            {
+                ProgramShortcut psc = ShortcutList[i];
+                String filePath = psc.FilePath;
                 string savePath;
 
-                if (ShortcutList[i].isWindowsApp)
+                if (psc.isWindowsApp)
                 {
-                    savePath = iconPath + "\\" + specialCharRegex.Replace(filePath, string.Empty) + ".png";
-                } else if (Directory.Exists(filePath))
+                    savePath = iconPath + specialCharRegex.Replace(filePath, string.Empty) + ".png";
+                }
+                else if (Directory.Exists(filePath))
                 {
-                    savePath = iconPath + "\\" + Path.GetFileNameWithoutExtension(filePath) + "_FolderObjTSKGRoup.png";
-                } else
+                    savePath = iconPath + Path.GetFileNameWithoutExtension(filePath) + "_FolderObjTSKGRoup.png";
+                }
+                else
                 {
-                    savePath = iconPath + "\\" + Path.GetFileNameWithoutExtension(filePath) + ".png";
+                    savePath = iconPath + Path.GetFileNameWithoutExtension(filePath) + ".png";
                 }
 
-                programShortcutControl.logo.Save(savePath);
+                try
+                {
+                    Bitmap iconBmp = null;
+                    if (shortcutsPanel != null && i < shortcutsPanel.Controls.Count)
+                    {
+                        ucProgramShortcut uc = shortcutsPanel.Controls[i] as ucProgramShortcut;
+                        if (uc != null && uc.Shortcut == psc)
+                        {
+                            iconBmp = uc.logo;
+                        }
+                    }
 
-    }
+                    if (iconBmp != null)
+                    {
+                        iconBmp.Save(savePath, ImageFormat.Png);
+                    }
+                    else if (psc.isWindowsApp)
+                    {
+                        using (Image img = handleWindowsApp.getWindowsAppIcon(filePath, true))
+                        {
+                            img?.Save(savePath, ImageFormat.Png);
+                        }
+                    }
+                    else if (System.IO.File.Exists(filePath))
+                    {
+                        using (Bitmap bmp = Path.GetExtension(filePath).ToLower() == ".lnk"
+                            ? Forms.frmGroup.handleLnkExt(filePath)
+                            : Icon.ExtractAssociatedIcon(filePath).ToBitmap())
+                        {
+                            bmp?.Save(savePath, ImageFormat.Png);
+                        }
+                    }
+                    else if (Directory.Exists(filePath))
+                    {
+                        using (Bitmap bmp = handleFolder.GetFolderIcon(filePath).ToBitmap())
+                        {
+                            bmp?.Save(savePath, ImageFormat.Png);
+                        }
+                    }
+                }
+                catch
+                {
+                    // Skip broken shortcuts; loadImageCache handles fallback
+                }
+            }
         }
 
         // Try to load an iamge from the cache

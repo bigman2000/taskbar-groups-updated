@@ -32,6 +32,7 @@
 * [➤ Image/Icon  Caching](#-imageicon-caching)
 * [➤ Program Shortcuts](#%EF%B8%8F-program-shortcuts)
 * [➤ File/Folder Structure](#-folder-structure-documentation)
+* [➤ Recent Updates](#-recent-updates)
 * [➤ License](#-License)
 
  [![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)](#how-to-download-taskbar-groups)
@@ -120,6 +121,23 @@ Crucial information about the shortcuts and the group itself stored inside of he
 In here stores the individual profiles for each form. Essentially these profiles are per-compiled code that the application can read from to improve loading times and responsiveness in the system.
 #### /Shortcuts
 Here is where all of your shortcuts to activate your group will go. All groups created will have their shortcut created here and after creation, you can feel free to move the shortcut or pin it to any desired locations.
+![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+## ✨ Recent Updates
+* **Launch Panel (`frmMain`)**
+  * Added tooltips displaying shortcut names when hovering over launch buttons.
+  * Added running application detection with a less transparent button background for active apps.
+  * Added option to activate an already running window on click instead of launching a new instance.
+  * Added right-click context menu on launch buttons (*Switch to window*, *Close window*, *Open new instance*, *Run as administrator*, *Open file location*).
+  * Added configurable icon sizes (*Compact*, *Medium*, *Large*), optional shortcut name labels under icons, Windows 11 rounded corners, and arrow-key / `Enter` / `Esc` keyboard navigation.
+* **Group Editor (`frmGroup`)**
+  * Enlarged up/down reorder buttons and preserved scroll position when reordering.
+  * Added drag-and-drop shortcut reordering with automatic edge/out-of-bounds scrolling.
+  * Added custom shortcut icon support from image files (`.png`, `.jpg`, `.bmp`, `.ico`) and embedded icons inside `.exe` / `.dll` files via an icon picker dialog.
+  * Added Unicode/Cyrillic support for group names.
+* **Main Window (`frmClient`)**
+  * Fixed header, sidebar, and bottom action bar with independent scrolling for the group list, window resizing, and non-blocking async version checks.
+  * Added search/filtering (by group or program name) and sorting (*Default*, *A - Z*, *Z - A*).
+  * Updated group cards with modern rounded buttons, **Preview**, **Clone**, **Export** / **Import** (`.tgroup`/`.zip`), quick **Delete** with confirmation, mini-icon tooltips, overflow `+N` badge, and direct drag-and-drop icon reordering inside the card.
 ![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
 ## 📜 License
 This project is licensed under the [MIT License](https://github.com/tjackenpacken/taskbar-groups/blob/master/LICENSE).

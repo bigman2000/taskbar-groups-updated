@@ -62,6 +62,7 @@ namespace client.Forms
             cmdSave.Left += 70;
             cmdExit.Left += 70;
             radioDark.Checked = true;
+            cmbIconSize.SelectedIndex = 1;
         }
 
         // CTOR for editing an existing group
@@ -82,6 +83,9 @@ namespace client.Forms
             this.Text = "Edit group";
             txtGroupName.Text = Regex.Replace(Category.Name, @"(_)+", " ");
             pnlAllowOpenAll.Checked = category.allowOpenAll;
+            chkActivateRunning.Checked = category.activateRunningWindow;
+            chkShowLabels.Checked = category.showLabels;
+            cmbIconSize.SelectedIndex = Math.Max(0, Math.Min(2, category.IconSizeMode));
             cmdAddGroupIcon.BackgroundImage = Category.LoadIconImage();
             lblNum.Text = Category.Width.ToString();
             lblOpacity.Text = Category.Opacity.ToString();
@@ -294,23 +298,10 @@ namespace client.Forms
         public void Swap<T>(IList<T> list, int indexA, int indexB)
         {
             resetSelection();
-            T tmp = list[indexA];
-            list[indexA] = list[indexB];
-            list[indexB] = tmp;
+            if (indexA < 0 || indexB < 0 || indexA >= Category.ShortcutList.Count || indexB >= Category.ShortcutList.Count || indexA == indexB)
+                return;
 
-            // Clears and reloads all shortcuts with new positions
-            pnlShortcuts.Controls.Clear();
-            pnlShortcuts.Height = 0;
-            pnlAddShortcut.Top = 220;
-
-            selectedShortcut = null;
-
-            int position = 0;
-            foreach (ProgramShortcut psc in Category.ShortcutList)
-            {
-                LoadShortcut(psc, position);
-                position++;
-            }
+            MoveShortcut(indexA, indexB);
         }
 
         private void InitializeDragAndDrop()
@@ -639,20 +630,23 @@ namespace client.Forms
 
             //List <Directory> directories = 
 
-            if (txtGroupName.Text == "Name the new group...") // Verify category name
+            string groupTitle = txtGroupName.Text.Trim();
+            string normalizedTitle = Regex.Replace(groupTitle, @"\s+", "_");
+
+            if (groupTitle == "Name the new group..." || string.IsNullOrWhiteSpace(groupTitle)) // Verify category name
             {
                 lblErrorTitle.Text = "Must select a name";
                 lblErrorTitle.Visible = true;
             }
-            else if (IsNew && Directory.Exists(@MainPath.path + @"\config\" + txtGroupName.Text) ||
-                     !IsNew && Category.Name != txtGroupName.Text && Directory.Exists(@MainPath.path + @"\config\" + txtGroupName.Text))
+            else if (IsNew && Directory.Exists(@MainPath.path + @"\config\" + normalizedTitle) ||
+                     !IsNew && Category.Name != normalizedTitle && Directory.Exists(@MainPath.path + @"\config\" + normalizedTitle))
             {
                 lblErrorTitle.Text = "There is already a group with that name";
                 lblErrorTitle.Visible = true;
             }
-            else if (!new Regex("^[0-9a-zA-Z \b]+$").IsMatch(txtGroupName.Text))
+            else if (!Regex.IsMatch(groupTitle, @"^[\p{L}\p{N} _\-]+$"))
             {
-                lblErrorTitle.Text = "Name must not have any special characters";
+                lblErrorTitle.Text = "Name contains invalid characters";
                 lblErrorTitle.Visible = true;
             }
             else if (cmdAddGroupIcon.BackgroundImage ==
@@ -1121,6 +1115,24 @@ namespace client.Forms
         private void pnlAllowOpenAll_CheckedChanged(object sender, EventArgs e)
         {
             Category.allowOpenAll = pnlAllowOpenAll.Checked;
+        }
+
+        private void chkActivateRunning_CheckedChanged(object sender, EventArgs e)
+        {
+            Category.activateRunningWindow = chkActivateRunning.Checked;
+        }
+
+        private void chkShowLabels_CheckedChanged(object sender, EventArgs e)
+        {
+            Category.showLabels = chkShowLabels.Checked;
+        }
+
+        private void cmbIconSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbIconSize.SelectedIndex >= 0)
+            {
+                Category.IconSizeMode = cmbIconSize.SelectedIndex;
+            }
         }
 
         private void cmdSelectDirectory_Click(object sender, EventArgs e)

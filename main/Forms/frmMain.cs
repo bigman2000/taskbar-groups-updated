@@ -32,6 +32,16 @@ namespace client
         public List<ucShortcut> ControlList;
         public Color HoverColor;
         public Color RunningColor;
+        public bool IsLightBackground { get; private set; }
+
+        private bool isContextMenuOpen = false;
+        private int selectedIndex = -1;
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            WindowHelper.EnableRoundedCorners(this.Handle);
+        }
 
         private string passedDirec;
         public Point mouseClick;
@@ -60,7 +70,8 @@ namespace client
                 this.BackColor = ImageFunctions.FromString(ThisCategory.ColorString);
                 Opacity = (1 - (ThisCategory.Opacity / 100));
 
-                if (BackColor.R * 0.2126 + BackColor.G * 0.7152 + BackColor.B * 0.0722 > 255 / 2)
+                IsLightBackground = BackColor.R * 0.2126 + BackColor.G * 0.7152 + BackColor.B * 0.0722 > 255 / 2;
+                if (IsLightBackground)
                 {
                     // If backcolor is light, set hover and running colors darker
                     HoverColor = Color.FromArgb(BackColor.A, Math.Max(0, BackColor.R - 50), Math.Max(0, BackColor.G - 50), Math.Max(0, BackColor.B - 50));
@@ -266,35 +277,43 @@ namespace client
         //------------------------------------------------------------------------------------
         //
 
-        private void CaptureRunningProcesses(out Dictionary<string, List<string>> runningPathsByName, out List<string> runningFullPaths)
+        private struct RunningProcInfo
         {
-            runningPathsByName = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
-            runningFullPaths = new List<string>();
+            public int Pid;
+            public string FileName;
+        }
+
+        private void CaptureRunningProcesses(out Dictionary<string, List<RunningProcInfo>> runningByName, out List<RunningProcInfo> allRunning)
+        {
+            runningByName = new Dictionary<string, List<RunningProcInfo>>(StringComparer.OrdinalIgnoreCase);
+            allRunning = new List<RunningProcInfo>();
 
             foreach (Process proc in Process.GetProcesses())
             {
                 try
                 {
                     string procName = proc.ProcessName;
-                    if (!runningPathsByName.TryGetValue(procName, out List<string> paths))
-                    {
-                        paths = new List<string>();
-                        runningPathsByName[procName] = paths;
-                    }
+                    int pid = proc.Id;
+                    string modulePath = null;
 
                     try
                     {
-                        string modulePath = proc.MainModule?.FileName;
-                        if (!string.IsNullOrEmpty(modulePath))
-                        {
-                            paths.Add(modulePath);
-                            runningFullPaths.Add(modulePath);
-                        }
+                        modulePath = proc.MainModule?.FileName;
                     }
                     catch
                     {
                         // Access to MainModule can be denied for elevated/system processes
                     }
+
+                    RunningProcInfo info = new RunningProcInfo { Pid = pid, FileName = modulePath };
+                    allRunning.Add(info);
+
+                    if (!runningByName.TryGetValue(procName, out List<RunningProcInfo> list))
+                    {
+                        list = new List<RunningProcInfo>();
+                        runningByName[procName] = list;
+                    }
+                    list.Add(info);
                 }
                 catch
                 {
@@ -307,25 +326,28 @@ namespace client
             }
         }
 
-        private bool IsShortcutRunning(ProgramShortcut psc, Dictionary<string, List<string>> runningPathsByName, List<string> runningFullPaths)
+        private List<int> GetShortcutProcessIds(ProgramShortcut psc, Dictionary<string, List<RunningProcInfo>> runningByName, List<RunningProcInfo> allRunning)
         {
+            List<int> matchedPids = new List<int>();
             if (psc == null || string.IsNullOrWhiteSpace(psc.FilePath))
-                return false;
+                return matchedPids;
 
             if (psc.isWindowsApp)
             {
                 int underscoreIndex = psc.FilePath.IndexOf('_');
                 string packagePrefix = underscoreIndex > 0 ? psc.FilePath.Substring(0, underscoreIndex) : psc.FilePath;
                 if (string.IsNullOrEmpty(packagePrefix))
-                    return false;
+                    return matchedPids;
 
                 string marker = "\\WindowsApps\\" + packagePrefix;
-                foreach (string path in runningFullPaths)
+                foreach (RunningProcInfo info in allRunning)
                 {
-                    if (path.IndexOf(marker, StringComparison.OrdinalIgnoreCase) >= 0)
-                        return true;
+                    if (!string.IsNullOrEmpty(info.FileName) && info.FileName.IndexOf(marker, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        matchedPids.Add(info.Pid);
+                    }
                 }
-                return false;
+                return matchedPids;
             }
 
             string targetExePath = null;
@@ -342,7 +364,7 @@ namespace client
                 }
                 catch
                 {
-                    return false;
+                    return matchedPids;
                 }
             }
             else if (ext == ".exe")
@@ -351,31 +373,70 @@ namespace client
             }
 
             if (string.IsNullOrWhiteSpace(targetExePath) || Path.GetExtension(targetExePath).ToLowerInvariant() != ".exe")
-                return false;
+                return matchedPids;
 
             string procName = Path.GetFileNameWithoutExtension(targetExePath);
-            if (!runningPathsByName.TryGetValue(procName, out List<string> knownPaths))
-                return false;
+            if (!runningByName.TryGetValue(procName, out List<RunningProcInfo> candidates))
+                return matchedPids;
 
-            if (knownPaths.Count == 0)
-                return true;
-
-            foreach (string knownPath in knownPaths)
+            bool anyAccessiblePath = false;
+            foreach (RunningProcInfo info in candidates)
             {
-                if (string.Equals(knownPath, targetExePath, StringComparison.OrdinalIgnoreCase))
-                    return true;
+                if (!string.IsNullOrEmpty(info.FileName))
+                {
+                    anyAccessiblePath = true;
+                    if (string.Equals(info.FileName, targetExePath, StringComparison.OrdinalIgnoreCase))
+                    {
+                        matchedPids.Add(info.Pid);
+                    }
+                }
             }
 
-            return false;
+            if (matchedPids.Count == 0 && !anyAccessiblePath)
+            {
+                foreach (RunningProcInfo info in candidates)
+                {
+                    matchedPids.Add(info.Pid);
+                }
+            }
+
+            return matchedPids;
+        }
+
+        private void GetCellDimensions(out int cellWidth, out int cellHeight, out int iconDimension)
+        {
+            switch (ThisCategory.IconSizeMode)
+            {
+                case 0: // Compact
+                    cellWidth = ThisCategory.showLabels ? 52 : 44;
+                    cellHeight = 38;
+                    iconDimension = 18;
+                    break;
+                case 2: // Large
+                    cellWidth = ThisCategory.showLabels ? 72 : 68;
+                    cellHeight = 56;
+                    iconDimension = 32;
+                    break;
+                default: // Medium (1)
+                    cellWidth = ThisCategory.showLabels ? 62 : 55;
+                    cellHeight = 45;
+                    iconDimension = 23;
+                    break;
+            }
+
+            if (ThisCategory.showLabels)
+            {
+                cellHeight += 15;
+            }
         }
 
         // Loading category and building shortcuts
         private void LoadCategory()
         {
-            //System.Diagnostics.Debugger.Launch();
+            GetCellDimensions(out int cellWidth, out int cellHeight, out int iconDimension);
 
             this.Width = 0;
-            this.Height = 45;
+            this.Height = cellHeight;
             int x = 0;
             int y = 0;
             int width = ThisCategory.Width;
@@ -388,9 +449,9 @@ namespace client
                 ThisCategory.cacheIcons();
             }
 
-            Dictionary<string, List<string>> runningPathsByName;
-            List<string> runningFullPaths;
-            CaptureRunningProcesses(out runningPathsByName, out runningFullPaths);
+            Dictionary<string, List<RunningProcInfo>> runningByName;
+            List<RunningProcInfo> allRunning;
+            CaptureRunningProcesses(out runningByName, out allRunning);
 
             foreach (ProgramShortcut psc in ThisCategory.ShortcutList)
             {
@@ -398,24 +459,27 @@ namespace client
                 if (columns > width)  // creating new row if there are more psc than max width
                 {
                     x = 0;
-                    y += 45;
-                    this.Height += 45;
+                    y += cellHeight;
+                    this.Height += cellHeight;
                     columns = 1;
                 }
 
-                if (this.Width < ((width * 55)))
-                    this.Width += (55);
+                if (this.Width < (width * cellWidth))
+                    this.Width += cellWidth;
 
-                // OLD
-                //BuildShortcutPanel(x, y, psc);
-                
+                List<int> pids = GetShortcutProcessIds(psc, runningByName, allRunning);
+
                 // Building shortcut controls
                 ucShortcut pscPanel = new ucShortcut() 
                 {
                     Psc = psc, 
                     MotherForm = this, 
                     ThisCategory = ThisCategory,
-                    IsRunning = IsShortcutRunning(psc, runningPathsByName, runningFullPaths)
+                    IsRunning = pids.Count > 0,
+                    RunningProcessIds = pids,
+                    IconDimension = iconDimension,
+                    ShowLabel = ThisCategory.showLabels,
+                    Size = new Size(cellWidth, cellHeight)
                 };
                 pscPanel.Location = new System.Drawing.Point(x, y);
                 this.Controls.Add(pscPanel);
@@ -424,7 +488,7 @@ namespace client
                 pscPanel.BringToFront();
 
                 // Reset values
-                x += 55;
+                x += cellWidth;
                 columns++;
             }
 
@@ -451,18 +515,18 @@ namespace client
         }
 
         // Click handler for shortcuts
-        public void OpenFile(string arguments, string path, string workingDirec)
+        public void OpenFile(string arguments, string path, string workingDirec, bool runAsAdmin = false)
         {
             // starting program from psc panel click
             ProcessStartInfo proc = new ProcessStartInfo();
             proc.Arguments = arguments;
             proc.FileName = path;
             proc.WorkingDirectory = workingDirec;
-
-            /*
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.FileName = path;
-            */
+            if (runAsAdmin)
+            {
+                proc.Verb = "runas";
+                proc.UseShellExecute = true;
+            }
 
             try
             {
@@ -474,57 +538,180 @@ namespace client
             }
         }
 
+        public void ShowShortcutContextMenu(ucShortcut shortcut, Point screenLocation)
+        {
+            ContextMenuStrip menu = new ContextMenuStrip
+            {
+                BackColor = Color.FromArgb(31, 31, 31),
+                ForeColor = Color.White,
+                ShowImageMargin = false
+            };
+
+            if (shortcut.IsRunning && shortcut.RunningProcessIds != null && shortcut.RunningProcessIds.Count > 0)
+            {
+                ToolStripMenuItem switchItem = new ToolStripMenuItem("Switch to window")
+                {
+                    BackColor = Color.FromArgb(31, 31, 31),
+                    ForeColor = Color.White
+                };
+                switchItem.Click += (s, e) =>
+                {
+                    WindowHelper.ActivateProcessWindow(shortcut.RunningProcessIds);
+                    this.Close();
+                };
+                menu.Items.Add(switchItem);
+
+                ToolStripMenuItem closeItem = new ToolStripMenuItem("Close window")
+                {
+                    BackColor = Color.FromArgb(31, 31, 31),
+                    ForeColor = Color.White
+                };
+                closeItem.Click += (s, e) =>
+                {
+                    WindowHelper.CloseProcessWindows(shortcut.RunningProcessIds);
+                    shortcut.IsRunning = false;
+                    shortcut.RunningProcessIds.Clear();
+                    shortcut.ApplyDefaultBackColor();
+                };
+                menu.Items.Add(closeItem);
+                menu.Items.Add(new ToolStripSeparator());
+            }
+
+            ToolStripMenuItem openNewItem = new ToolStripMenuItem("Open new instance")
+            {
+                BackColor = Color.FromArgb(31, 31, 31),
+                ForeColor = Color.White
+            };
+            openNewItem.Click += (s, e) =>
+            {
+                shortcut.LaunchShortcut(false);
+                this.Close();
+            };
+            menu.Items.Add(openNewItem);
+
+            if (!shortcut.Psc.isWindowsApp && !Directory.Exists(shortcut.Psc.FilePath))
+            {
+                ToolStripMenuItem adminItem = new ToolStripMenuItem("Run as administrator")
+                {
+                    BackColor = Color.FromArgb(31, 31, 31),
+                    ForeColor = Color.White
+                };
+                adminItem.Click += (s, e) =>
+                {
+                    shortcut.LaunchShortcut(true);
+                    this.Close();
+                };
+                menu.Items.Add(adminItem);
+            }
+
+            if (!shortcut.Psc.isWindowsApp && (System.IO.File.Exists(shortcut.Psc.FilePath) || Directory.Exists(shortcut.Psc.FilePath)))
+            {
+                ToolStripMenuItem locationItem = new ToolStripMenuItem("Open file location")
+                {
+                    BackColor = Color.FromArgb(31, 31, 31),
+                    ForeColor = Color.White
+                };
+                locationItem.Click += (s, e) =>
+                {
+                    Process.Start("explorer.exe", $"/select,\"{shortcut.Psc.FilePath}\"");
+                    this.Close();
+                };
+                menu.Items.Add(locationItem);
+            }
+
+            menu.Closed += (s, e) =>
+            {
+                isContextMenuOpen = false;
+                if (!this.IsDisposed)
+                {
+                    this.BeginInvoke((Action)(() => menu.Dispose()));
+                }
+            };
+
+            isContextMenuOpen = true;
+            menu.Show(screenLocation);
+        }
+
         // Closes application upon deactivation
         private void frmMain_Deactivate(object sender, EventArgs e)
         {
             // closes program if user clicks outside form
-            this.Close();
+            if (!isContextMenuOpen)
+            {
+                this.Close();
+            }
+        }
+
+        private void SelectShortcutByIndex(int newIndex)
+        {
+            if (ControlList == null || ControlList.Count == 0)
+                return;
+
+            if (newIndex < 0)
+                newIndex = 0;
+            else if (newIndex >= ControlList.Count)
+                newIndex = ControlList.Count - 1;
+
+            if (selectedIndex >= 0 && selectedIndex < ControlList.Count)
+            {
+                ControlList[selectedIndex].ucShortcut_MouseLeave(this, EventArgs.Empty);
+            }
+
+            selectedIndex = newIndex;
+            ControlList[selectedIndex].ucShortcut_MouseEnter(this, EventArgs.Empty);
         }
 
         // Keyboard shortcut handlers
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
+            if (ControlList == null || ControlList.Count == 0)
+                return;
+
+            int cols = Math.Max(1, ThisCategory.Width);
+
+            switch (e.KeyCode)
+            {
+                case Keys.Escape:
+                    this.Close();
+                    return;
+                case Keys.Left:
+                    SelectShortcutByIndex(selectedIndex <= 0 ? 0 : selectedIndex - 1);
+                    return;
+                case Keys.Right:
+                    SelectShortcutByIndex(selectedIndex < 0 ? 0 : selectedIndex + 1);
+                    return;
+                case Keys.Up:
+                    SelectShortcutByIndex(selectedIndex < 0 ? 0 : Math.Max(0, selectedIndex - cols));
+                    return;
+                case Keys.Down:
+                    SelectShortcutByIndex(selectedIndex < 0 ? 0 : Math.Min(ControlList.Count - 1, selectedIndex + cols));
+                    return;
+                case Keys.Enter:
+                    if (e.Modifiers != Keys.Control && selectedIndex >= 0 && selectedIndex < ControlList.Count)
+                    {
+                        ControlList[selectedIndex].ucShortcut_Click(sender, e);
+                    }
+                    return;
+            }
 
             try
             {
                 switch (e.KeyCode)
                 {
-
-                    case Keys.D1:
-                        ControlList[0].ucShortcut_MouseEnter(sender, e);
-                        break;
-                    case Keys.D2:
-                        ControlList[1].ucShortcut_MouseEnter(sender, e);
-                        break;
-                    case Keys.D3:
-                        ControlList[2].ucShortcut_MouseEnter(sender, e);
-                        break;
-                    case Keys.D4:
-                        ControlList[3].ucShortcut_MouseEnter(sender, e);
-                        break;
-                    case Keys.D5:
-                        ControlList[4].ucShortcut_MouseEnter(sender, e);
-                        break;
-                    case Keys.D6:
-                        ControlList[5].ucShortcut_MouseEnter(sender, e);
-                        break;
-                    case Keys.D7:
-                        ControlList[6].ucShortcut_MouseEnter(sender, e);
-                        break;
-                    case Keys.D8:
-                        ControlList[7].ucShortcut_MouseEnter(sender, e);
-                        break;
-                    case Keys.D9:
-                        ControlList[8].ucShortcut_MouseEnter(sender, e);
-                        break;
-                    case Keys.D0:
-                        ControlList[9].ucShortcut_MouseEnter(sender, e);
-                        break;
+                    case Keys.D1: SelectShortcutByIndex(0); break;
+                    case Keys.D2: SelectShortcutByIndex(1); break;
+                    case Keys.D3: SelectShortcutByIndex(2); break;
+                    case Keys.D4: SelectShortcutByIndex(3); break;
+                    case Keys.D5: SelectShortcutByIndex(4); break;
+                    case Keys.D6: SelectShortcutByIndex(5); break;
+                    case Keys.D7: SelectShortcutByIndex(6); break;
+                    case Keys.D8: SelectShortcutByIndex(7); break;
+                    case Keys.D9: SelectShortcutByIndex(8); break;
+                    case Keys.D0: SelectShortcutByIndex(9); break;
                 }
             }
             catch
             {
-
             }
         }
 

@@ -1,4 +1,4 @@
-﻿namespace client.User_controls
+namespace client.User_controls
 {
     partial class ucShortcut
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.picIcon = new System.Windows.Forms.PictureBox();
+            this.lblName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,12 +44,31 @@
             this.picIcon.Click += new System.EventHandler(this.ucShortcut_Click);
             this.picIcon.MouseEnter += new System.EventHandler(this.ucShortcut_MouseEnter);
             this.picIcon.MouseLeave += new System.EventHandler(this.ucShortcut_MouseLeave);
+            this.picIcon.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ucShortcut_MouseUp);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoEllipsis = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 7.5F);
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(2, 34);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(51, 14);
+            this.lblName.TabIndex = 1;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.Visible = false;
+            this.lblName.Click += new System.EventHandler(this.ucShortcut_Click);
+            this.lblName.MouseEnter += new System.EventHandler(this.ucShortcut_MouseEnter);
+            this.lblName.MouseLeave += new System.EventHandler(this.ucShortcut_MouseLeave);
+            this.lblName.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ucShortcut_MouseUp);
             // 
             // ucShortcut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.picIcon);
             this.Name = "ucShortcut";
             this.Size = new System.Drawing.Size(55, 45);
@@ -56,6 +76,7 @@
             this.Click += new System.EventHandler(this.ucShortcut_Click);
             this.MouseEnter += new System.EventHandler(this.ucShortcut_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ucShortcut_MouseLeave);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ucShortcut_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).EndInit();
             this.ResumeLayout(false);
 
@@ -64,5 +85,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picIcon;
+        private System.Windows.Forms.Label lblName;
     }
 }

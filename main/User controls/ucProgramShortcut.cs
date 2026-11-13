@@ -193,7 +193,7 @@ namespace client.User_controls
         // If current item is already selected, then deselect everything
         private void ucProgramShortcut_Click(object sender, EventArgs e)
         {
-            if (suppressNextClick)
+            if (isDragging || suppressNextClick)
             {
                 suppressNextClick = false;
                 return;

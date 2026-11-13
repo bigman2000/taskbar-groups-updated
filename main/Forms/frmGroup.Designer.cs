@@ -49,6 +49,10 @@ namespace client.Forms
             this.lblErrorShortcut = new System.Windows.Forms.Label();
             this.lblAddShortcut = new System.Windows.Forms.Label();
             this.pnlColor = new System.Windows.Forms.Panel();
+            this.chkActivateRunning = new System.Windows.Forms.CheckBox();
+            this.chkShowLabels = new System.Windows.Forms.CheckBox();
+            this.lblIconSize = new System.Windows.Forms.Label();
+            this.cmbIconSize = new System.Windows.Forms.ComboBox();
             this.numOpacDown = new System.Windows.Forms.Button();
             this.numOpacUp = new System.Windows.Forms.Button();
             this.lblPercent = new System.Windows.Forms.Label();
@@ -346,6 +350,10 @@ namespace client.Forms
             // 
             // pnlColor
             // 
+            this.pnlColor.Controls.Add(this.cmbIconSize);
+            this.pnlColor.Controls.Add(this.lblIconSize);
+            this.pnlColor.Controls.Add(this.chkShowLabels);
+            this.pnlColor.Controls.Add(this.chkActivateRunning);
             this.pnlColor.Controls.Add(this.numOpacDown);
             this.pnlColor.Controls.Add(this.numOpacUp);
             this.pnlColor.Controls.Add(this.lblPercent);
@@ -359,8 +367,63 @@ namespace client.Forms
             this.pnlColor.Controls.Add(this.radioLight);
             this.pnlColor.Location = new System.Drawing.Point(110, 544);
             this.pnlColor.Name = "pnlColor";
-            this.pnlColor.Size = new System.Drawing.Size(368, 164);
+            this.pnlColor.Size = new System.Drawing.Size(368, 212);
             this.pnlColor.TabIndex = 48;
+            // 
+            // chkActivateRunning
+            // 
+            this.chkActivateRunning.AutoSize = true;
+            this.chkActivateRunning.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.chkActivateRunning.ForeColor = System.Drawing.Color.White;
+            this.chkActivateRunning.Location = new System.Drawing.Point(64, 157);
+            this.chkActivateRunning.Name = "chkActivateRunning";
+            this.chkActivateRunning.Size = new System.Drawing.Size(252, 23);
+            this.chkActivateRunning.TabIndex = 51;
+            this.chkActivateRunning.Text = "Activate running window on click";
+            this.chkActivateRunning.UseVisualStyleBackColor = true;
+            this.chkActivateRunning.CheckedChanged += new System.EventHandler(this.chkActivateRunning_CheckedChanged);
+            // 
+            // chkShowLabels
+            // 
+            this.chkShowLabels.AutoSize = true;
+            this.chkShowLabels.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.chkShowLabels.ForeColor = System.Drawing.Color.White;
+            this.chkShowLabels.Location = new System.Drawing.Point(64, 183);
+            this.chkShowLabels.Name = "chkShowLabels";
+            this.chkShowLabels.Size = new System.Drawing.Size(110, 23);
+            this.chkShowLabels.TabIndex = 52;
+            this.chkShowLabels.Text = "Show names";
+            this.chkShowLabels.UseVisualStyleBackColor = true;
+            this.chkShowLabels.CheckedChanged += new System.EventHandler(this.chkShowLabels_CheckedChanged);
+            // 
+            // lblIconSize
+            // 
+            this.lblIconSize.AutoSize = true;
+            this.lblIconSize.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.lblIconSize.ForeColor = System.Drawing.Color.White;
+            this.lblIconSize.Location = new System.Drawing.Point(190, 184);
+            this.lblIconSize.Name = "lblIconSize";
+            this.lblIconSize.Size = new System.Drawing.Size(66, 19);
+            this.lblIconSize.TabIndex = 53;
+            this.lblIconSize.Text = "Icon size:";
+            // 
+            // cmbIconSize
+            // 
+            this.cmbIconSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.cmbIconSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIconSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbIconSize.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.cmbIconSize.ForeColor = System.Drawing.Color.White;
+            this.cmbIconSize.FormattingEnabled = true;
+            this.cmbIconSize.Items.AddRange(new object[] {
+            "Compact",
+            "Medium",
+            "Large"});
+            this.cmbIconSize.Location = new System.Drawing.Point(262, 181);
+            this.cmbIconSize.Name = "cmbIconSize";
+            this.cmbIconSize.Size = new System.Drawing.Size(92, 24);
+            this.cmbIconSize.TabIndex = 54;
+            this.cmbIconSize.SelectedIndexChanged += new System.EventHandler(this.cmbIconSize_SelectedIndexChanged);
             // 
             // numOpacDown
             // 
@@ -516,7 +579,7 @@ namespace client.Forms
             this.pnlEnd.Controls.Add(this.cmdDelete);
             this.pnlEnd.Controls.Add(this.cmdSave);
             this.pnlEnd.Controls.Add(this.cmdExit);
-            this.pnlEnd.Location = new System.Drawing.Point(52, 722);
+            this.pnlEnd.Location = new System.Drawing.Point(52, 766);
             this.pnlEnd.Name = "pnlEnd";
             this.pnlEnd.Size = new System.Drawing.Size(482, 44);
             this.pnlEnd.TabIndex = 47;
@@ -710,7 +773,7 @@ namespace client.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(589, 821);
+            this.ClientSize = new System.Drawing.Size(589, 840);
             this.Controls.Add(this.pnlArguments);
             this.Controls.Add(this.pnlEnd);
             this.Controls.Add(this.pnlAddShortcut);
@@ -800,5 +863,9 @@ namespace client.Forms
         private System.Windows.Forms.PictureBox picShortcutIcon;
         private System.Windows.Forms.Button cmdSelectShortcutIcon;
         private System.Windows.Forms.Button cmdResetShortcutIcon;
+        private System.Windows.Forms.CheckBox chkActivateRunning;
+        private System.Windows.Forms.CheckBox chkShowLabels;
+        private System.Windows.Forms.Label lblIconSize;
+        private System.Windows.Forms.ComboBox cmbIconSize;
     }
 }
