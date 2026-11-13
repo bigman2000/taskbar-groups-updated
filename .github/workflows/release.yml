@@ -1,0 +1,45 @@
+name: Build and Attach Release Assets
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v2
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore TaskbarGroups.sln
+
+      - name: Build Release
+        run: msbuild TaskbarGroups.sln /p:Configuration=Release /p:Platform="Any CPU" /m
+
+      - name: Package binaries
+        shell: pwsh
+        run: |
+          $tag = "${{ github.ref_name }}"
+          $zipName = "TaskbarGroups-$tag.zip"
+          New-Item -ItemType Directory -Path staging -Force | Out-Null
+          Copy-Item -Path "main\bin\Release\*" -Destination "staging" -Recurse
+          Get-ChildItem -Path "staging" -Filter "*.pdb" -Recurse | Remove-Item -Force
+          Compress-Archive -Path "staging\*" -DestinationPath $zipName -Force
+          echo "ZIP_NAME=$zipName" >> $env:GITHUB_ENV
+
+      - name: Upload archive to Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.ref_name }}" "${{ env.ZIP_NAME }}" --clobber
+
