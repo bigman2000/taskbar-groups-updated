@@ -1,4 +1,4 @@
-﻿using client.User_controls;
+using client.User_controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -59,7 +59,7 @@ namespace client.Classes
 
         }
 
-        public void CreateConfig(Image groupImage)
+        public void CreateConfig(Image groupImage, Dictionary<ProgramShortcut, Image> customIcons = null)
         {
 
             string path = @"config\" + this.Name;
@@ -68,6 +68,21 @@ namespace client.Classes
             // Directory and .exe
             //
             System.IO.Directory.CreateDirectory(@path);
+
+            if (customIcons != null && ShortcutList != null)
+            {
+                for (int i = 0; i < ShortcutList.Count; i++)
+                {
+                    if (customIcons.ContainsKey(ShortcutList[i]) && customIcons[ShortcutList[i]] != null)
+                    {
+                        ShortcutList[i].CustomIconPath = $"custom_{i}.png";
+                    }
+                    else
+                    {
+                        ShortcutList[i].CustomIconPath = "";
+                    }
+                }
+            }
 
             //System.IO.File.Copy(@"config\config.exe", @filePath);
             //
@@ -117,6 +132,32 @@ namespace client.Classes
 
             // Build the icon cache
             cacheIcons();
+
+            if (customIcons != null && ShortcutList != null)
+            {
+                string iconsDir = Path.Combine(path, "Icons");
+                Directory.CreateDirectory(iconsDir);
+                foreach (ProgramShortcut psc in ShortcutList)
+                {
+                    if (!string.IsNullOrEmpty(psc.CustomIconPath) &&
+                        customIcons.TryGetValue(psc, out Image customImg) &&
+                        customImg != null)
+                    {
+                        string customSavePath = Path.Combine(iconsDir, psc.CustomIconPath);
+                        if (customImg.Width > 256 || customImg.Height > 256)
+                        {
+                            using (Bitmap resized = ImageFunctions.ResizeImage(customImg, 256, 256))
+                            {
+                                resized.Save(customSavePath, ImageFormat.Png);
+                            }
+                        }
+                        else
+                        {
+                            customImg.Save(customSavePath, ImageFormat.Png);
+                        }
+                    }
+                }
+            }
 
             System.IO.File.Move(@path + "\\" + this.Name + ".lnk",
                 Path.GetFullPath(@"Shortcuts\" + Regex.Replace(this.Name, @"(_)+", " ") + ".lnk")); // Move .lnk to correct directory
@@ -209,6 +250,23 @@ namespace client.Classes
         // Takes in a programPath (shortcut) and processes it to the proper file name
         public Image loadImageCache(ProgramShortcut shortcutObject)
         {
+            if (!string.IsNullOrEmpty(shortcutObject.CustomIconPath))
+            {
+                string customIconFullPath = Path.Combine(MainPath.path, "config", this.Name, "Icons", shortcutObject.CustomIconPath);
+                if (!System.IO.File.Exists(customIconFullPath))
+                {
+                    customIconFullPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "config", this.Name, "Icons", shortcutObject.CustomIconPath);
+                }
+
+                if (System.IO.File.Exists(customIconFullPath))
+                {
+                    using (MemoryStream ms = new MemoryStream(System.IO.File.ReadAllBytes(customIconFullPath)))
+                    using (Image img = Image.FromStream(ms))
+                    {
+                        return new Bitmap(img);
+                    }
+                }
+            }
 
             String programPath = shortcutObject.FilePath;
 

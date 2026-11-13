@@ -1,4 +1,4 @@
-﻿namespace client.Classes
+namespace client.Classes
 {
     public class ProgramShortcut
     {
@@ -8,6 +8,7 @@
         public string name { get; set; } = "";
         public string Arguments = "";
         public string WorkingDirectory = MainPath.exeString;
+        public string CustomIconPath { get; set; } = "";
  
 
         public ProgramShortcut() // needed for XML serialization

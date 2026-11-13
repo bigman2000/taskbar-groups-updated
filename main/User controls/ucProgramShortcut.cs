@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using client.Classes;
@@ -17,6 +17,11 @@ namespace client.User_controls
         public int Position { get; set; }
 
         public Bitmap logo;
+
+        private bool isMouseDown = false;
+        private bool isDragging = false;
+        private bool suppressNextClick = false;
+        private Point dragStartScreenPoint;
         public ucProgramShortcut()
         {
             InitializeComponent();
@@ -49,9 +54,55 @@ namespace client.User_controls
             txtShortcutName.Height = size.Height;
 
 
+            Image pendingIcon = MotherForm.GetPendingCustomIcon(Shortcut);
+            if (pendingIcon != null)
+            {
+                picShortcut.BackgroundImage = logo = new Bitmap(pendingIcon);
+            }
+            else if (!MotherForm.IsCustomIconCleared(Shortcut) && !string.IsNullOrEmpty(Shortcut.CustomIconPath))
+            {
+                string customIconFullPath = Path.Combine(MainPath.path, "config", MotherForm.Category.Name, "Icons", Shortcut.CustomIconPath);
+                if (File.Exists(customIconFullPath))
+                {
+                    using (MemoryStream ms = new MemoryStream(File.ReadAllBytes(customIconFullPath)))
+                    using (Image img = Image.FromStream(ms))
+                    {
+                        picShortcut.BackgroundImage = logo = new Bitmap(img);
+                    }
+                }
+                else
+                {
+                    LoadDefaultIcon();
+                }
+            }
+            else
+            {
+                LoadDefaultIcon();
+            }
+
+            UpdateOrderButtons();
+        }
+
+        public void SetCustomIcon(Bitmap icon)
+        {
+            if (icon == null)
+                return;
+
+            logo = new Bitmap(icon);
+            picShortcut.BackgroundImage = logo;
+        }
+
+        public void ResetToDefaultIcon()
+        {
+            LoadDefaultIcon();
+        }
+
+        private void LoadDefaultIcon()
+        {
             if (Shortcut.isWindowsApp)
             {
-                picShortcut.BackgroundImage = handleWindowsApp.getWindowsAppIcon(Shortcut.FilePath, true);
+                logo = handleWindowsApp.getWindowsAppIcon(Shortcut.FilePath, true);
+                picShortcut.BackgroundImage = logo;
             }
             else if (File.Exists(Shortcut.FilePath)) // Checks if the shortcut actually exists; if not then display an error image
             {
@@ -68,7 +119,8 @@ namespace client.User_controls
                     picShortcut.BackgroundImage = logo = Icon.ExtractAssociatedIcon(Shortcut.FilePath).ToBitmap();
                 }
 
-            } else if (Directory.Exists(Shortcut.FilePath))
+            }
+            else if (Directory.Exists(Shortcut.FilePath))
             {
                 try
                 {
@@ -78,32 +130,42 @@ namespace client.User_controls
                 {
                     MessageBox.Show(ex.Message);
                 }
-            } else
+            }
+            else
             {
                 picShortcut.BackgroundImage = logo = global::client.Properties.Resources.Error;
             }
+        }
 
-            if (Position == 0)
-            {
-                cmdNumUp.Enabled = false;
-                cmdNumUp.BackgroundImage = global::client.Properties.Resources.NumUpGray;
-            }
-            if (Position == MotherForm.Category.ShortcutList.Count - 1)
-            {
-                cmdNumDown.Enabled = false;
-                cmdNumDown.BackgroundImage = global::client.Properties.Resources.NumDownGray;
+        public void UpdateOrderButtons()
+        {
+            bool isFirst = (Position == 0);
+            bool isLast = (Position == MotherForm.Category.ShortcutList.Count - 1);
 
-            }
+            cmdNumUp.Enabled = !isFirst;
+            cmdNumUp.BackgroundImage = isFirst
+                ? global::client.Properties.Resources.NumUpGray
+                : global::client.Properties.Resources.NumUpWhite;
 
+            cmdNumDown.Enabled = !isLast;
+            cmdNumDown.BackgroundImage = isLast
+                ? global::client.Properties.Resources.NumDownGray
+                : global::client.Properties.Resources.NumDownWhite;
         }
 
         private void ucProgramShortcut_MouseEnter(object sender, EventArgs e)
         {
+            if (MotherForm.IsDraggingShortcut)
+                return;
+
             ucSelected();
         }
 
         private void ucProgramShortcut_MouseLeave(object sender, EventArgs e)
         {
+            if (MotherForm.IsDraggingShortcut)
+                return;
+
             if (MotherForm.selectedShortcut != this)
             {
                 ucDeselected();
@@ -131,6 +193,12 @@ namespace client.User_controls
         // If current item is already selected, then deselect everything
         private void ucProgramShortcut_Click(object sender, EventArgs e)
         {
+            if (suppressNextClick)
+            {
+                suppressNextClick = false;
+                return;
+            }
+
             if (MotherForm.selectedShortcut == this)
             {
                 MotherForm.resetSelection();
@@ -170,6 +238,72 @@ namespace client.User_controls
             cmdNumUp.BackColor = Color.FromArgb(26, 26, 26);
             cmdNumDown.BackColor = Color.FromArgb(26, 26, 26);
 
+        }
+
+        public void ucDragging(bool active)
+        {
+            Color back = active ? Color.FromArgb(46, 46, 46) : Color.FromArgb(31, 31, 31);
+            this.BackColor = back;
+            txtShortcutName.BackColor = back;
+            cmdNumUp.BackColor = back;
+            cmdNumDown.BackColor = back;
+        }
+
+        private void ShortcutDrag_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left || MotherForm.Category.ShortcutList.Count <= 1)
+                return;
+
+            isMouseDown = true;
+            isDragging = false;
+            suppressNextClick = false;
+            dragStartScreenPoint = ((Control)sender).PointToScreen(e.Location);
+        }
+
+        private void ShortcutDrag_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (!isMouseDown)
+                return;
+
+            if (!isDragging)
+            {
+                Point currentScreen = ((Control)sender).PointToScreen(e.Location);
+                int dx = Math.Abs(currentScreen.X - dragStartScreenPoint.X);
+                int dy = Math.Abs(currentScreen.Y - dragStartScreenPoint.Y);
+
+                // Allow horizontal text selection when the user has already focused the name box
+                if (sender == txtShortcutName && txtShortcutName.Focused && dy < 6)
+                    return;
+
+                if (dx >= SystemInformation.DragSize.Width || dy >= SystemInformation.DragSize.Height)
+                {
+                    isDragging = true;
+                    ((Control)sender).Capture = true;
+                    MotherForm.BeginShortcutDrag(this);
+                }
+            }
+
+            if (isDragging)
+            {
+                MotherForm.UpdateShortcutDrag();
+            }
+        }
+
+        private void ShortcutDrag_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+                return;
+
+            bool wasDragging = isDragging;
+            isMouseDown = false;
+            isDragging = false;
+
+            if (wasDragging)
+            {
+                suppressNextClick = true;
+                ((Control)sender).Capture = false;
+                MotherForm.EndShortcutDrag();
+            }
         }
 
         private void lbTextbox_TextChanged(object sender, EventArgs e)

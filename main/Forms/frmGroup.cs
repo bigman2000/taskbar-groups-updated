@@ -1,4 +1,4 @@
-﻿using ChinhDo.Transactions;
+using ChinhDo.Transactions;
 using client.Classes;
 using client.User_controls;
 using IWshRuntimeLibrary;
@@ -26,10 +26,16 @@ namespace client.Forms
         private String[] newExt;
 
         public ucProgramShortcut selectedShortcut;
+        private ucProgramShortcut draggingShortcut;
+        private Timer dragScrollTimer;
+
+        public bool IsDraggingShortcut => draggingShortcut != null;
 
         public static Shell32.Shell shell = new Shell32.Shell();
 
         private List<ProgramShortcut> shortcutChanged = new List<ProgramShortcut>();
+        private Dictionary<ProgramShortcut, Image> pendingCustomIcons = new Dictionary<ProgramShortcut, Image>();
+        private HashSet<ProgramShortcut> clearedCustomIcons = new HashSet<ProgramShortcut>();
 
 
         //--------------------------------------
@@ -43,6 +49,7 @@ namespace client.Forms
             System.Runtime.ProfileOptimization.StartProfile("frmGroup.Profile");
 
             InitializeComponent();
+            InitializeDragAndDrop();
 
             // Setting default category properties
             newExt = imageExt.Concat(specialImageExt).ToArray();
@@ -64,6 +71,7 @@ namespace client.Forms
             System.Runtime.ProfileOptimization.StartProfile("frmGroup.Profile");
 
             InitializeComponent();
+            InitializeDragAndDrop();
 
             // Setting properties
             Category = category;
@@ -230,6 +238,13 @@ namespace client.Forms
         {
             resetSelection();
 
+            if (pendingCustomIcons.TryGetValue(psc, out Image pendingImg))
+            {
+                pendingImg?.Dispose();
+                pendingCustomIcons.Remove(psc);
+            }
+            clearedCustomIcons.Remove(psc);
+
             Category.ShortcutList.Remove(psc);
             resetSelection();
             bool before = true;
@@ -295,6 +310,150 @@ namespace client.Forms
             {
                 LoadShortcut(psc, position);
                 position++;
+            }
+        }
+
+        private void InitializeDragAndDrop()
+        {
+            if (components == null)
+            {
+                components = new System.ComponentModel.Container();
+            }
+
+            dragScrollTimer = new Timer(components)
+            {
+                Interval = 25
+            };
+            dragScrollTimer.Tick += DragScrollTimer_Tick;
+        }
+
+        public void BeginShortcutDrag(ucProgramShortcut shortcut)
+        {
+            if (shortcut == null || Category.ShortcutList.Count <= 1)
+                return;
+
+            resetSelection();
+            draggingShortcut = shortcut;
+            draggingShortcut.ucDragging(true);
+            Cursor = Cursors.SizeAll;
+            dragScrollTimer.Start();
+        }
+
+        public void UpdateShortcutDrag()
+        {
+            if (draggingShortcut == null || Category.ShortcutList.Count <= 1)
+                return;
+
+            Point clientPt = pnlShortcuts.PointToClient(Cursor.Position);
+            int virtualY = clientPt.Y - pnlShortcuts.AutoScrollPosition.Y;
+            int targetIndex = virtualY / 50;
+
+            if (targetIndex < 0)
+                targetIndex = 0;
+            else if (targetIndex >= Category.ShortcutList.Count)
+                targetIndex = Category.ShortcutList.Count - 1;
+
+            int currentIndex = draggingShortcut.Position;
+            if (targetIndex != currentIndex)
+            {
+                MoveShortcut(currentIndex, targetIndex);
+            }
+        }
+
+        public void EndShortcutDrag()
+        {
+            dragScrollTimer.Stop();
+            Cursor = Cursors.Default;
+
+            if (draggingShortcut != null)
+            {
+                draggingShortcut.ucDragging(false);
+                draggingShortcut = null;
+            }
+        }
+
+        private void DragScrollTimer_Tick(object sender, EventArgs e)
+        {
+            if (draggingShortcut == null)
+            {
+                dragScrollTimer.Stop();
+                return;
+            }
+
+            if ((Control.MouseButtons & MouseButtons.Left) == 0)
+            {
+                EndShortcutDrag();
+                return;
+            }
+
+            Point clientPt = pnlShortcuts.PointToClient(Cursor.Position);
+            int maxScrollY = Math.Max(0, pnlShortcuts.DisplayRectangle.Height - pnlShortcuts.ClientSize.Height);
+
+            if (maxScrollY > 0)
+            {
+                const int edgeZone = 25;
+                int scrollDelta = 0;
+
+                if (clientPt.Y < edgeZone)
+                {
+                    int dist = edgeZone - clientPt.Y;
+                    scrollDelta = -Math.Max(4, Math.Min(18, dist / 3 + 4));
+                }
+                else if (clientPt.Y > pnlShortcuts.ClientSize.Height - edgeZone)
+                {
+                    int dist = clientPt.Y - (pnlShortcuts.ClientSize.Height - edgeZone);
+                    scrollDelta = Math.Max(4, Math.Min(18, dist / 3 + 4));
+                }
+
+                if (scrollDelta != 0)
+                {
+                    int currentScrollY = -pnlShortcuts.AutoScrollPosition.Y;
+                    int nextScrollY = Math.Max(0, Math.Min(maxScrollY, currentScrollY + scrollDelta));
+                    if (nextScrollY != currentScrollY)
+                    {
+                        pnlShortcuts.AutoScrollPosition = new Point(0, nextScrollY);
+                    }
+                }
+            }
+
+            UpdateShortcutDrag();
+        }
+
+        private void MoveShortcut(int fromIndex, int toIndex)
+        {
+            ProgramShortcut item = Category.ShortcutList[fromIndex];
+            Category.ShortcutList.RemoveAt(fromIndex);
+            Category.ShortcutList.Insert(toIndex, item);
+
+            pnlShortcuts.SuspendLayout();
+            try
+            {
+                foreach (ucProgramShortcut uc in pnlShortcuts.Controls)
+                {
+                    int newPos = Category.ShortcutList.IndexOf(uc.Shortcut);
+                    if (newPos != -1)
+                    {
+                        uc.Position = newPos;
+                        uc.Location = new Point(25, newPos * 50 + pnlShortcuts.AutoScrollPosition.Y);
+                        uc.UpdateOrderButtons();
+                    }
+                }
+
+                for (int i = 0; i < Category.ShortcutList.Count; i++)
+                {
+                    foreach (ucProgramShortcut uc in pnlShortcuts.Controls)
+                    {
+                        if (uc.Shortcut == Category.ShortcutList[i])
+                        {
+                            pnlShortcuts.Controls.SetChildIndex(uc, i);
+                            break;
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                pnlShortcuts.ResumeLayout(true);
             }
         }
 
@@ -521,6 +680,8 @@ namespace client.Forms
                     }
 
 
+                    PreloadExistingCustomIcons();
+
                     if (!IsNew)
                     {
                         //
@@ -556,7 +717,7 @@ namespace client.Forms
                     // Normalize string so it can be used in path; remove spaces
                     Category.Name = Regex.Replace(txtGroupName.Text, @"\s+", "_");
 
-                    Category.CreateConfig(cmdAddGroupIcon.BackgroundImage); // Creating group config files
+                    Category.CreateConfig(cmdAddGroupIcon.BackgroundImage, pendingCustomIcons); // Creating group config files
                     Client.LoadCategory(Path.GetFullPath(@"config\" + Category.Name)); // Loading visuals
                     
                     this.Dispose();
@@ -761,6 +922,8 @@ namespace client.Forms
         {
             pnlArgumentTextbox.Enabled = false;
             cmdSelectDirectory.Enabled = false;
+            picShortcutIcon.BackgroundImage = null;
+            cmdResetShortcutIcon.Visible = false;
             if (selectedShortcut != null)
             {
                 pnlColor.Visible = true;
@@ -785,8 +948,154 @@ namespace client.Forms
             pnlWorkingDirectory.Enabled = true;
             cmdSelectDirectory.Enabled = true;
 
+            picShortcutIcon.BackgroundImage = passedShortcut.logo;
+            cmdResetShortcutIcon.Visible = HasCustomIcon(passedShortcut.Shortcut);
+
             pnlColor.Visible = false;
             pnlArguments.Visible = true;
+        }
+
+        public Image GetPendingCustomIcon(ProgramShortcut psc)
+        {
+            if (psc != null && pendingCustomIcons.TryGetValue(psc, out Image img))
+                return img;
+            return null;
+        }
+
+        public bool IsCustomIconCleared(ProgramShortcut psc)
+        {
+            return psc != null && clearedCustomIcons.Contains(psc);
+        }
+
+        private bool HasCustomIcon(ProgramShortcut psc)
+        {
+            if (psc == null)
+                return false;
+            if (pendingCustomIcons.ContainsKey(psc))
+                return true;
+            return !clearedCustomIcons.Contains(psc) && !string.IsNullOrEmpty(psc.CustomIconPath);
+        }
+
+        private void PreloadExistingCustomIcons()
+        {
+            if (Category.ShortcutList == null || string.IsNullOrEmpty(Category.Name))
+                return;
+
+            foreach (ProgramShortcut psc in Category.ShortcutList)
+            {
+                if (pendingCustomIcons.ContainsKey(psc) || clearedCustomIcons.Contains(psc))
+                    continue;
+
+                if (!string.IsNullOrEmpty(psc.CustomIconPath))
+                {
+                    string existingPath = Path.Combine(MainPath.path, "config", Category.Name, "Icons", psc.CustomIconPath);
+                    if (System.IO.File.Exists(existingPath))
+                    {
+                        using (MemoryStream ms = new MemoryStream(System.IO.File.ReadAllBytes(existingPath)))
+                        using (Image img = Image.FromStream(ms))
+                        {
+                            pendingCustomIcons[psc] = new Bitmap(img);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void cmdSelectShortcutIcon_Click(object sender, EventArgs e)
+        {
+            if (selectedShortcut == null)
+                return;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Select Shortcut Icon",
+                CheckFileExists = true,
+                CheckPathExists = true,
+                Filter = "Icon & Image files (*.png, *.jpg, *.jpeg, *.bmp, *.ico, *.exe, *.dll)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.bmp;*.ico;*.exe;*.dll|Executable & DLL files (*.exe, *.dll)|*.exe;*.dll|Image files (*.png, *.jpg, *.jpeg, *.bmp, *.ico)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.bmp;*.ico",
+                RestoreDirectory = true
+            };
+
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            string file = openFileDialog.FileName;
+            string ext = Path.GetExtension(file).ToLowerInvariant();
+            Bitmap chosenBitmap = null;
+
+            try
+            {
+                if (ext == ".exe" || ext == ".dll")
+                {
+                    List<Bitmap> extracted = IconExtractor.ExtractIconsFromFile(file, 48);
+                    if (extracted.Count == 0)
+                    {
+                        MessageBox.Show("No icons were found in the selected file.", "Select Icon", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    else if (extracted.Count == 1)
+                    {
+                        chosenBitmap = extracted[0];
+                    }
+                    else
+                    {
+                        using (frmIconPicker picker = new frmIconPicker(extracted, Path.GetFileName(file)))
+                        {
+                            if (picker.ShowDialog(this) == DialogResult.OK && picker.SelectedIcon != null)
+                            {
+                                chosenBitmap = picker.SelectedIcon;
+                            }
+                        }
+
+                        foreach (Bitmap bmp in extracted)
+                            bmp.Dispose();
+                    }
+                }
+                else
+                {
+                    chosenBitmap = IconExtractor.LoadIconFromImageFile(file);
+                }
+
+                if (chosenBitmap == null)
+                    return;
+
+                ProgramShortcut targetShortcut = selectedShortcut.Shortcut;
+                if (pendingCustomIcons.TryGetValue(targetShortcut, out Image oldPending))
+                {
+                    oldPending?.Dispose();
+                }
+
+                pendingCustomIcons[targetShortcut] = chosenBitmap;
+                clearedCustomIcons.Remove(targetShortcut);
+
+                selectedShortcut.SetCustomIcon(chosenBitmap);
+                picShortcutIcon.BackgroundImage = selectedShortcut.logo;
+                cmdResetShortcutIcon.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                chosenBitmap?.Dispose();
+                MessageBox.Show($"Could not load icon: {ex.Message}", "Select Icon", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cmdResetShortcutIcon_Click(object sender, EventArgs e)
+        {
+            if (selectedShortcut == null)
+                return;
+
+            ProgramShortcut targetShortcut = selectedShortcut.Shortcut;
+            if (pendingCustomIcons.TryGetValue(targetShortcut, out Image oldPending))
+            {
+                oldPending?.Dispose();
+                pendingCustomIcons.Remove(targetShortcut);
+            }
+
+            clearedCustomIcons.Add(targetShortcut);
+            targetShortcut.CustomIconPath = "";
+
+            selectedShortcut.ResetToDefaultIcon();
+            picShortcutIcon.BackgroundImage = selectedShortcut.logo;
+            cmdResetShortcutIcon.Visible = false;
         }
 
         // Set the argument property to whatever the user set

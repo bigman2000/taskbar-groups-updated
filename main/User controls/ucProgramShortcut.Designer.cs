@@ -1,4 +1,4 @@
-﻿namespace client.User_controls
+namespace client.User_controls
 {
     partial class ucProgramShortcut
     {
@@ -61,9 +61,9 @@
             this.cmdNumUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdNumUp.FlatAppearance.BorderSize = 0;
             this.cmdNumUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdNumUp.Location = new System.Drawing.Point(16, 12);
+            this.cmdNumUp.Location = new System.Drawing.Point(14, 5);
             this.cmdNumUp.Name = "cmdNumUp";
-            this.cmdNumUp.Size = new System.Drawing.Size(14, 7);
+            this.cmdNumUp.Size = new System.Drawing.Size(28, 18);
             this.cmdNumUp.TabIndex = 30;
             this.cmdNumUp.UseVisualStyleBackColor = false;
             this.cmdNumUp.Click += new System.EventHandler(this.cmdNumUp_Click);
@@ -77,9 +77,9 @@
             this.cmdNumDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdNumDown.FlatAppearance.BorderSize = 0;
             this.cmdNumDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdNumDown.Location = new System.Drawing.Point(16, 30);
+            this.cmdNumDown.Location = new System.Drawing.Point(14, 27);
             this.cmdNumDown.Name = "cmdNumDown";
-            this.cmdNumDown.Size = new System.Drawing.Size(14, 7);
+            this.cmdNumDown.Size = new System.Drawing.Size(28, 18);
             this.cmdNumDown.TabIndex = 29;
             this.cmdNumDown.UseVisualStyleBackColor = false;
             this.cmdNumDown.Click += new System.EventHandler(this.cmdNumDown_Click);
@@ -96,8 +96,11 @@
             this.picShortcut.Size = new System.Drawing.Size(30, 30);
             this.picShortcut.TabIndex = 17;
             this.picShortcut.TabStop = false;
+            this.picShortcut.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShortcutDrag_MouseDown);
             this.picShortcut.MouseEnter += new System.EventHandler(this.ucProgramShortcut_MouseEnter);
             this.picShortcut.MouseLeave += new System.EventHandler(this.ucProgramShortcut_MouseLeave);
+            this.picShortcut.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShortcutDrag_MouseMove);
+            this.picShortcut.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ShortcutDrag_MouseUp);
             // 
             // txtShortcutName
             // 
@@ -118,8 +121,11 @@
             this.txtShortcutName.Enter += new System.EventHandler(this.ucProgramShortcut_Enter);
             this.txtShortcutName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ucProgramShortcut_KeyDown);
             this.txtShortcutName.Leave += new System.EventHandler(this.ucProgramShortcut_Leave);
+            this.txtShortcutName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShortcutDrag_MouseDown);
             this.txtShortcutName.MouseEnter += new System.EventHandler(this.ucProgramShortcut_MouseEnter);
             this.txtShortcutName.MouseLeave += new System.EventHandler(this.ucProgramShortcut_MouseLeave);
+            this.txtShortcutName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShortcutDrag_MouseMove);
+            this.txtShortcutName.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ShortcutDrag_MouseUp);
             // 
             // ucProgramShortcut
             // 
@@ -137,8 +143,11 @@
             this.Click += new System.EventHandler(this.ucProgramShortcut_Click);
             this.Enter += new System.EventHandler(this.ucProgramShortcut_Enter);
             this.Leave += new System.EventHandler(this.ucProgramShortcut_Leave);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShortcutDrag_MouseDown);
             this.MouseEnter += new System.EventHandler(this.ucProgramShortcut_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ucProgramShortcut_MouseLeave);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShortcutDrag_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ShortcutDrag_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.picShortcut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

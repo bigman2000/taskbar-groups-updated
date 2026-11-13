@@ -1,4 +1,4 @@
-﻿using client.Classes;
+using client.Classes;
 using client.User_controls;
 using System;
 using System.Collections.Generic;
@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IWshRuntimeLibrary;
 
 namespace client
 {
@@ -30,6 +31,7 @@ namespace client
         public Category ThisCategory;
         public List<ucShortcut> ControlList;
         public Color HoverColor;
+        public Color RunningColor;
 
         private string passedDirec;
         public Point mouseClick;
@@ -59,11 +61,17 @@ namespace client
                 Opacity = (1 - (ThisCategory.Opacity / 100));
 
                 if (BackColor.R * 0.2126 + BackColor.G * 0.7152 + BackColor.B * 0.0722 > 255 / 2)
-                    //if backcolor is light, set hover color as darker
-                    HoverColor = Color.FromArgb(BackColor.A, (BackColor.R - 50), (BackColor.G - 50), (BackColor.B - 50));
+                {
+                    // If backcolor is light, set hover and running colors darker
+                    HoverColor = Color.FromArgb(BackColor.A, Math.Max(0, BackColor.R - 50), Math.Max(0, BackColor.G - 50), Math.Max(0, BackColor.B - 50));
+                    RunningColor = Color.FromArgb(32, 0, 0, 0);
+                }
                 else
-                    //light backcolor is light, set hover color as darker
-                    HoverColor = Color.FromArgb(BackColor.A, (BackColor.R + 50), (BackColor.G + 50), (BackColor.B + 50));
+                {
+                    // If backcolor is dark, set hover and running colors lighter
+                    HoverColor = Color.FromArgb(BackColor.A, Math.Min(255, BackColor.R + 50), Math.Min(255, BackColor.G + 50), Math.Min(255, BackColor.B + 50));
+                    RunningColor = Color.FromArgb(36, 255, 255, 255);
+                }
             }
             else
             {
@@ -258,6 +266,109 @@ namespace client
         //------------------------------------------------------------------------------------
         //
 
+        private void CaptureRunningProcesses(out Dictionary<string, List<string>> runningPathsByName, out List<string> runningFullPaths)
+        {
+            runningPathsByName = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
+            runningFullPaths = new List<string>();
+
+            foreach (Process proc in Process.GetProcesses())
+            {
+                try
+                {
+                    string procName = proc.ProcessName;
+                    if (!runningPathsByName.TryGetValue(procName, out List<string> paths))
+                    {
+                        paths = new List<string>();
+                        runningPathsByName[procName] = paths;
+                    }
+
+                    try
+                    {
+                        string modulePath = proc.MainModule?.FileName;
+                        if (!string.IsNullOrEmpty(modulePath))
+                        {
+                            paths.Add(modulePath);
+                            runningFullPaths.Add(modulePath);
+                        }
+                    }
+                    catch
+                    {
+                        // Access to MainModule can be denied for elevated/system processes
+                    }
+                }
+                catch
+                {
+                    // Process may have exited
+                }
+                finally
+                {
+                    proc.Dispose();
+                }
+            }
+        }
+
+        private bool IsShortcutRunning(ProgramShortcut psc, Dictionary<string, List<string>> runningPathsByName, List<string> runningFullPaths)
+        {
+            if (psc == null || string.IsNullOrWhiteSpace(psc.FilePath))
+                return false;
+
+            if (psc.isWindowsApp)
+            {
+                int underscoreIndex = psc.FilePath.IndexOf('_');
+                string packagePrefix = underscoreIndex > 0 ? psc.FilePath.Substring(0, underscoreIndex) : psc.FilePath;
+                if (string.IsNullOrEmpty(packagePrefix))
+                    return false;
+
+                string marker = "\\WindowsApps\\" + packagePrefix;
+                foreach (string path in runningFullPaths)
+                {
+                    if (path.IndexOf(marker, StringComparison.OrdinalIgnoreCase) >= 0)
+                        return true;
+                }
+                return false;
+            }
+
+            string targetExePath = null;
+            string ext = Path.GetExtension(psc.FilePath).ToLowerInvariant();
+            if (ext == ".lnk" && System.IO.File.Exists(psc.FilePath))
+            {
+                try
+                {
+                    IWshShortcut shortcut = (IWshShortcut)new WshShell().CreateShortcut(psc.FilePath);
+                    if (!string.IsNullOrWhiteSpace(shortcut.TargetPath))
+                    {
+                        targetExePath = Environment.ExpandEnvironmentVariables(shortcut.TargetPath);
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            else if (ext == ".exe")
+            {
+                targetExePath = psc.FilePath;
+            }
+
+            if (string.IsNullOrWhiteSpace(targetExePath) || Path.GetExtension(targetExePath).ToLowerInvariant() != ".exe")
+                return false;
+
+            string procName = Path.GetFileNameWithoutExtension(targetExePath);
+            if (!runningPathsByName.TryGetValue(procName, out List<string> knownPaths))
+                return false;
+
+            if (knownPaths.Count == 0)
+                return true;
+
+            foreach (string knownPath in knownPaths)
+            {
+                if (string.Equals(knownPath, targetExePath, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+
+            return false;
+        }
+
         // Loading category and building shortcuts
         private void LoadCategory()
         {
@@ -276,6 +387,10 @@ namespace client
             {
                 ThisCategory.cacheIcons();
             }
+
+            Dictionary<string, List<string>> runningPathsByName;
+            List<string> runningFullPaths;
+            CaptureRunningProcesses(out runningPathsByName, out runningFullPaths);
 
             foreach (ProgramShortcut psc in ThisCategory.ShortcutList)
             {
@@ -299,7 +414,8 @@ namespace client
                 {
                     Psc = psc, 
                     MotherForm = this, 
-                    ThisCategory = ThisCategory 
+                    ThisCategory = ThisCategory,
+                    IsRunning = IsShortcutRunning(psc, runningPathsByName, runningFullPaths)
                 };
                 pscPanel.Location = new System.Drawing.Point(x, y);
                 this.Controls.Add(pscPanel);

@@ -1,4 +1,4 @@
-﻿namespace client.Forms
+namespace client.Forms
 {
     partial class frmGroup
     {
@@ -66,6 +66,10 @@
             this.cmdWidthDown = new System.Windows.Forms.Button();
             this.cmdWidthUp = new System.Windows.Forms.Button();
             this.pnlArguments = new System.Windows.Forms.Panel();
+            this.lblShortcutIcon = new System.Windows.Forms.Label();
+            this.picShortcutIcon = new System.Windows.Forms.PictureBox();
+            this.cmdSelectShortcutIcon = new System.Windows.Forms.Button();
+            this.cmdResetShortcutIcon = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmdSelectDirectory = new System.Windows.Forms.Button();
@@ -80,6 +84,7 @@
             this.pnlColor.SuspendLayout();
             this.pnlEnd.SuspendLayout();
             this.pnlArguments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShortcutIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWith
@@ -546,6 +551,10 @@
             // 
             // pnlArguments
             // 
+            this.pnlArguments.Controls.Add(this.lblShortcutIcon);
+            this.pnlArguments.Controls.Add(this.picShortcutIcon);
+            this.pnlArguments.Controls.Add(this.cmdSelectShortcutIcon);
+            this.pnlArguments.Controls.Add(this.cmdResetShortcutIcon);
             this.pnlArguments.Controls.Add(this.label7);
             this.pnlArguments.Controls.Add(this.label6);
             this.pnlArguments.Controls.Add(this.cmdSelectDirectory);
@@ -555,16 +564,68 @@
             this.pnlArguments.Controls.Add(this.pnlArgumentTextbox);
             this.pnlArguments.Location = new System.Drawing.Point(45, 547);
             this.pnlArguments.Name = "pnlArguments";
-            this.pnlArguments.Size = new System.Drawing.Size(482, 131);
+            this.pnlArguments.Size = new System.Drawing.Size(482, 166);
             this.pnlArguments.TabIndex = 48;
             this.pnlArguments.Visible = false;
+            // 
+            // lblShortcutIcon
+            // 
+            this.lblShortcutIcon.AutoSize = true;
+            this.lblShortcutIcon.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblShortcutIcon.ForeColor = System.Drawing.Color.White;
+            this.lblShortcutIcon.Location = new System.Drawing.Point(23, 62);
+            this.lblShortcutIcon.Name = "lblShortcutIcon";
+            this.lblShortcutIcon.Size = new System.Drawing.Size(41, 20);
+            this.lblShortcutIcon.TabIndex = 54;
+            this.lblShortcutIcon.Text = "Icon:";
+            // 
+            // picShortcutIcon
+            // 
+            this.picShortcutIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.picShortcutIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picShortcutIcon.Location = new System.Drawing.Point(72, 56);
+            this.picShortcutIcon.Name = "picShortcutIcon";
+            this.picShortcutIcon.Size = new System.Drawing.Size(32, 32);
+            this.picShortcutIcon.TabIndex = 55;
+            this.picShortcutIcon.TabStop = false;
+            // 
+            // cmdSelectShortcutIcon
+            // 
+            this.cmdSelectShortcutIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.cmdSelectShortcutIcon.FlatAppearance.BorderSize = 0;
+            this.cmdSelectShortcutIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdSelectShortcutIcon.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmdSelectShortcutIcon.ForeColor = System.Drawing.Color.White;
+            this.cmdSelectShortcutIcon.Location = new System.Drawing.Point(116, 59);
+            this.cmdSelectShortcutIcon.Name = "cmdSelectShortcutIcon";
+            this.cmdSelectShortcutIcon.Size = new System.Drawing.Size(97, 27);
+            this.cmdSelectShortcutIcon.TabIndex = 56;
+            this.cmdSelectShortcutIcon.Text = "Select Icon";
+            this.cmdSelectShortcutIcon.UseVisualStyleBackColor = false;
+            this.cmdSelectShortcutIcon.Click += new System.EventHandler(this.cmdSelectShortcutIcon_Click);
+            // 
+            // cmdResetShortcutIcon
+            // 
+            this.cmdResetShortcutIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.cmdResetShortcutIcon.FlatAppearance.BorderSize = 0;
+            this.cmdResetShortcutIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdResetShortcutIcon.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmdResetShortcutIcon.ForeColor = System.Drawing.Color.White;
+            this.cmdResetShortcutIcon.Location = new System.Drawing.Point(221, 59);
+            this.cmdResetShortcutIcon.Name = "cmdResetShortcutIcon";
+            this.cmdResetShortcutIcon.Size = new System.Drawing.Size(65, 27);
+            this.cmdResetShortcutIcon.TabIndex = 57;
+            this.cmdResetShortcutIcon.Text = "Reset";
+            this.cmdResetShortcutIcon.UseVisualStyleBackColor = false;
+            this.cmdResetShortcutIcon.Visible = false;
+            this.cmdResetShortcutIcon.Click += new System.EventHandler(this.cmdResetShortcutIcon_Click);
             // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label7.Location = new System.Drawing.Point(26, 51);
+            this.label7.Location = new System.Drawing.Point(26, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(440, 1);
             this.label7.TabIndex = 53;
@@ -574,7 +635,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label6.Location = new System.Drawing.Point(26, 103);
+            this.label6.Location = new System.Drawing.Point(26, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(335, 1);
             this.label6.TabIndex = 50;
@@ -586,7 +647,7 @@
             this.cmdSelectDirectory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdSelectDirectory.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cmdSelectDirectory.ForeColor = System.Drawing.Color.White;
-            this.cmdSelectDirectory.Location = new System.Drawing.Point(367, 79);
+            this.cmdSelectDirectory.Location = new System.Drawing.Point(367, 114);
             this.cmdSelectDirectory.Name = "cmdSelectDirectory";
             this.cmdSelectDirectory.Size = new System.Drawing.Size(97, 27);
             this.cmdSelectDirectory.TabIndex = 52;
@@ -599,7 +660,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(23, 63);
+            this.label5.Location = new System.Drawing.Point(23, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 20);
             this.label5.TabIndex = 51;
@@ -612,7 +673,7 @@
             this.pnlWorkingDirectory.Enabled = false;
             this.pnlWorkingDirectory.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pnlWorkingDirectory.ForeColor = System.Drawing.Color.White;
-            this.pnlWorkingDirectory.Location = new System.Drawing.Point(27, 85);
+            this.pnlWorkingDirectory.Location = new System.Drawing.Point(27, 120);
             this.pnlWorkingDirectory.Name = "pnlWorkingDirectory";
             this.pnlWorkingDirectory.Size = new System.Drawing.Size(330, 16);
             this.pnlWorkingDirectory.TabIndex = 50;
@@ -623,7 +684,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(23, 11);
+            this.label3.Location = new System.Drawing.Point(23, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 1;
@@ -636,7 +697,7 @@
             this.pnlArgumentTextbox.Enabled = false;
             this.pnlArgumentTextbox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pnlArgumentTextbox.ForeColor = System.Drawing.Color.White;
-            this.pnlArgumentTextbox.Location = new System.Drawing.Point(26, 33);
+            this.pnlArgumentTextbox.Location = new System.Drawing.Point(26, 30);
             this.pnlArgumentTextbox.Name = "pnlArgumentTextbox";
             this.pnlArgumentTextbox.Size = new System.Drawing.Size(425, 16);
             this.pnlArgumentTextbox.TabIndex = 0;
@@ -683,6 +744,7 @@
             this.pnlEnd.ResumeLayout(false);
             this.pnlArguments.ResumeLayout(false);
             this.pnlArguments.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShortcutIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -734,5 +796,9 @@
         private System.Windows.Forms.Button cmdSelectDirectory;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblShortcutIcon;
+        private System.Windows.Forms.PictureBox picShortcutIcon;
+        private System.Windows.Forms.Button cmdSelectShortcutIcon;
+        private System.Windows.Forms.Button cmdResetShortcutIcon;
     }
 }
