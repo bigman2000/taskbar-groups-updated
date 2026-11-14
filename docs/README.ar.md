@@ -21,7 +21,7 @@
 
 > ℹ️ **ملاحظة:** هذا المشروع هو تفريع (Fork) مُحدّث باستمرار من [tjackenpacken/taskbar-groups](https://github.com/tjackenpacken/taskbar-groups). نظراً لعدم تحديث المستودع الأصلي منذ فترة طويلة، تم إنشاء هذا التفريع لإصلاح الأخطاء وإضافة ميزات جديدة.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📖 Table of Contents
 
@@ -37,14 +37,14 @@
 * ➤ Recent Updates
 * ➤ License
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🔽 How to download Taskbar Groups
 1. Download the `.zip` file from the latest release (link above)
 2. Unpack the `.zip` file at a desired location
 3. Run `TaskbarGroups.exe` in the extracted folder
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🛠️ Creating your first group
 1. Click **"Add taskbar group"**
@@ -54,17 +54,17 @@
 5. Left-click on the group card to open the `Shortcuts` folder with your group shortcut selected
 6. Right-click the highlighted shortcut and select **"Pin to taskbar"**
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🖥️ Screen/Window Documentation
 Below is documentation for each window and its components.
 
 #### Main Screen
-![Group overview screen](https://user-images.githubusercontent.com/56088716/103317856-81025f00-49fa-11eb-907b-99623babf315.PNG)
+![Group overview screen](images/main-screen.png)
 Here is the main group configuration screen opened when launching `TaskbarGroups.exe`. You can create, import, search, sort, preview, edit, clone, export, or delete groups, and switch the UI language (26 languages supported).
 
 #### Group Creation Screen
-![Group creation screen](https://user-images.githubusercontent.com/56088716/103452967-36efd680-4ca3-11eb-8244-2aed6fc5af97.PNG)
+![Group creation screen](images/group-screen.png)
 Here is the group creation/editing screen where you configure your group:
 
 * **Name the new group** — Insert any group name (including Unicode/Cyrillic characters, up to 49 characters).
@@ -80,12 +80,12 @@ Here is the group creation/editing screen where you configure your group:
 #### Extra Notes
 For executables, icons are extracted directly. For `.lnk` shortcuts and Microsoft Store apps, the app resolves either the target icon or the Store app package icon automatically.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📦 Image/Icon Caching
 Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` so the launch popup opens instantaneously without re-extracting icons each time. Saving a group regenerates its icon cache.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ⌨️ Program Shortcuts
 * **Number keys `1`–`9`, `0`** — Launches the shortcut at position 1–10.
@@ -93,7 +93,7 @@ Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` 
 * **`Ctrl + Enter`** — Opens all shortcuts in the group at once (when enabled in group settings).
 * **Right-click on a shortcut** — Opens a context menu: *Switch to window*, *Close window*, *Open new instance*, *Run as administrator*, *Open file location*.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📁 Folder Structure Documentation
 * **`/config`** — Stores configuration folders for each created group.
@@ -104,7 +104,7 @@ Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` 
 * **`/JITComp`** — Stores compiled profile optimization data for faster startup.
 * **`/Shortcuts`** — Contains generated `.lnk` shortcuts for pinning groups to the Windows taskbar.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ✨ Recent Updates
 * **Localization (26 Languages)**: Added full UI localization and a language selector in the main window, plus synchronized READMEs in all 26 languages.
@@ -112,9 +112,9 @@ Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` 
 * **Group Editor (`frmGroup`)**: Added drag-and-drop shortcut reordering with auto-scroll, custom icon picker for `.exe`/`.dll`/images, and Unicode/Cyrillic group name support.
 * **Main Window (`frmClient`)**: Fixed layout with independent scrolling, search & sorting, modern buttons, **Preview**, **Clone**, **Export**/**Import** (`.tgroup`/`.zip`), quick **Delete**, overflow `+N` badge, and drag-and-drop icon reordering directly inside group cards.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📜 License
 This project is licensed under the [MIT License](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---

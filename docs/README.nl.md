@@ -21,7 +21,7 @@
 
 > ℹ️ **Opmerking:** Dit project is een actief onderhouden fork van [tjackenpacken/taskbar-groups](https://github.com/tjackenpacken/taskbar-groups). De oorspronkelijke repository is al lange tijd niet bijgewerkt en lijkt verlaten; deze fork is gemaakt om bugs op te lossen en nieuwe functies toe te voegen.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📖 Inhoudsopgave
 
@@ -37,14 +37,14 @@
 * ➤ Recente updates
 * ➤ Licentie
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🔽 Taskbar Groups downloaden
 1. Download het `.zip`-bestand van de nieuwste release (link hierboven)
 2. Pak het `.zip`-bestand uit naar een gewenste map
 3. Start `TaskbarGroups.exe` in de uitgepakte map
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🛠️ Je eerste groep maken
 1. Klik op **"Groep toevoegen"**
@@ -54,17 +54,17 @@
 5. Klik op de groepskaart om de map `Shortcuts` te openen
 6. Klik met de rechtermuisknop op de snelkoppeling en kies **"Aan taakbalk vastmaken"**
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🖥️ Vensterdocumentatie
 Hieronder vindt u uitleg over elk venster en de onderdelen.
 
 #### Hoofdscherm
-![Group overview screen](https://user-images.githubusercontent.com/56088716/103317856-81025f00-49fa-11eb-907b-99623babf315.PNG)
+![Group overview screen](images/main-screen.png)
 Het hoofdscherm van `TaskbarGroups.exe`. Hier kunt u groepen maken, importeren, zoeken, sorteren, bekijken, bewerken, klonen, exporteren, verwijderen en de taal wijzigen (26 talen).
 
 #### Groepseditor
-![Group creation screen](https://user-images.githubusercontent.com/56088716/103452967-36efd680-4ca3-11eb-8244-2aed6fc5af97.PNG)
+![Group creation screen](images/group-screen.png)
 In de groepseditor configureert u uw groep:
 
 * **Groepsnaam** — Elke gewenste naam (inclusief Unicode/Cyrillisch, max. 49 tekens).
@@ -80,12 +80,12 @@ In de groepseditor configureert u uw groep:
 #### Extra opmerkingen
 Pictogrammen van `.exe`-bestanden worden direct opgehaald; voor `.lnk` en Microsoft Store-apps gebeurt dit automatisch.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📦 Pictogramcache
 Pictogrammen worden lokaal opgeslagen in `/config/<Groepsnaam>/Icons` zodat het menu direct opent. Opslaan vernieuwt de cache.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ⌨️ Sneltoetsen
 * **Cijfertoetsen `1`–`9`, `0`** — Opent snelkoppeling 1–10.
@@ -93,7 +93,7 @@ Pictogrammen worden lokaal opgeslagen in `/config/<Groepsnaam>/Icons` zodat het 
 * **`Ctrl + Enter`** — Opent alle snelkoppelingen tegelijk (indien ingeschakeld).
 * **Rechtermuisklik op snelkoppeling** — Contextmenu: *Naar venster schakelen*, *Venster sluiten*, *Nieuwe instantie*, *Als administrator uitvoeren*, *Bestandslocatie openen*.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📁 Mappenstructuur
 * **`/config`** — Bevat de configuratiemappen van alle groepen.
@@ -104,7 +104,7 @@ Pictogrammen worden lokaal opgeslagen in `/config/<Groepsnaam>/Icons` zodat het 
 * **`/JITComp`** — Gecompileerde opstartprofielen.
 * **`/Shortcuts`** — `.lnk`-snelkoppelingen om vast te maken aan de taakbalk.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ✨ Recente updates
 * **Lokalisatie (26 talen)**: Volledige UI-vertaling met taalkiezer en gesynchroniseerde README's in 26 talen.
@@ -112,9 +112,9 @@ Pictogrammen worden lokaal opgeslagen in `/config/<Groepsnaam>/Icons` zodat het 
 * **Groepseditor (`frmGroup`)**: Slepen en neerzetten om te herordenen met auto-scroll, pictogramkiezer voor `.exe`/`.dll`/afbeeldingen en Unicode-ondersteuning.
 * **Hoofdvenster (`frmClient`)**: Vast kop-/voetpaneel, zoeken & sorteren, Voorbeeld, Klonen, Exporteren/Importeren (`.tgroup`/`.zip`), snel Verwijderen, `+N`-badge en direct herordenen op kaarten.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📜 Licentie
 Dit project valt onder de [MIT-licentie](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---

@@ -21,7 +21,7 @@
 
 > ℹ️ **Not:** Bu proje [tjackenpacken/taskbar-groups](https://github.com/tjackenpacken/taskbar-groups) projesinin aktif olarak sürdürülen bir çatalıdır (fork). Orijinal depo uzun süredir güncellenmediği ve terk edilmiş göründüğü için hataları düzeltmek ve yeni özellikler eklemek amacıyla bu fork oluşturulmuştur.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📖 İçindekiler
 
@@ -37,14 +37,14 @@
 * ➤ Son Güncellemeler
 * ➤ Lisans
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🔽 Taskbar Groups nasıl indirilir
 1. En son sürümden `.zip` dosyasını indirin (yukarıdaki bağlantı)
 2. `.zip` dosyasını istediğiniz bir klasöre çıkartın
 3. Çıkartılan klasördeki `TaskbarGroups.exe` dosyasını çalıştırın
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🛠️ İlk grubunuzu oluşturma
 1. **"Grup ekle"** düğmesine tıklayın
@@ -54,17 +54,17 @@
 5. `Shortcuts` klasörünü açmak için grup kartına sol tıklayın
 6. Seçili kısayola sağ tıklayın ve **"Görev çubuğuna sabitle"** yi seçin
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🖥️ Pencere Dokümantasyonu
 Aşağıda her pencere ve bileşenleri açıklanmıştır.
 
 #### Ana Ekran
-![Group overview screen](https://user-images.githubusercontent.com/56088716/103317856-81025f00-49fa-11eb-907b-99623babf315.PNG)
+![Group overview screen](images/main-screen.png)
 `TaskbarGroups.exe` açıldığında görünen ana ekran. Grup oluşturabilir, içe aktarabilir, arayabilir, sıralayabilir, önizleyebilir, düzenleyebilir, klonlayabilir, dışa aktarabilir, silebilir ve dili değiştirebilirsiniz (26 dil).
 
 #### Grup Oluşturma
-![Group creation screen](https://user-images.githubusercontent.com/56088716/103452967-36efd680-4ca3-11eb-8244-2aed6fc5af97.PNG)
+![Group creation screen](images/group-screen.png)
 Grup oluşturma/düzenleme ekranında grubunuzu özelleştirebilirsiniz:
 
 * **Grup adı** — İstediğiniz herhangi bir ad (Unicode destekli, en fazla 49 karakter).
@@ -80,12 +80,12 @@ Grup oluşturma/düzenleme ekranında grubunuzu özelleştirebilirsiniz:
 #### Ek Notlar
 `.exe` dosyalarından simge doğrudan alınır; `.lnk` ve Microsoft Store uygulamaları için otomatik çözümlenir.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📦 Simge Önbellekleme
 Simgeler `/config/<Grup_Adı>/Icons` içinde önbelleğe alınır. Grubu kaydetmek önbelleği yeniler.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ⌨️ Klavye Kısayolları
 * **`1`–`9`, `0` tuşları** — 1–10. konumdaki kısayolu açar.
@@ -93,7 +93,7 @@ Simgeler `/config/<Grup_Adı>/Icons` içinde önbelleğe alınır. Grubu kaydetm
 * **`Ctrl + Enter`** — Gruptaki tüm kısayolları aynı anda açar.
 * **Kısayola sağ tıklama** — Bağlam menüsü: *Pencereye geç*, *Pencereyi kapat*, *Yeni örnek aç*, *Yönetici olarak çalıştır*, *Dosya konumunu aç*.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📁 Klasör Yapısı
 * **`/config`** — Oluşturulan grupların yapılandırma klasörleri.
@@ -104,7 +104,7 @@ Simgeler `/config/<Grup_Adı>/Icons` içinde önbelleğe alınır. Grubu kaydetm
 * **`/JITComp`** — Daha hızlı açılış için derlenmiş profiller.
 * **`/Shortcuts`** — Görev çubuğuna sabitlemek için `.lnk` kısayolları.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ✨ Son Güncellemeler
 * **Yerelleştirme (26 Dil)**: Ana pencerede dil seçici ile tam arayüz çevirisi ve 26 dilde senkronize README dosyaları.
@@ -112,9 +112,9 @@ Simgeler `/config/<Grup_Adı>/Icons` içinde önbelleğe alınır. Grubu kaydetm
 * **Grup Düzenleyici (`frmGroup`)**: Otomatik kaydırmalı sürükle-bırak sıralama, `.exe`/`.dll`/resimlerden simge seçici ve Unicode desteği.
 * **Ana Pencere (`frmClient`)**: Sabit düzen, arama ve sıralama, Önizleme, Klonla, Dışa/İçe Aktar (`.tgroup`/`.zip`), hızlı Silme, `+N` rozeti ve kart içi sürükle-bırak sıralama.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📜 Lisans
 Bu proje [MIT Lisansı](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE) altında lisanslanmıştır.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---

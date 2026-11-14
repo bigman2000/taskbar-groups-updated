@@ -21,7 +21,7 @@
 
 > ℹ️ **Nota:** Questo progetto è un fork mantenuto attivamente di [tjackenpacken/taskbar-groups](https://github.com/tjackenpacken/taskbar-groups). Il repository originale non viene aggiornato da molto tempo e sembra abbandonato; questo fork nasce per correggere bug e aggiungere nuove funzioni.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📖 Indice
 
@@ -37,14 +37,14 @@
 * ➤ Aggiornamenti recenti
 * ➤ Licenza
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🔽 Come scaricare Taskbar Groups
 1. Scarica il file `.zip` dall'ultima release (link sopra)
 2. Estrai l'archivio nella cartella desiderata
 3. Avvia `TaskbarGroups.exe` dalla cartella estratta
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🛠️ Creare il primo gruppo
 1. Clicca su **"Aggiungi gruppo"**
@@ -54,17 +54,17 @@
 5. Clicca sulla scheda del gruppo per aprire la cartella `Shortcuts`
 6. Fai clic destro sul collegamento selezionato e scegli **"Aggiungi alla barra delle applicazioni"**
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🖥️ Documentazione delle finestre
 Di seguito la descrizione di ogni finestra e dei suoi componenti.
 
 #### Schermata principale
-![Group overview screen](https://user-images.githubusercontent.com/56088716/103317856-81025f00-49fa-11eb-907b-99623babf315.PNG)
+![Group overview screen](images/main-screen.png)
 Finestra principale aperta all'avvio di `TaskbarGroups.exe`. Consente di creare, importare, cercare, ordinare, visualizzare in anteprima, modificare, clonare, esportare o eliminare gruppi e cambiare lingua (26 lingue).
 
 #### Creazione gruppo
-![Group creation screen](https://user-images.githubusercontent.com/56088716/103452967-36efd680-4ca3-11eb-8244-2aed6fc5af97.PNG)
+![Group creation screen](images/group-screen.png)
 Finestra di creazione e modifica di un gruppo:
 
 * **Nome del gruppo** — Qualsiasi nome (incluso Unicode/cirillico, max 49 caratteri).
@@ -80,12 +80,12 @@ Finestra di creazione e modifica di un gruppo:
 #### Note aggiuntive
 Le icone degli eseguibili vengono estratte direttamente; per `.lnk` e app Microsoft Store vengono risolte automaticamente.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📦 Cache icone
 Le icone sono memorizzate in `/config/<Nome_Gruppo>/Icons` per un'apertura istantanea. Il salvataggio rigenera la cache.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ⌨️ Scorciatoie da tastiera
 * **Tasti numerici `1`–`9`, `0`** — Avvia il collegamento alle posizioni 1–10.
@@ -93,7 +93,7 @@ Le icone sono memorizzate in `/config/<Nome_Gruppo>/Icons` per un'apertura istan
 * **`Ctrl + Invio`** — Apre tutti i collegamenti del gruppo contemporaneamente.
 * **Clic destro su un collegamento** — Menu contestuale: *Passa alla finestra*, *Chiudi finestra*, *Nuova istanza*, *Esegui come amministratore*, *Apri percorso file*.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📁 Struttura delle cartelle
 * **`/config`** — Contiene le cartelle di configurazione dei gruppi.
@@ -104,7 +104,7 @@ Le icone sono memorizzate in `/config/<Nome_Gruppo>/Icons` per un'apertura istan
 * **`/JITComp`** — Profili compilati per avvio rapido.
 * **`/Shortcuts`** — Collegamenti `.lnk` da fissare alla barra delle applicazioni.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ✨ Aggiornamenti recenti
 * **Localizzazione (26 lingue)**: Traduzione completa dell'interfaccia con selettore lingua e README sincronizzati in 26 lingue.
@@ -112,9 +112,9 @@ Le icone sono memorizzate in `/config/<Nome_Gruppo>/Icons` per un'apertura istan
 * **Editor gruppo (`frmGroup`)**: Riordino drag-and-drop con scorrimento automatico, selettore icone da `.exe`/`.dll`/immagini e supporto Unicode.
 * **Finestra principale (`frmClient`)**: Layout fisso, ricerca e ordinamento, Anteprima, Clona, Esporta/Importa (`.tgroup`/`.zip`), Eliminazione rapida, badge `+N` e riordino diretto nella scheda.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📜 Licenza
 Questo progetto è distribuito con [Licenza MIT](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---

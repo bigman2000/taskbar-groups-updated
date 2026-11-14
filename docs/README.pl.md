@@ -21,7 +21,7 @@
 
 > ℹ️ **Uwaga:** Ten projekt jest aktywnie rozwijanym forkiem [tjackenpacken/taskbar-groups](https://github.com/tjackenpacken/taskbar-groups). Oryginalne repozytorium od dawna nie było aktualizowane i wygląda na porzucone, dlatego powstał ten fork, aby naprawić błędy i dodać nowe funkcje.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📖 Spis treści
 
@@ -37,14 +37,14 @@
 * ➤ Ostatnie zmiany
 * ➤ Licencja
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🔽 Jak pobrać Taskbar Groups
 1. Pobierz plik `.zip` z najnowszego wydania (link powyżej)
 2. Rozpakuj archiwum do wybranego folderu
 3. Uruchom `TaskbarGroups.exe` z rozpakowanego folderu
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🛠️ Tworzenie pierwszej grupy
 1. Kliknij **"Dodaj grupę"**
@@ -54,17 +54,17 @@
 5. Kliknij kartę grupy, aby otworzyć folder `Shortcuts`
 6. Kliknij prawym przyciskiem wyróżniony skrót i wybierz **"Przypnij do paska zadań"**
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 🖥️ Dokumentacja okien
 Poniżej znajduje się opis poszczególnych okien i ich funkcji.
 
 #### Okno główne
-![Group overview screen](https://user-images.githubusercontent.com/56088716/103317856-81025f00-49fa-11eb-907b-99623babf315.PNG)
+![Group overview screen](images/main-screen.png)
 Okno główne uruchamiane przez `TaskbarGroups.exe`. Pozwala tworzyć, importować, wyszukiwać, sortować, podglądać, edytować, klonować, eksportować i usuwać grupy oraz zmieniać język (26 języków).
 
 #### Edytor grupy
-![Group creation screen](https://user-images.githubusercontent.com/56088716/103452967-36efd680-4ca3-11eb-8244-2aed6fc5af97.PNG)
+![Group creation screen](images/group-screen.png)
 Okno tworzenia i edycji grupy:
 
 * **Nazwa grupy** — Dowolna nazwa (w tym Unicode/cyrylica/polskie znaki, do 49 znaków).
@@ -80,12 +80,12 @@ Okno tworzenia i edycji grupy:
 #### Dodatkowe informacje
 Ikony plików `.exe` są pobierane bezpośrednio; dla `.lnk` i aplikacji Microsoft Store są wykrywane automatycznie.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📦 Pamięć podręczna ikon
 Ikony są buforowane w `/config/<Nazwa_Grupy>/Icons`, co zapewnia natychmiastowe otwieranie menu. Zapis grupy odświeża pamięć podręczną.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ⌨️ Skróty klawiszowe
 * **Klawisze `1`–`9`, `0`** — Uruchamia skrót na pozycji 1–10.
@@ -93,7 +93,7 @@ Ikony są buforowane w `/config/<Nazwa_Grupy>/Icons`, co zapewnia natychmiastowe
 * **`Ctrl + Enter`** — Otwiera wszystkie skróty w grupie jednocześnie (jeśli włączono).
 * **Prawy przycisk myszy na skrócie** — Menu kontekstowe: *Przełącz do okna*, *Zamknij okno*, *Otwórz nową instancję*, *Uruchom jako administrator*, *Otwórz lokalizację pliku*.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📁 Struktura folderów
 * **`/config`** — Zawiera foldery konfiguracyjne grup.
@@ -104,7 +104,7 @@ Ikony są buforowane w `/config/<Nazwa_Grupy>/Icons`, co zapewnia natychmiastowe
 * **`/JITComp`** — Profile przyspieszające uruchamianie.
 * **`/Shortcuts`** — Skróty `.lnk` do przypięcia na pasku zadań.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## ✨ Ostatnie zmiany
 * **Lokalizacja (26 języków)**: Pełne tłumaczenie interfejsu z wyborem języka w oknie głównym oraz zsynchronizowane pliki README w 26 językach.
@@ -112,9 +112,9 @@ Ikony są buforowane w `/config/<Nazwa_Grupy>/Icons`, co zapewnia natychmiastowe
 * **Edytor grupy (`frmGroup`)**: Zmiana kolejności metodą przeciągnij i upuść z automatycznym przewijaniem, wybór ikon z `.exe`/`.dll`/obrazów oraz obsługa Unicode.
 * **Okno główne (`frmClient`)**: Stały nagłówek i stopka, wyszukiwanie i sortowanie, Podgląd, Klonowanie, Eksport/Import (`.tgroup`/`.zip`), szybkie Usuwanie, plakietka `+N` i zmiana kolejności ikon na karcie.
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
 
 ## 📜 Licencja
 Projekt udostępniany na [licencji MIT](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+---
