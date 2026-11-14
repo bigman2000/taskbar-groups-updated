@@ -94,6 +94,9 @@
     <Compile Include="Classes\IconExtractor.cs" />
     <Compile Include="Classes\IconFactory.cs" />
     <Compile Include="Classes\ImageFunctions.cs" />
+    <Compile Include="Classes\Localization.cs" />
+    <Compile Include="Classes\LocalizationData.cs" />
+    <Compile Include="Classes\LocalizationData2.cs" />
     <Compile Include="Classes\MainPath.cs" />
     <Compile Include="Classes\ModernButton.cs" />
     <Compile Include="Classes\ProgramShortcut.cs" />

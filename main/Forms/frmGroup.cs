@@ -62,7 +62,46 @@ namespace client.Forms
             cmdSave.Left += 70;
             cmdExit.Left += 70;
             radioDark.Checked = true;
+            ApplyLocalization();
+            txtGroupName.Text = Localization.T("group_name_placeholder");
             cmbIconSize.SelectedIndex = 1;
+        }
+
+        private void ApplyLocalization()
+        {
+            this.Text = IsNew ? Localization.T("frm_new_group") : Localization.T("frm_edit_group");
+            lblWith.Text = Localization.T("lbl_width") + ":";
+            lblAddGroupIcon.Text = Localization.T("lbl_change_group_icon");
+            lblAddGroupIconDesc.Text = Localization.T("lbl_change_group_icon_desc");
+            lblAddShortcut.Text = Localization.T("lbl_add_shortcut");
+            radioDark.Text = Localization.T("radio_dark");
+            radioLight.Text = Localization.T("radio_light");
+            radioCustom.Text = Localization.T("radio_custom");
+            lblOpacityTooltip.Text = Localization.T("lbl_opacity") + ":";
+            pnlAllowOpenAll.Text = Localization.T("chk_allow_open_all");
+            chkActivateRunning.Text = Localization.T("chk_activate_running");
+            chkShowLabels.Text = Localization.T("chk_show_labels");
+            lblIconSize.Text = Localization.T("lbl_icon_size") + ":";
+            label3.Text = Localization.T("lbl_arguments") + ":";
+            lblShortcutIcon.Text = Localization.T("lbl_icon");
+            cmdSelectShortcutIcon.Text = Localization.T("btn_select_icon");
+            cmdResetShortcutIcon.Text = Localization.T("btn_reset");
+            label5.Text = Localization.T("lbl_working_dir") + ":";
+            cmdSelectDirectory.Text = Localization.T("btn_select_dir");
+            cmdSave.Text = Localization.T("btn_save");
+            cmdExit.Text = Localization.T("btn_exit");
+            cmdDelete.Text = Localization.T("btn_delete");
+
+            int currentSizeIdx = cmbIconSize.SelectedIndex;
+            cmbIconSize.Items.Clear();
+            cmbIconSize.Items.AddRange(new object[]
+            {
+                Localization.T("size_compact"),
+                Localization.T("size_medium"),
+                Localization.T("size_large")
+            });
+            if (currentSizeIdx >= 0 && currentSizeIdx < cmbIconSize.Items.Count)
+                cmbIconSize.SelectedIndex = currentSizeIdx;
         }
 
         // CTOR for editing an existing group
@@ -79,8 +118,10 @@ namespace client.Forms
             Client = client;
             IsNew = false;
 
+            ApplyLocalization();
+
             // Setting control values from loaded group
-            this.Text = "Edit group";
+            this.Text = Localization.T("frm_edit_group");
             txtGroupName.Text = Regex.Replace(Category.Name, @"(_)+", " ");
             pnlAllowOpenAll.Checked = category.allowOpenAll;
             chkActivateRunning.Checked = category.activateRunningWindow;
@@ -159,7 +200,7 @@ namespace client.Forms
 
             if (Category.ShortcutList.Count >= 20)
             {
-                lblErrorShortcut.Text = "Max 20 shortcuts in one group";
+                lblErrorShortcut.Text = Localization.T("err_max_shortcuts");
                 lblErrorShortcut.BringToFront();
                 lblErrorShortcut.Visible = true;
             }
@@ -633,31 +674,31 @@ namespace client.Forms
             string groupTitle = txtGroupName.Text.Trim();
             string normalizedTitle = Regex.Replace(groupTitle, @"\s+", "_");
 
-            if (groupTitle == "Name the new group..." || string.IsNullOrWhiteSpace(groupTitle)) // Verify category name
+            if (groupTitle == Localization.T("group_name_placeholder") || string.IsNullOrWhiteSpace(groupTitle)) // Verify category name
             {
-                lblErrorTitle.Text = "Must select a name";
+                lblErrorTitle.Text = Localization.T("err_select_name");
                 lblErrorTitle.Visible = true;
             }
             else if (IsNew && Directory.Exists(@MainPath.path + @"\config\" + normalizedTitle) ||
                      !IsNew && Category.Name != normalizedTitle && Directory.Exists(@MainPath.path + @"\config\" + normalizedTitle))
             {
-                lblErrorTitle.Text = "There is already a group with that name";
+                lblErrorTitle.Text = Localization.T("err_group_exists");
                 lblErrorTitle.Visible = true;
             }
             else if (!Regex.IsMatch(groupTitle, @"^[\p{L}\p{N} _\-]+$"))
             {
-                lblErrorTitle.Text = "Name contains invalid characters";
+                lblErrorTitle.Text = Localization.T("err_invalid_chars");
                 lblErrorTitle.Visible = true;
             }
             else if (cmdAddGroupIcon.BackgroundImage ==
                 global::client.Properties.Resources.AddWhite) // Verify icon
             {
-                lblErrorIcon.Text = "Must select group icon";
+                lblErrorIcon.Text = Localization.T("err_select_icon");
                 lblErrorIcon.Visible = true;
             }
             else if (Category.ShortcutList.Count == 0) // Verify shortcuts
             {
-                lblErrorShortcut.Text = "Must select at least one shortcut";
+                lblErrorShortcut.Text = Localization.T("err_min_shortcut");
                 lblErrorShortcut.Visible = true;
             }
             else
@@ -695,7 +736,7 @@ namespace client.Forms
                             }
                         } catch (Exception)
                         {
-                            MessageBox.Show("Please close all programs used within the taskbar group in order to save!");
+                            MessageBox.Show(Localization.T("msg_close_programs_save"));
                             return;
                         }
                     }
@@ -754,7 +795,7 @@ namespace client.Forms
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Please close all programs used within the taskbar group in order to delete!");
+                    MessageBox.Show(Localization.T("msg_close_programs_delete"));
                     return;
                 }
 
@@ -891,14 +932,14 @@ namespace client.Forms
         private void txtGroupName_MouseClick(object sender, MouseEventArgs e)
         {
             resetSelection();
-            if (txtGroupName.Text == "Name the new group...")
+            if (txtGroupName.Text == Localization.T("group_name_placeholder"))
                 txtGroupName.Text = "";
         }
 
         private void txtGroupName_Leave(object sender, EventArgs e)
         {
             if (txtGroupName.Text == "")
-                txtGroupName.Text = "Name the new group...";
+                txtGroupName.Text = Localization.T("group_name_placeholder");
         }
 
         // Error labels
@@ -1002,7 +1043,7 @@ namespace client.Forms
 
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Title = "Select Shortcut Icon",
+                Title = Localization.T("btn_select_icon"),
                 CheckFileExists = true,
                 CheckPathExists = true,
                 Filter = "Icon & Image files (*.png, *.jpg, *.jpeg, *.bmp, *.ico, *.exe, *.dll)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.bmp;*.ico;*.exe;*.dll|Executable & DLL files (*.exe, *.dll)|*.exe;*.dll|Image files (*.png, *.jpg, *.jpeg, *.bmp, *.ico)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.bmp;*.ico",
@@ -1023,7 +1064,7 @@ namespace client.Forms
                     List<Bitmap> extracted = IconExtractor.ExtractIconsFromFile(file, 48);
                     if (extracted.Count == 0)
                     {
-                        MessageBox.Show("No icons were found in the selected file.", "Select Icon", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Localization.T("msg_no_icons_found"), Localization.T("btn_select_icon"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     else if (extracted.Count == 1)
@@ -1068,7 +1109,7 @@ namespace client.Forms
             catch (Exception ex)
             {
                 chosenBitmap?.Dispose();
-                MessageBox.Show($"Could not load icon: {ex.Message}", "Select Icon", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{Localization.T("msg_could_not_load_icon")}: {ex.Message}", Localization.T("btn_select_icon"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

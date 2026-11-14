@@ -1,5 +1,5 @@
 <p align="center">
-  <b>🇬🇧 English</b> · <a href="docs/README.ru.md">🇷🇺 Русский</a>
+  <b>🇬🇧 English</b> · <a href="docs/README.de.md">🇩🇪 Deutsch</a> · <a href="docs/README.es.md">🇪🇸 Español</a> · <a href="docs/README.fr.md">🇫🇷 Français</a> · <a href="docs/README.it.md">🇮🇹 Italiano</a> · <a href="docs/README.nl.md">🇳🇱 Nederlands</a> · <a href="docs/README.pl.md">🇵🇱 Polski</a> · <a href="docs/README.pt-BR.md">🇧🇷 Português (Brasil)</a> · <a href="docs/README.ru.md">🇷🇺 Русский</a> · <a href="docs/README.uk.md">🇺🇦 Українська</a> · <a href="docs/README.tr.md">🇹🇷 Türkçe</a> · <a href="docs/README.az.md">🇦🇿 Azərbaycanca</a> · <a href="docs/README.hr.md">🇭🇷 Hrvatski</a> · <a href="docs/README.id.md">🇮🇩 Bahasa Indonesia</a> · <a href="docs/README.vi.md">🇻🇳 Tiếng Việt</a> · <a href="docs/README.th.md">🇹🇭 ไทย</a> · <a href="docs/README.ja.md">🇯🇵 日本語</a> · <a href="docs/README.ko.md">🇰🇷 한국어</a> · <a href="docs/README.zh-CN.md">🇨🇳 简体中文</a> · <a href="docs/README.zh-TW.md">🇹🇼 繁體中文</a> · <a href="docs/README.ar.md">🇸🇦 العربية</a> · <a href="docs/README.he.md">🇮🇱 עברית</a> · <a href="docs/README.fa.md">🇮🇷 فارسی</a> · <a href="docs/README.hi.md">🇮🇳 हिन्दी</a> · <a href="docs/README.ur.md">🇵🇰 اردو</a> · <a href="docs/README.bn.md">🇧🇩 বাংলা</a>
 </p>
 
 <p align="center">
@@ -7,141 +7,114 @@
 </p>
 <h1 align="center">Taskbar Groups</h1>
 <p align="center">
-<a href="https://github.com/tjackenpacken/taskbar-groups/issues"><img alt="Issues open" src="https://img.shields.io/github/issues-raw/tjackenpacken/taskbar-groups?style=for-the-badge" height="20"/></a>
-<a href="https://github.com/tjackenpacken/taskbar-groups/"><img alt="Last commit" src="https://img.shields.io/github/last-commit/tjackenpacken/taskbar-groups?style=for-the-badge" height="20"/></a>
-<a href="https://github.com/tjackenpacken/taskbar-groups/releases"><img alt="Latest version" src="https://img.shields.io/github/v/tag/tjackenpacken/taskbar-groups?label=Latest%20Version&style=for-the-badge" height="20"/></a>
-<a href="https://github.com/tjackenpacken/taskbar-groups/blob/master/LICENSE"><img alt="Latest version" src="https://img.shields.io/github/license/tjackenpacken/taskbar-groups?style=for-the-badge" height="20"/></a>
-	
+<a href="https://github.com/bigman2000/taskbar-groups-updated/issues"><img alt="Issues open" src="https://img.shields.io/github/issues-raw/bigman2000/taskbar-groups-updated?style=for-the-badge" height="20"/></a>
+<a href="https://github.com/bigman2000/taskbar-groups-updated/"><img alt="Last commit" src="https://img.shields.io/github/last-commit/bigman2000/taskbar-groups-updated?style=for-the-badge" height="20"/></a>
+<a href="https://github.com/bigman2000/taskbar-groups-updated/releases"><img alt="Latest version" src="https://img.shields.io/github/v/tag/bigman2000/taskbar-groups-updated?label=Latest%20Version&style=for-the-badge" height="20"/></a>
+<a href="https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/bigman2000/taskbar-groups-updated?style=for-the-badge" height="20"/></a>
 </p>
 <p align="center">
-  <b>Taskbar groups is a lightweight utility for Windows that lets the users create groups of shortcuts in the taskbar.</b>
-  
-<p align="center">
-	<a href="https://github.com/tjackenpacken/taskbar-groups/releases">Download & Release Notes</a>
+  <b>Taskbar Groups is a lightweight utility for Windows that lets users create groups of shortcuts on the taskbar.</b>
 </p>
-<br />
+<p align="center">
+  <a href="https://github.com/bigman2000/taskbar-groups-updated/releases">Download & Release Notes</a>
+</p>
 
-[![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)  ](#table-of-contents)
+> ℹ️ **Note:** This project is an actively maintained fork of [tjackenpacken/taskbar-groups](https://github.com/tjackenpacken/taskbar-groups). The original repository has not been updated for a long time and appears abandoned, so this fork was created to fix bugs and add new features.
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
 
 ## 📖 Table of Contents
 
-* [➤ Installation](#-how-to-download-taskbar-groups)
-* [➤ Creating your first group](#%EF%B8%8F-creating-your-first-group)
-* [➤ Screen/Window Documentation](#%EF%B8%8F-screenwindow-documentation)
-	* [Main Screen](#main-screen-)
-	* [Group Creation Screen](#group-creation-screen-)
-	* [Extra Notes](#extra-notes-)
-* [➤ Image/Icon  Caching](#-imageicon-caching)
-* [➤ Program Shortcuts](#%EF%B8%8F-program-shortcuts)
-* [➤ File/Folder Structure](#-folder-structure-documentation)
-* [➤ Recent Updates](#-recent-updates)
-* [➤ License](#-License)
+* ➤ Installation
+* ➤ Creating your first group
+* ➤ Screen/Window Documentation
+  * Main Screen
+  * Group Creation Screen
+  * Extra Notes
+* ➤ Image/Icon Caching
+* ➤ Program Shortcuts
+* ➤ Folder Structure
+* ➤ Recent Updates
+* ➤ License
 
- [![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)](#how-to-download-taskbar-groups)
+![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
 
-##  🔽 How to download Taskbar groups:
-    1. Download the .zip-file from the latest release (link above)
-    2. Unpack the .zip-file at a desired location
-    3. Run the TaskbarGroups.exe file in the extracted folder
+## 🔽 How to download Taskbar Groups
+1. Download the `.zip` file from the latest release (link above)
+2. Unpack the `.zip` file at a desired location
+3. Run `TaskbarGroups.exe` in the extracted folder
 
- [ ![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)](#creating-your-first-group)
+![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+
 ## 🛠️ Creating your first group
-    1. Press on the "Add taskbar group"
-    2. Give the group a name and an icon
-    3. Click on the "Add new shortcut" and select an .exe or .lnk (repeat until you got all your desired shortcuts)
-	    a. You can select multiple .exe or .lnk files at once
-	    b. You can drag and drop .exe, .lnk, or folders into the add new shortcut field
-    4. Save the group
-    enter image description here5. Left click on the group
-    6. In the folder that opens up, right click on the highlighted shortcut
-    7. Select "Pin to taskbar"
- [![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)](#screenwindow-documentation)
+1. Click **"Add taskbar group"**
+2. Give the group a name and select an icon
+3. Click **"Add new shortcut"** and select `.exe` or `.lnk` files (or drag and drop `.exe`, `.lnk`, or folders into the shortcut area)
+4. Save the group
+5. Left-click on the group card to open the `Shortcuts` folder with your group shortcut selected
+6. Right-click the highlighted shortcut and select **"Pin to taskbar"**
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+
 ## 🖥️ Screen/Window Documentation
- Below will be some documentation for each of the screens with explaining the functionality of each of the components.
-#### Main screen [](#main-screen)
-![Group overview screen](https://user-images.githubusercontent.com/56088716/103317856-81025f00-49fa-11eb-907b-99623babf315.PNG)Here is the main group configuration screen. You get here by executing the TaskbarGroups.exe file. Here you can add groups and see what groups you have created.
+Below is documentation for each window and its components.
 
-#### Group Creation Screen [](#group-creation)
-![Group creation screen](https://user-images.githubusercontent.com/56088716/103452967-36efd680-4ca3-11eb-8244-2aed6fc5af97.PNG)  
-Here is the group creation screen. Here you can start customizing and configuring your group. Here is the quick rundown of the features of this window.
+#### Main Screen
+![Group overview screen](https://user-images.githubusercontent.com/56088716/103317856-81025f00-49fa-11eb-907b-99623babf315.PNG)
+Here is the main group configuration screen opened when launching `TaskbarGroups.exe`. You can create, import, search, sort, preview, edit, clone, export, or delete groups, and switch the UI language (26 languages supported).
 
-**Name the new group** - You can insert any group name (no special characters) that you would like with a maximum character limit of 49 characters in total.
+#### Group Creation Screen
+![Group creation screen](https://user-images.githubusercontent.com/56088716/103452967-36efd680-4ca3-11eb-8244-2aed6fc5af97.PNG)
+Here is the group creation/editing screen where you configure your group:
 
-**Width** - You can set the limit for how many shortcuts will appear on each line. For example I have 12 shortcuts and I have a width of 6. It will display 6 shortcuts per row/line.
+* **Name the new group** — Insert any group name (including Unicode/Cyrillic characters, up to 49 characters).
+* **Width** — Sets how many shortcuts appear per row (e.g., 12 shortcuts with width 6 displays 2 rows of 6).
+* **Change Group Icon** — Click (+) or drag and drop `.png`, `.jpg`, `.ico`, `.exe`, or `.lnk` files to set the group icon.
+* **Add new shortcuts** — Click (+) or drag and drop `.exe`, `.lnk`, `.url`, or folders. Supports Windows Store apps and Steam games.
+* **Allow open-all shortcuts** — Enables launching every shortcut in the group at once using `Ctrl + Enter`.
+* **Activate running window on click** — Switches to an already running window of the app instead of opening a new instance.
+* **Show names / Icon size** — Optionally display shortcut labels under icons and choose between *Compact*, *Medium*, or *Large* icon sizes.
+* **Working Directory & Arguments** — Select any shortcut item to customize its working directory, launch arguments, or custom icon (including extracting icons from `.exe`/`.dll` files).
+* **Background Color & Opacity** — Choose Dark, Light, or Custom color and set transparency from 0% to 100%.
 
-**Change Group Icon** - You can click the (+) icon and it will bring up a file dialogue. You can select any type of image files (.png, .jpg, etc.), icon files (.ico), and any sort of executable or shortcut files (.exe, .lnk). On top of this you can drag and drop any of the mentioned file types above to use the icons from those files.
+#### Extra Notes
+For executables, icons are extracted directly. For `.lnk` shortcuts and Microsoft Store apps, the app resolves either the target icon or the Store app package icon automatically.
 
-**Add new shortcuts** - You can click the (+) icon and it will bring up a file dialogue like the change group icon section. You can select any type of executable or extension files (.exe, .lnk) to add to your group. You can also add **shortcuts** leading to the windows store apps along with steam games/software. **Do note however that if the shortcuts are moved, the application can no longer launch those applications and you will have to re-edit your group.**
+![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
 
-**Allow open-all shortcuts** - When you launch the group to try to launch an app, you have the option to launch all the executables inside the group. To enable this feature, this checkbox has to be checked and the group has to be saved. All shortcuts can be launched through the usage of the Ctrl + Enter keybinds.
-
-**Shortcut Item Selection** - Once you have added shortcuts/applications, you can click on the **sides of the individual entries** of those shortcuts/applications or anywhere that a text or image aren't blocking the background area. Clicking on them will "select" them and they would have a permanent background that is darker than the rest of the entries. This will be the same color as when you hover over applications/shortcuts. This will be needed to set **Working Directories** and **Arguments**.
-
-**Working Directory** - Once you have selected an item, this textbox and the choose folder beside it will be enabled. Here you can change what working directory the application starts with. This may be required for some applications. By default for older groups, the working directory is the directory of the taskbar groups application. For new added shortcuts/applications, the working directory will be set as the location of the application or the directory of the target file for shortcuts. You can also manually set a loation through the **Select Directory** button. Any directory that is changed manually will be checked to be valid and if the working directory is invalid, the target path will be set with the same process as if you added a new application/shortcut.
-
-**Arguments** - Once you have selected an item, this textbox is enabled and you can type any launch arguments that you would like to include with the application on launch.
-
-**Dark color/Light color/Custom color** - Here you can select what color you want the background of your group to be.
-
-**Opacity** - Here you can select how transparent you want the background of your application to be. The scale work from 0% (Solid color, no opacity) to 100% (Fully transparent).
-
-**Entry Name** - Whenever you add an application, the entry will have the text assumed from the name of the application without the extension at the end (.exe, .txt, etc.). This can be changed if you select the text directly and you can type into field. The textbox that you type in expands/shrinks based on the length of the text to make room to select the entry. The character limit here is 27 characters.
-
-#### Extra Notes [](#extra-notes)
-With fetching the icons of executables, the application will directly take the icon of the executable. With extensions, it works a little bit different. The application will try to fix the icon location for the extension to see if that exists anywhere on the system and use that if possible. If not, then the application would try to use the icon of the target file of that extension.
-
-On top of this, this works a bit differently for Microsoft App Store extensions. These extensions don't contain any sort of target path nor icon location. Here the application will try to fetch the image from the system folder where these icons are stored using the ID of the application grabbed from the extension.
-[
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)](#image-caching)
 ## 📦 Image/Icon Caching
-Image/icon caching is done through recreating the icon and placing it locally in the icons folder of the group in the config folder. Here it is loaded up locally as to not waste resources to recreate the icon every time. When icons are deleted/not found, the application will display an x. The icon cache can be regenerated by simply saving the group again through the main application.
+Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` so the launch popup opens instantaneously without re-extracting icons each time. Saving a group regenerates its icon cache.
 
-[
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)](#program-shortcuts)
+![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+
 ## ⌨️ Program Shortcuts
-When you open a group once its created through the shortcut provided, there are a list of hotkeys to make the program more easily usable.
+* **Number keys `1`–`9`, `0`** — Launches the shortcut at position 1–10.
+* **Arrow keys / `Enter` / `Esc`** — Navigate between shortcuts, launch the selected one, or close the popup.
+* **`Ctrl + Enter`** — Opens all shortcuts in the group at once (when enabled in group settings).
+* **Right-click on a shortcut** — Opens a context menu: *Switch to window*, *Close window*, *Open new instance*, *Run as administrator*, *Open file location*.
 
-**Top row numbers 1,2,3,4,5,6,7,8,9,0** - Opens the shortcuts at those positions respective from 1-10.
-
-**Ctrl + Enter** - Opens all applications/shortcut within the group at once
-(Feature must be enabled through the settings when editing/creating the group for this to work)
-
-[
-![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)](#folder-structure)
+![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
 
 ## 📁 Folder Structure Documentation
+* **`/config`** — Stores configuration folders for each created group.
+* **`/config/<Group_Name>/Icons`** — Local icon cache for all shortcuts in the group.
+* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — Generated icon files for the group shortcut.
+* **`/config/<Group_Name>/ObjectData.xml`** — XML configuration storing shortcuts, appearance, and behavior settings.
+* **`/config/lang.txt`** — Stores the selected UI language code.
+* **`/JITComp`** — Stores compiled profile optimization data for faster startup.
+* **`/Shortcuts`** — Contains generated `.lnk` shortcuts for pinning groups to the Windows taskbar.
 
-#### /config
-In the config folder, you will have the data regarding each group that you have created. 
-#### /config/<Goup_Name>/Icons
-This is the icon cache that comes with the folder. All icons of the shortcuts that you added are added into that cache. This cache will be read from when using your group to not have to fetch each individual icon every time.
-#### /config/<Goup_Name>/GroupIcon.ico / GroupImage.png
-Created image from the group icon you selected. This will be your application icon and read from when you start up the group.
-#### /config/<Goup_Name>/ObjectData.xml
-Crucial information about the shortcuts and the group itself stored inside of here. It saves your settings for the group and is important in determining what goes into the group when you open it and any other visual settings you may have configured.
-#### /JITComp
-In here stores the individual profiles for each form. Essentially these profiles are per-compiled code that the application can read from to improve loading times and responsiveness in the system.
-#### /Shortcuts
-Here is where all of your shortcuts to activate your group will go. All groups created will have their shortcut created here and after creation, you can feel free to move the shortcut or pin it to any desired locations.
 ![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+
 ## ✨ Recent Updates
-* **Launch Panel (`frmMain`)**
-  * Added tooltips displaying shortcut names when hovering over launch buttons.
-  * Added running application detection with a less transparent button background for active apps.
-  * Added option to activate an already running window on click instead of launching a new instance.
-  * Added right-click context menu on launch buttons (*Switch to window*, *Close window*, *Open new instance*, *Run as administrator*, *Open file location*).
-  * Added configurable icon sizes (*Compact*, *Medium*, *Large*), optional shortcut name labels under icons, Windows 11 rounded corners, and arrow-key / `Enter` / `Esc` keyboard navigation.
-* **Group Editor (`frmGroup`)**
-  * Enlarged up/down reorder buttons and preserved scroll position when reordering.
-  * Added drag-and-drop shortcut reordering with automatic edge/out-of-bounds scrolling.
-  * Added custom shortcut icon support from image files (`.png`, `.jpg`, `.bmp`, `.ico`) and embedded icons inside `.exe` / `.dll` files via an icon picker dialog.
-  * Added Unicode/Cyrillic support for group names.
-* **Main Window (`frmClient`)**
-  * Fixed header, sidebar, and bottom action bar with independent scrolling for the group list, window resizing, and non-blocking async version checks.
-  * Added search/filtering (by group or program name) and sorting (*Default*, *A - Z*, *Z - A*).
-  * Updated group cards with modern rounded buttons, **Preview**, **Clone**, **Export** / **Import** (`.tgroup`/`.zip`), quick **Delete** with confirmation, mini-icon tooltips, overflow `+N` badge, and direct drag-and-drop icon reordering inside the card.
+* **Localization (26 Languages)**: Added full UI localization and a language selector in the main window, plus synchronized READMEs in all 26 languages.
+* **Launch Panel (`frmMain`)**: Added tooltips, running-app detection, *Activate running window* option, right-click context menu, configurable icon sizes (*Compact*, *Medium*, *Large*), shortcut labels, Windows 11 rounded corners, and keyboard navigation.
+* **Group Editor (`frmGroup`)**: Added drag-and-drop shortcut reordering with auto-scroll, custom icon picker for `.exe`/`.dll`/images, and Unicode/Cyrillic group name support.
+* **Main Window (`frmClient`)**: Fixed layout with independent scrolling, search & sorting, modern buttons, **Preview**, **Clone**, **Export**/**Import** (`.tgroup`/`.zip`), quick **Delete**, overflow `+N` badge, and drag-and-drop icon reordering directly inside group cards.
+
 ![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)
+
 ## 📜 License
-This project is licensed under the [MIT License](https://github.com/tjackenpacken/taskbar-groups/blob/master/LICENSE).
+This project is licensed under the [MIT License](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
 
 ![-----------------------------------------------------](https://user-images.githubusercontent.com/56088716/103312593-8a37ff80-49eb-11eb-91d3-75488e21a0a9.png)

@@ -25,6 +25,7 @@ namespace client.User_controls
         public ucProgramShortcut()
         {
             InitializeComponent();
+            cmdDelete.Text = Localization.T("btn_delete");
         }
 
         private void ucProgramShortcut_Load(object sender, EventArgs e)

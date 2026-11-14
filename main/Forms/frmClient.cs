@@ -18,21 +18,95 @@ namespace client.Forms
     {
         private static readonly HttpClient client = new HttpClient();
         private readonly List<Category> loadedCategories = new List<Category>();
+        private bool suppressLangChange = false;
+        private bool suppressSortChange = false;
+        private string latestVersionStatusKey = "checking";
 
         public frmClient()
         {
             System.Runtime.ProfileOptimization.StartProfile("frmClient.Profile");
             InitializeComponent();
             this.MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+            InitLanguageSelector();
+            ApplyLocalization();
             cmbSort.SelectedIndex = 0;
 
             currentVersion.Text = "v" + System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString();
             Reload();
         }
 
+        private void InitLanguageSelector()
+        {
+            suppressLangChange = true;
+            cmbLanguage.Items.Clear();
+            int selectedIndex = 0;
+            for (int i = 0; i < Localization.SupportedLanguages.Length; i++)
+            {
+                LanguageInfo lang = Localization.SupportedLanguages[i];
+                cmbLanguage.Items.Add(lang);
+                if (string.Equals(lang.Code, Localization.CurrentLanguage, StringComparison.OrdinalIgnoreCase))
+                    selectedIndex = i;
+            }
+            cmbLanguage.SelectedIndex = selectedIndex;
+            suppressLangChange = false;
+        }
+
+        public void ApplyLocalization()
+        {
+            this.Text = Localization.T("app_title");
+            label1.Text = Localization.T("app_title");
+            label2.Text = Localization.T("app_subtitle");
+            label3.Text = Localization.T("help_when_opens");
+            lblHelp1.Text = Localization.T("help_step1");
+            lblHelp2.Text = Localization.T("help_step2");
+            lblHelp3.Text = Localization.T("help_step3");
+            label4.Text = Localization.T("issues_title");
+            label5.Text = Localization.T("issues_prompt");
+            githubLink.Text = Localization.T("issues_link");
+            label6.Text = Localization.T("current_version");
+            githubLabel.Text = Localization.T("latest_version");
+            if (latestVersionStatusKey != null)
+                githubVersion.Text = Localization.T(latestVersionStatusKey);
+
+            lblSearchHint.Text = Localization.T("search_hint");
+            cmdClearSearch.Text = Localization.T("btn_clear");
+            cmdAddGroupBtn.Text = Localization.T("btn_add_group");
+            cmdImportGroup.Text = Localization.T("btn_import_group");
+
+            int currentSort = cmbSort.SelectedIndex >= 0 ? cmbSort.SelectedIndex : 0;
+            suppressSortChange = true;
+            cmbSort.Items.Clear();
+            cmbSort.Items.AddRange(new object[]
+            {
+                Localization.T("sort_default"),
+                Localization.T("sort_az"),
+                Localization.T("sort_za")
+            });
+            cmbSort.SelectedIndex = currentSort;
+            suppressSortChange = false;
+
+            UpdateHelpTitle();
+        }
+
+        private void UpdateHelpTitle()
+        {
+            if (loadedCategories.Count > 0)
+            {
+                lblHelpTitle.Text = Localization.T("help_title_has_groups");
+                pnlHelp.Visible = true;
+            }
+            else
+            {
+                lblHelpTitle.Text = Localization.T("help_title_empty");
+                pnlHelp.Visible = false;
+            }
+        }
+
         private async void frmClient_Load(object sender, EventArgs e)
         {
-            githubVersion.Text = await getVersionData();
+            var (statusKey, tag) = await getVersionData();
+            latestVersionStatusKey = statusKey;
+            githubVersion.Text = statusKey != null ? Localization.T(statusKey) : tag;
         }
 
         public void Reload()
@@ -55,16 +129,7 @@ namespace client.Forms
                 }
             }
 
-            if (loadedCategories.Count > 0)
-            {
-                lblHelpTitle.Text = "Click on a group to add a taskbar shortcut";
-                pnlHelp.Visible = true;
-            }
-            else
-            {
-                lblHelpTitle.Text = "Press on \"Add taskbar group\" to get started";
-                pnlHelp.Visible = false;
-            }
+            UpdateHelpTitle();
 
             ApplyFilterAndSort();
         }
@@ -166,7 +231,21 @@ namespace client.Forms
 
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (suppressSortChange)
+                return;
             ApplyFilterAndSort();
+        }
+
+        private void cmbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (suppressLangChange)
+                return;
+            if (cmbLanguage.SelectedItem is LanguageInfo lang)
+            {
+                Localization.SetLanguage(lang.Code);
+                ApplyLocalization();
+                ApplyFilterAndSort();
+            }
         }
 
         private void cmdAddGroup_Click(object sender, EventArgs e)
@@ -180,7 +259,7 @@ namespace client.Forms
         {
             OpenFileDialog openDialog = new OpenFileDialog
             {
-                Title = "Import Taskbar Group",
+                Title = Localization.T("import_group_title"),
                 CheckFileExists = true,
                 Filter = "Taskbar Group Archive (*.tgroup;*.zip)|*.tgroup;*.zip"
             };
@@ -195,7 +274,7 @@ namespace client.Forms
                 string xmlPath = Path.Combine(tempDir, "ObjectData.xml");
                 if (!File.Exists(xmlPath))
                 {
-                    MessageBox.Show("Invalid group archive: ObjectData.xml not found.", "Import Group", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Localization.T("import_invalid_archive"), Localization.T("import_group_title"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -248,7 +327,7 @@ namespace client.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to import group: {ex.Message}", "Import Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Localization.F("import_failed", ex.Message), Localization.T("import_group_title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -269,7 +348,7 @@ namespace client.Forms
             control.BackColor = Color.FromArgb(18, 18, 18);
         }
 
-        private static async Task<string> getVersionData()
+        private static async Task<(string statusKey, string tag)> getVersionData()
         {
             try
             {
@@ -281,14 +360,14 @@ namespace client.Forms
 
                 JsonArray responseJSON = JsonArray.Parse(responseBody);
                 if (responseJSON.Count == 0)
-                    return "No releases";
+                    return ("no_releases", null);
 
                 JsonObject jsonObjectData = responseJSON[0].GetObject();
-                return jsonObjectData["tag_name"].GetString();
+                return (null, jsonObjectData["tag_name"].GetString());
             }
             catch
             {
-                return "Not found";
+                return ("not_found", null);
             }
         }
 

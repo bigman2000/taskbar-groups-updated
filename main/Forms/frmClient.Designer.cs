@@ -44,6 +44,7 @@ namespace client.Forms
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmdClearSearch = new global::client.Classes.ModernButton();
             this.cmbSort = new System.Windows.Forms.ComboBox();
+            this.cmbLanguage = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlLeftColumn.SuspendLayout();
@@ -313,6 +314,7 @@ namespace client.Forms
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.cmdClearSearch);
             this.panel1.Controls.Add(this.cmbSort);
+            this.panel1.Controls.Add(this.cmbLanguage);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -378,6 +380,21 @@ namespace client.Forms
             this.cmbSort.Size = new System.Drawing.Size(130, 24);
             this.cmbSort.TabIndex = 15;
             this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
+            // 
+            // cmbLanguage
+            // 
+            this.cmbLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbLanguage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.cmbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbLanguage.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.cmbLanguage.ForeColor = System.Drawing.Color.White;
+            this.cmbLanguage.FormattingEnabled = true;
+            this.cmbLanguage.Location = new System.Drawing.Point(504, 28);
+            this.cmbLanguage.Name = "cmbLanguage";
+            this.cmbLanguage.Size = new System.Drawing.Size(160, 24);
+            this.cmbLanguage.TabIndex = 16;
+            this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.cmbLanguage_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -445,6 +462,7 @@ namespace client.Forms
         private System.Windows.Forms.Label lblSearchHint;
         private global::client.Classes.ModernButton cmdClearSearch;
         private System.Windows.Forms.ComboBox cmbSort;
+        private System.Windows.Forms.ComboBox cmbLanguage;
         private System.Windows.Forms.Label lblHelpTitle;
         private System.Windows.Forms.Panel pnlHelp;
         private System.Windows.Forms.Label lblHelp3;

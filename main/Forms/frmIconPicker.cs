@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using client.Classes;
 
 namespace client.Forms
 {
@@ -25,7 +26,7 @@ namespace client.Forms
 
         private void InitializeUi(string sourceFileName)
         {
-            this.Text = $"Select Icon - {sourceFileName}";
+            this.Text = $"{Localization.T("picker_title")} - {sourceFileName}";
             this.BackColor = Color.FromArgb(31, 31, 31);
             this.ForeColor = Color.White;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -41,7 +42,7 @@ namespace client.Forms
                 Font = new Font("Segoe UI", 9.5F),
                 ForeColor = Color.White,
                 Location = new Point(14, 12),
-                Text = $"Found {sourceIcons.Count} icons. Select one:"
+                Text = Localization.T("picker_hint")
             };
 
             imageList = new ImageList
@@ -73,7 +74,7 @@ namespace client.Forms
                 ForeColor = Color.White,
                 Location = new Point(268, 336),
                 Size = new Size(84, 30),
-                Text = "OK",
+                Text = Localization.T("btn_ok"),
                 Enabled = false
             };
             cmdOk.FlatAppearance.BorderSize = 0;
@@ -87,7 +88,7 @@ namespace client.Forms
                 ForeColor = Color.White,
                 Location = new Point(362, 336),
                 Size = new Size(84, 30),
-                Text = "Cancel",
+                Text = Localization.T("btn_cancel"),
                 DialogResult = DialogResult.Cancel
             };
             cmdCancel.FlatAppearance.BorderSize = 0;

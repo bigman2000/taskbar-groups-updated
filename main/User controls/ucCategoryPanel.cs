@@ -44,6 +44,12 @@ namespace client.User_controls
 
             picGroupIcon.BackgroundImage = Category.LoadIconImage();
 
+            cmdPreview.Text = Localization.T("btn_preview");
+            cmdDelete.Text = Localization.T("btn_edit_group");
+            cmdClone.Text = Localization.T("btn_clone");
+            cmdExport.Text = Localization.T("btn_export");
+            cmdRemove.Text = Localization.T("btn_delete");
+
             BuildMiniIcons();
         }
 
@@ -99,7 +105,7 @@ namespace client.User_controls
                 else
                 {
                     pb.BackgroundImage = global::client.Properties.Resources.Error;
-                    tt.SetToolTip(pb, "Program does not exist");
+                    tt.SetToolTip(pb, Localization.T("program_not_exist"));
                 }
 
                 pb.MouseEnter += (s, e) => Client.EnterControl(s, e, this);
@@ -130,7 +136,7 @@ namespace client.User_controls
                     Cursor = Cursors.Hand
                 };
                 lblOverflowBadge.Click += OpenFolder;
-                tt.SetToolTip(lblOverflowBadge, $"{remaining} more shortcuts");
+                tt.SetToolTip(lblOverflowBadge, Localization.F("more_shortcuts", remaining));
                 Controls.Add(lblOverflowBadge);
                 lblOverflowBadge.BringToFront();
             }
@@ -354,7 +360,7 @@ namespace client.User_controls
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to clone group: {ex.Message}", "Clone Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Localization.F("clone_failed", ex.Message), Localization.T("btn_clone"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -368,7 +374,7 @@ namespace client.User_controls
 
                 SaveFileDialog saveDialog = new SaveFileDialog
                 {
-                    Title = "Export Taskbar Group",
+                    Title = Localization.T("btn_export"),
                     Filter = "Taskbar Group Archive (*.tgroup)|*.tgroup|Zip Archive (*.zip)|*.zip",
                     FileName = Regex.Replace(Category.Name, @"(_)+", " ") + ".tgroup"
                 };
@@ -383,7 +389,7 @@ namespace client.User_controls
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to export group: {ex.Message}", "Export Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Localization.F("export_failed", ex.Message), Localization.T("btn_export"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -391,8 +397,8 @@ namespace client.User_controls
         {
             string displayName = Regex.Replace(Category.Name, @"(_)+", " ");
             DialogResult res = MessageBox.Show(
-                $"Delete group \"{displayName}\"?",
-                "Delete Group",
+                Localization.F("confirm_delete_group", displayName),
+                Localization.T("delete_group_title"),
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
@@ -412,7 +418,7 @@ namespace client.User_controls
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to delete group: {ex.Message}", "Delete Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Localization.F("delete_failed", ex.Message), Localization.T("delete_group_title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

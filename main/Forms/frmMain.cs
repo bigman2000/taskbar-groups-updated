@@ -549,7 +549,7 @@ namespace client
 
             if (shortcut.IsRunning && shortcut.RunningProcessIds != null && shortcut.RunningProcessIds.Count > 0)
             {
-                ToolStripMenuItem switchItem = new ToolStripMenuItem("Switch to window")
+                ToolStripMenuItem switchItem = new ToolStripMenuItem(Localization.T("ctx_switch_window"))
                 {
                     BackColor = Color.FromArgb(31, 31, 31),
                     ForeColor = Color.White
@@ -561,7 +561,7 @@ namespace client
                 };
                 menu.Items.Add(switchItem);
 
-                ToolStripMenuItem closeItem = new ToolStripMenuItem("Close window")
+                ToolStripMenuItem closeItem = new ToolStripMenuItem(Localization.T("ctx_close_window"))
                 {
                     BackColor = Color.FromArgb(31, 31, 31),
                     ForeColor = Color.White
@@ -577,7 +577,7 @@ namespace client
                 menu.Items.Add(new ToolStripSeparator());
             }
 
-            ToolStripMenuItem openNewItem = new ToolStripMenuItem("Open new instance")
+            ToolStripMenuItem openNewItem = new ToolStripMenuItem(Localization.T("ctx_open_new"))
             {
                 BackColor = Color.FromArgb(31, 31, 31),
                 ForeColor = Color.White
@@ -591,7 +591,7 @@ namespace client
 
             if (!shortcut.Psc.isWindowsApp && !Directory.Exists(shortcut.Psc.FilePath))
             {
-                ToolStripMenuItem adminItem = new ToolStripMenuItem("Run as administrator")
+                ToolStripMenuItem adminItem = new ToolStripMenuItem(Localization.T("ctx_run_admin"))
                 {
                     BackColor = Color.FromArgb(31, 31, 31),
                     ForeColor = Color.White
@@ -606,7 +606,7 @@ namespace client
 
             if (!shortcut.Psc.isWindowsApp && (System.IO.File.Exists(shortcut.Psc.FilePath) || Directory.Exists(shortcut.Psc.FilePath)))
             {
-                ToolStripMenuItem locationItem = new ToolStripMenuItem("Open file location")
+                ToolStripMenuItem locationItem = new ToolStripMenuItem(Localization.T("ctx_open_location"))
                 {
                     BackColor = Color.FromArgb(31, 31, 31),
                     ForeColor = Color.White
