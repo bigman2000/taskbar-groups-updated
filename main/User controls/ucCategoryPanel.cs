@@ -16,7 +16,6 @@ namespace client.User_controls
         public frmClient Client;
 
         private readonly List<PictureBox> miniIconPanels = new List<PictureBox>();
-        private Label lblOverflowBadge;
 
         private bool isIconMouseDown = false;
         private bool isDraggingIcon = false;
@@ -28,8 +27,9 @@ namespace client.User_controls
         private const int IconStartX = 24;
         private const int IconY = 53;
         private const int IconStepX = 34;
+        private const int IconStepY = 34;
         private const int IconSize = 26;
-        private const int MaxIconAreaRight = 435;
+        private const int BaseCardHeight = 96;
 
         public ucCategoryPanel(frmClient client, Category category)
         {
@@ -62,13 +62,6 @@ namespace client.User_controls
             }
             miniIconPanels.Clear();
 
-            if (lblOverflowBadge != null)
-            {
-                Controls.Remove(lblOverflowBadge);
-                lblOverflowBadge.Dispose();
-                lblOverflowBadge = null;
-            }
-
             if (components == null)
                 components = new System.ComponentModel.Container();
 
@@ -79,11 +72,7 @@ namespace client.User_controls
                 ShowAlways = true
             };
 
-            int maxSlots = (MaxIconAreaRight - IconStartX) / IconStepX;
-            bool hasOverflow = Category.ShortcutList.Count > maxSlots;
-            int visibleCount = hasOverflow ? Math.Max(1, maxSlots - 1) : Category.ShortcutList.Count;
-
-            for (int i = 0; i < visibleCount; i++)
+            for (int i = 0; i < Category.ShortcutList.Count; i++)
             {
                 ProgramShortcut programShortcut = Category.ShortcutList[i];
                 PictureBox pb = new PictureBox
@@ -91,7 +80,6 @@ namespace client.User_controls
                     BackColor = Color.Transparent,
                     BackgroundImageLayout = ImageLayout.Zoom,
                     Cursor = Cursors.Hand,
-                    Location = new Point(IconStartX + i * IconStepX, IconY),
                     Size = new Size(IconSize, IconSize),
                     Tag = i
                 };
@@ -120,26 +108,43 @@ namespace client.User_controls
                 miniIconPanels.Add(pb);
             }
 
-            if (hasOverflow)
+            UpdateLayout();
+        }
+
+        private int GetIconsPerRow()
+        {
+            int maxRight = Math.Max(IconStartX + IconSize, cmdPreview.Left - 14);
+            int available = maxRight - IconStartX;
+            return Math.Max(1, 1 + (available - IconSize) / IconStepX);
+        }
+
+        public void UpdateLayout()
+        {
+            if (miniIconPanels.Count == 0)
             {
-                int remaining = Category.ShortcutList.Count - visibleCount;
-                lblOverflowBadge = new Label
-                {
-                    AutoSize = false,
-                    BackColor = Color.FromArgb(42, 42, 42),
-                    ForeColor = Color.FromArgb(200, 200, 200),
-                    Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold),
-                    Text = $"+{remaining}",
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Location = new Point(IconStartX + visibleCount * IconStepX, IconY + 2),
-                    Size = new Size(28, 22),
-                    Cursor = Cursors.Hand
-                };
-                lblOverflowBadge.Click += OpenFolder;
-                tt.SetToolTip(lblOverflowBadge, Localization.F("more_shortcuts", remaining));
-                Controls.Add(lblOverflowBadge);
-                lblOverflowBadge.BringToFront();
+                if (this.Height != BaseCardHeight)
+                    this.Height = BaseCardHeight;
+                return;
             }
+
+            int cols = GetIconsPerRow();
+            for (int i = 0; i < miniIconPanels.Count; i++)
+            {
+                int row = i / cols;
+                int col = i % cols;
+                miniIconPanels[i].Location = new Point(IconStartX + col * IconStepX, IconY + row * IconStepY);
+            }
+
+            int rows = Math.Max(1, (miniIconPanels.Count + cols - 1) / cols);
+            int newHeight = Math.Max(BaseCardHeight, IconY + rows * IconStepY + 9);
+            if (this.Height != newHeight)
+                this.Height = newHeight;
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            UpdateLayout();
         }
 
         private static string GetShortcutDisplayName(ProgramShortcut psc)
@@ -193,8 +198,18 @@ namespace client.User_controls
             if (isDraggingIcon)
             {
                 Point clientPt = PointToClient(Cursor.Position);
-                int targetIndex = (clientPt.X - IconStartX) / IconStepX;
-                if (targetIndex < 0) targetIndex = 0;
+                int cols = GetIconsPerRow();
+                int maxRow = (miniIconPanels.Count - 1) / cols;
+
+                int col = (clientPt.X - IconStartX) / IconStepX;
+                if (col < 0) col = 0;
+                if (col >= cols) col = cols - 1;
+
+                int row = (clientPt.Y - IconY) / IconStepY;
+                if (row < 0) row = 0;
+                if (row > maxRow) row = maxRow;
+
+                int targetIndex = row * cols + col;
                 if (targetIndex >= miniIconPanels.Count) targetIndex = miniIconPanels.Count - 1;
 
                 if (targetIndex != draggingIconIndex)
@@ -256,8 +271,8 @@ namespace client.User_controls
             for (int i = 0; i < miniIconPanels.Count; i++)
             {
                 miniIconPanels[i].Tag = i;
-                miniIconPanels[i].Location = new Point(IconStartX + i * IconStepX, IconY);
             }
+            UpdateLayout();
         }
 
         private void SaveReorderedCategory()

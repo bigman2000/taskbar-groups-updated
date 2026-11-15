@@ -110,7 +110,7 @@ Le icone sono memorizzate in `/config/<Nome_Gruppo>/Icons` per un'apertura istan
 * **Localizzazione (26 lingue)**: Traduzione completa dell'interfaccia con selettore lingua e README sincronizzati in 26 lingue.
 * **Pannello di avvio (`frmMain`)**: Tooltip, rilevamento app attive, attivazione finestra esistente, menu contestuale, dimensioni icone, etichette, angoli arrotondati Windows 11 e navigazione da tastiera.
 * **Editor gruppo (`frmGroup`)**: Riordino drag-and-drop con scorrimento automatico, selettore icone da `.exe`/`.dll`/immagini e supporto Unicode.
-* **Finestra principale (`frmClient`)**: Layout fisso, ricerca e ordinamento, Anteprima, Clona, Esporta/Importa (`.tgroup`/`.zip`), Eliminazione rapida, badge `+N` e riordino diretto nella scheda.
+* **Finestra principale (`frmClient`)**: Layout fisso, ricerca e ordinamento, Anteprima, Clona, Esporta/Importa (`.tgroup`/`.zip`), Eliminazione rapida, disposizione su più righe adattiva delle icone e riordino diretto nella scheda.
 
 ---
 

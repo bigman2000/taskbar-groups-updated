@@ -110,7 +110,7 @@ Simgeler `/config/<Grup_Adı>/Icons` içinde önbelleğe alınır. Grubu kaydetm
 * **Yerelleştirme (26 Dil)**: Ana pencerede dil seçici ile tam arayüz çevirisi ve 26 dilde senkronize README dosyaları.
 * **Başlatma Paneli (`frmMain`)**: İpuçları, çalışan uygulama algılama, açık pencereyi etkinleştirme, sağ tık menüsü, simge boyutları, etiketler, Windows 11 yuvarlatılmış köşeler ve klavye gezinmesi.
 * **Grup Düzenleyici (`frmGroup`)**: Otomatik kaydırmalı sürükle-bırak sıralama, `.exe`/`.dll`/resimlerden simge seçici ve Unicode desteği.
-* **Ana Pencere (`frmClient`)**: Sabit düzen, arama ve sıralama, Önizleme, Klonla, Dışa/İçe Aktar (`.tgroup`/`.zip`), hızlı Silme, `+N` rozeti ve kart içi sürükle-bırak sıralama.
+* **Ana Pencere (`frmClient`)**: Sabit düzen, arama ve sıralama, Önizleme, Klonla, Dışa/İçe Aktar (`.tgroup`/`.zip`), hızlı Silme, pencere boyutuna göre çok satırlı simge kaydırma ve kart içi sürükle-bırak sıralama.
 
 ---
 

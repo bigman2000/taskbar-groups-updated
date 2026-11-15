@@ -110,7 +110,7 @@ Los iconos se guardan en `/config/<Nombre_Grupo>/Icons` para abrir el menú al i
 * **Localización (26 idiomas)**: Traducción completa de la interfaz con selector de idioma en la ventana principal y READMEs sincronizados en los 26 idiomas.
 * **Panel de lanzamiento (`frmMain`)**: Tooltips, detección de apps abiertas, activación de ventana existente, menú contextual, tamaños de icono, etiquetas, bordes redondeados de Windows 11 y navegación con teclado.
 * **Editor de grupos (`frmGroup`)**: Reordenación por arrastrar y soltar con desplazamiento automático, selector de iconos desde `.exe`/`.dll`/imágenes y soporte Unicode.
-* **Ventana principal (`frmClient`)**: Diseño fijo con desplazamiento independiente, búsqueda y ordenación, Vista previa, Clonar, Exportar/Importar (`.tgroup`/`.zip`), Eliminación rápida, insignia `+N` y reordenación en la tarjeta.
+* **Ventana principal (`frmClient`)**: Diseño fijo con desplazamiento independiente, búsqueda y ordenación, Vista previa, Clonar, Exportar/Importar (`.tgroup`/`.zip`), Eliminación rápida, ajuste de iconos en varias filas al cambiar el tamaño y reordenación en la tarjeta.
 
 ---
 

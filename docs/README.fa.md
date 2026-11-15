@@ -74,7 +74,7 @@ Here is the group creation/editing screen where you configure your group:
 * **Allow open-all shortcuts** — Enables launching every shortcut in the group at once using `Ctrl + Enter`.
 * **Activate running window on click** — Switches to an already running window of the app instead of opening a new instance.
 * **Show names / Icon size** — Optionally display shortcut labels under icons and choose between *Compact*, *Medium*, or *Large* icon sizes.
-* **Working Directory & Arguments** — Select any shortcut item to customize its working directory, launch arguments, or custom icon (including extracting icons from `.exe`/`.dll` files).
+* **Working Directory, Executable Path & Arguments** — Select any shortcut item to edit its executable path (helpful when an app moves to a new folder on update), working directory, launch arguments, or custom icon (including extracting icons from `.exe`/`.dll` files).
 * **Background Color & Opacity** — Choose Dark, Light, or Custom color and set transparency from 0% to 100%.
 
 #### Extra Notes
@@ -109,8 +109,8 @@ Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` 
 ## ✨ Recent Updates
 * **Localization (26 Languages)**: Added full UI localization and a language selector in the main window, plus synchronized READMEs in all 26 languages.
 * **Launch Panel (`frmMain`)**: Added tooltips, running-app detection, *Activate running window* option, right-click context menu, configurable icon sizes (*Compact*, *Medium*, *Large*), shortcut labels, Windows 11 rounded corners, and keyboard navigation.
-* **Group Editor (`frmGroup`)**: Added drag-and-drop shortcut reordering with auto-scroll, custom icon picker for `.exe`/`.dll`/images, and Unicode/Cyrillic group name support.
-* **Main Window (`frmClient`)**: Fixed layout with independent scrolling, search & sorting, modern buttons, **Preview**, **Clone**, **Export**/**Import** (`.tgroup`/`.zip`), quick **Delete**, overflow `+N` badge, and drag-and-drop icon reordering directly inside group cards.
+* **Group Editor (`frmGroup`)**: Added drag-and-drop shortcut reordering with auto-scroll, executable path editing (with automatic working directory update), custom icon picker for `.exe`/`.dll`/images, and Unicode/Cyrillic group name support.
+* **Main Window (`frmClient`)**: Fixed layout with independent scrolling, search & sorting, modern buttons, **Preview**, **Clone**, **Export**/**Import** (`.tgroup`/`.zip`), quick **Delete**, responsive multi-row icon wrapping inside group cards (no hidden icons), and 2D drag-and-drop icon reordering.
 
 ---
 

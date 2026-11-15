@@ -110,7 +110,7 @@ Symbole werden lokal unter `/config/<Gruppenname>/Icons` zwischengespeichert, so
 * **Lokalisierung (26 Sprachen)**: Vollständige UI-Übersetzung mit Sprachauswahl im Hauptfenster sowie synchronisierte READMEs in allen 26 Sprachen.
 * **Startleiste (`frmMain`)**: Tooltips, Erkennung laufender Apps, Option zum Aktivieren laufender Fenster, Kontextmenü, wählbare Symbolgrößen, Beschriftungen, Windows-11-Rundungen und Tastaturnavigation.
 * **Gruppeneditor (`frmGroup`)**: Drag-and-Drop-Sortierung mit Auto-Scroll, Icon-Auswahl aus `.exe`/`.dll`/Bildern und Unicode-Unterstützung.
-* **Hauptfenster (`frmClient`)**: Fixierte Kopf-/Fußleiste, Suche & Sortierung, Vorschau, Klonen, Export/Import (`.tgroup`/`.zip`), schnelles Löschen, `+N`-Anzeige und Drag-and-Drop-Sortierung direkt auf der Karte.
+* **Hauptfenster (`frmClient`)**: Fixierte Kopf-/Fußleiste, Suche & Sortierung, Vorschau, Klonen, Export/Import (`.tgroup`/`.zip`), schnelles Löschen, mehrzeiliger Icon-Umbruch bei Fenstergrößenänderung und Drag-and-Drop-Sortierung direkt auf der Karte.
 
 ---
 

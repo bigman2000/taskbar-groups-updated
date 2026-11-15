@@ -110,7 +110,7 @@ Ikony są buforowane w `/config/<Nazwa_Grupy>/Icons`, co zapewnia natychmiastowe
 * **Lokalizacja (26 języków)**: Pełne tłumaczenie interfejsu z wyborem języka w oknie głównym oraz zsynchronizowane pliki README w 26 językach.
 * **Panel uruchamiania (`frmMain`)**: Podpowiedzi, wykrywanie uruchomionych aplikacji, aktywacja istniejącego okna, menu kontekstowe, rozmiary ikon, etykiety, zaokrąglenia Windows 11 i obsługa klawiatury.
 * **Edytor grupy (`frmGroup`)**: Zmiana kolejności metodą przeciągnij i upuść z automatycznym przewijaniem, wybór ikon z `.exe`/`.dll`/obrazów oraz obsługa Unicode.
-* **Okno główne (`frmClient`)**: Stały nagłówek i stopka, wyszukiwanie i sortowanie, Podgląd, Klonowanie, Eksport/Import (`.tgroup`/`.zip`), szybkie Usuwanie, plakietka `+N` i zmiana kolejności ikon na karcie.
+* **Okno główne (`frmClient`)**: Stały nagłówek i stopka, wyszukiwanie i sortowanie, Podgląd, Klonowanie, Eksport/Import (`.tgroup`/`.zip`), szybkie Usuwanie, zawijanie ikon do kolejnych wierszy przy zmianie rozmiaru okna i zmiana kolejności ikon na karcie.
 
 ---
 

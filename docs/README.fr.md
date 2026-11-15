@@ -110,7 +110,7 @@ Le cache local dans `/config/<Nom_du_groupe>/Icons` permet une ouverture instant
 * **Localisation (26 langues)** : Traduction complète de l'interface avec sélecteur de langue et READMEs synchronisés dans 26 langues.
 * **Panneau de lancement (`frmMain`)** : Infobulles, détection des apps actives, activation de fenêtre existante, menu contextuel, tailles d'icônes, libellés, coins arrondis Windows 11 et navigation clavier.
 * **Éditeur de groupe (`frmGroup`)** : Réorganisation par glisser-déposer avec défilement automatique, sélecteur d'icônes `.exe`/`.dll`/images et support Unicode.
-* **Fenêtre principale (`frmClient`)** : Mise en page fixe, recherche et tri, Aperçu, Cloner, Exporter/Importer (`.tgroup`/`.zip`), Suppression rapide, badge `+N` et réorganisation directe sur la carte.
+* **Fenêtre principale (`frmClient`)** : Mise en page fixe, recherche et tri, Aperçu, Cloner, Exporter/Importer (`.tgroup`/`.zip`), Suppression rapide, retour à la ligne adaptatif des icônes et réorganisation directe sur la carte.
 
 ---
 

@@ -81,6 +81,10 @@ namespace client.Forms
             this.pnlWorkingDirectory = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlArgumentTextbox = new System.Windows.Forms.TextBox();
+            this.lblShortcutPath = new System.Windows.Forms.Label();
+            this.pnlShortcutPath = new System.Windows.Forms.TextBox();
+            this.lblShortcutPathLine = new System.Windows.Forms.Label();
+            this.cmdSelectShortcutPath = new System.Windows.Forms.Button();
             this.pnlGroupIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAddGroupIcon)).BeginInit();
             this.pnlAddShortcut.SuspendLayout();
@@ -625,9 +629,13 @@ namespace client.Forms
             this.pnlArguments.Controls.Add(this.pnlWorkingDirectory);
             this.pnlArguments.Controls.Add(this.label3);
             this.pnlArguments.Controls.Add(this.pnlArgumentTextbox);
+            this.pnlArguments.Controls.Add(this.lblShortcutPath);
+            this.pnlArguments.Controls.Add(this.pnlShortcutPath);
+            this.pnlArguments.Controls.Add(this.lblShortcutPathLine);
+            this.pnlArguments.Controls.Add(this.cmdSelectShortcutPath);
             this.pnlArguments.Location = new System.Drawing.Point(45, 547);
             this.pnlArguments.Name = "pnlArguments";
-            this.pnlArguments.Size = new System.Drawing.Size(482, 166);
+            this.pnlArguments.Size = new System.Drawing.Size(482, 212);
             this.pnlArguments.TabIndex = 48;
             this.pnlArguments.Visible = false;
             // 
@@ -767,6 +775,56 @@ namespace client.Forms
             this.pnlArgumentTextbox.TextChanged += new System.EventHandler(this.pnlArgumentTextbox_TextChanged);
             this.pnlArgumentTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pnlArgumentTextbox_KeyDown);
             // 
+            // lblShortcutPath
+            // 
+            this.lblShortcutPath.AutoSize = true;
+            this.lblShortcutPath.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblShortcutPath.ForeColor = System.Drawing.Color.White;
+            this.lblShortcutPath.Location = new System.Drawing.Point(23, 148);
+            this.lblShortcutPath.Name = "lblShortcutPath";
+            this.lblShortcutPath.Size = new System.Drawing.Size(120, 20);
+            this.lblShortcutPath.TabIndex = 58;
+            this.lblShortcutPath.Text = "Executable Path:";
+            // 
+            // pnlShortcutPath
+            // 
+            this.pnlShortcutPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.pnlShortcutPath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pnlShortcutPath.Enabled = false;
+            this.pnlShortcutPath.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.pnlShortcutPath.ForeColor = System.Drawing.Color.White;
+            this.pnlShortcutPath.Location = new System.Drawing.Point(27, 170);
+            this.pnlShortcutPath.Name = "pnlShortcutPath";
+            this.pnlShortcutPath.Size = new System.Drawing.Size(330, 16);
+            this.pnlShortcutPath.TabIndex = 59;
+            this.pnlShortcutPath.TextChanged += new System.EventHandler(this.pnlShortcutPath_TextChanged);
+            // 
+            // lblShortcutPathLine
+            // 
+            this.lblShortcutPathLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblShortcutPathLine.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShortcutPathLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblShortcutPathLine.Location = new System.Drawing.Point(26, 188);
+            this.lblShortcutPathLine.Name = "lblShortcutPathLine";
+            this.lblShortcutPathLine.Size = new System.Drawing.Size(335, 1);
+            this.lblShortcutPathLine.TabIndex = 60;
+            // 
+            // cmdSelectShortcutPath
+            // 
+            this.cmdSelectShortcutPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.cmdSelectShortcutPath.Enabled = false;
+            this.cmdSelectShortcutPath.FlatAppearance.BorderSize = 0;
+            this.cmdSelectShortcutPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdSelectShortcutPath.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmdSelectShortcutPath.ForeColor = System.Drawing.Color.White;
+            this.cmdSelectShortcutPath.Location = new System.Drawing.Point(367, 164);
+            this.cmdSelectShortcutPath.Name = "cmdSelectShortcutPath";
+            this.cmdSelectShortcutPath.Size = new System.Drawing.Size(97, 27);
+            this.cmdSelectShortcutPath.TabIndex = 61;
+            this.cmdSelectShortcutPath.Text = "Select File";
+            this.cmdSelectShortcutPath.UseVisualStyleBackColor = false;
+            this.cmdSelectShortcutPath.Click += new System.EventHandler(this.cmdSelectShortcutPath_Click);
+            // 
             // frmGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -867,5 +925,9 @@ namespace client.Forms
         private System.Windows.Forms.CheckBox chkShowLabels;
         private System.Windows.Forms.Label lblIconSize;
         private System.Windows.Forms.ComboBox cmbIconSize;
+        private System.Windows.Forms.Label lblShortcutPath;
+        private System.Windows.Forms.TextBox pnlShortcutPath;
+        private System.Windows.Forms.Label lblShortcutPathLine;
+        private System.Windows.Forms.Button cmdSelectShortcutPath;
     }
 }

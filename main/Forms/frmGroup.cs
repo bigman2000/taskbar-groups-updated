@@ -36,6 +36,7 @@ namespace client.Forms
         private List<ProgramShortcut> shortcutChanged = new List<ProgramShortcut>();
         private Dictionary<ProgramShortcut, Image> pendingCustomIcons = new Dictionary<ProgramShortcut, Image>();
         private HashSet<ProgramShortcut> clearedCustomIcons = new HashSet<ProgramShortcut>();
+        private bool suppressShortcutPathChange = false;
 
 
         //--------------------------------------
@@ -88,6 +89,8 @@ namespace client.Forms
             cmdResetShortcutIcon.Text = Localization.T("btn_reset");
             label5.Text = Localization.T("lbl_working_dir") + ":";
             cmdSelectDirectory.Text = Localization.T("btn_select_dir");
+            lblShortcutPath.Text = Localization.T("lbl_executable_path") + ":";
+            cmdSelectShortcutPath.Text = Localization.T("btn_select_file");
             cmdSave.Text = Localization.T("btn_save");
             cmdExit.Text = Localization.T("btn_exit");
             cmdDelete.Text = Localization.T("btn_delete");
@@ -956,7 +959,10 @@ namespace client.Forms
         public void resetSelection()
         {
             pnlArgumentTextbox.Enabled = false;
+            pnlWorkingDirectory.Enabled = false;
             cmdSelectDirectory.Enabled = false;
+            pnlShortcutPath.Enabled = false;
+            cmdSelectShortcutPath.Enabled = false;
             picShortcutIcon.BackgroundImage = null;
             cmdResetShortcutIcon.Visible = false;
             if (selectedShortcut != null)
@@ -982,6 +988,12 @@ namespace client.Forms
             pnlWorkingDirectory.Text = Category.ShortcutList[selectedShortcut.Position].WorkingDirectory;
             pnlWorkingDirectory.Enabled = true;
             cmdSelectDirectory.Enabled = true;
+
+            suppressShortcutPathChange = true;
+            pnlShortcutPath.Text = Category.ShortcutList[selectedShortcut.Position].FilePath;
+            suppressShortcutPathChange = false;
+            pnlShortcutPath.Enabled = true;
+            cmdSelectShortcutPath.Enabled = true;
 
             picShortcutIcon.BackgroundImage = passedShortcut.logo;
             cmdResetShortcutIcon.Visible = HasCustomIcon(passedShortcut.Shortcut);
@@ -1188,7 +1200,72 @@ namespace client.Forms
             if (openFileDialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 this.Focus();
+                pnlWorkingDirectory.Text = openFileDialog.FileName;
                 Category.ShortcutList[selectedShortcut.Position].WorkingDirectory = openFileDialog.FileName;
+            }
+        }
+
+        private void cmdSelectShortcutPath_Click(object sender, EventArgs e)
+        {
+            if (selectedShortcut == null)
+                return;
+
+            ProgramShortcut shortcut = Category.ShortcutList[selectedShortcut.Position];
+            string initialDir = @"C:\ProgramData\Microsoft\Windows\Start Menu\Programs";
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(shortcut.FilePath))
+                {
+                    string parent = Path.GetDirectoryName(shortcut.FilePath);
+                    if (!string.IsNullOrWhiteSpace(parent) && Directory.Exists(parent))
+                        initialDir = parent;
+                    else if (!string.IsNullOrWhiteSpace(shortcut.WorkingDirectory) && Directory.Exists(shortcut.WorkingDirectory))
+                        initialDir = shortcut.WorkingDirectory;
+                }
+            }
+            catch { }
+
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                InitialDirectory = initialDir,
+                Title = Localization.T("btn_select_file"),
+                CheckFileExists = true,
+                CheckPathExists = true,
+                Filter = "Exe or Shortcut (.exe, .lnk, .url)|*.exe;*.lnk;*.url|All files (*.*)|*.*",
+                RestoreDirectory = true,
+                DereferenceLinks = false
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.Focus();
+                string oldDir = getProperDirectory(shortcut.FilePath);
+                shortcut.isWindowsApp = false;
+                pnlShortcutPath.Text = openFileDialog.FileName;
+
+                if (string.IsNullOrWhiteSpace(shortcut.WorkingDirectory) ||
+                    string.Equals(shortcut.WorkingDirectory.TrimEnd('\\'), oldDir?.TrimEnd('\\'), StringComparison.OrdinalIgnoreCase))
+                {
+                    pnlWorkingDirectory.Text = getProperDirectory(openFileDialog.FileName);
+                }
+            }
+        }
+
+        private void pnlShortcutPath_TextChanged(object sender, EventArgs e)
+        {
+            if (suppressShortcutPathChange || selectedShortcut == null)
+                return;
+
+            ProgramShortcut shortcut = Category.ShortcutList[selectedShortcut.Position];
+            shortcut.FilePath = pnlShortcutPath.Text.Trim();
+
+            if (!shortcutChanged.Contains(shortcut))
+                shortcutChanged.Add(shortcut);
+
+            if (!HasCustomIcon(shortcut) && (System.IO.File.Exists(shortcut.FilePath) || Directory.Exists(shortcut.FilePath)))
+            {
+                selectedShortcut.ResetToDefaultIcon();
+                picShortcutIcon.BackgroundImage = selectedShortcut.logo;
             }
         }
 

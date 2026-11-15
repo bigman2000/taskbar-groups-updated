@@ -110,7 +110,7 @@ Pictogrammen worden lokaal opgeslagen in `/config/<Groepsnaam>/Icons` zodat het 
 * **Lokalisatie (26 talen)**: Volledige UI-vertaling met taalkiezer en gesynchroniseerde README's in 26 talen.
 * **Startpaneel (`frmMain`)**: Tooltips, detectie van actieve apps, actief venster activeren, contextmenu, pictogramgroottes, labels, Windows 11 afgeronde hoeken en toetsenbordnavigatie.
 * **Groepseditor (`frmGroup`)**: Slepen en neerzetten om te herordenen met auto-scroll, pictogramkiezer voor `.exe`/`.dll`/afbeeldingen en Unicode-ondersteuning.
-* **Hoofdvenster (`frmClient`)**: Vast kop-/voetpaneel, zoeken & sorteren, Voorbeeld, Klonen, Exporteren/Importeren (`.tgroup`/`.zip`), snel Verwijderen, `+N`-badge en direct herordenen op kaarten.
+* **Hoofdvenster (`frmClient`)**: Vast kop-/voetpaneel, zoeken & sorteren, Voorbeeld, Klonen, Exporteren/Importeren (`.tgroup`/`.zip`), snel Verwijderen, automatische terugloop van pictogrammen over meerdere rijen en direct herordenen op kaarten.
 
 ---
 

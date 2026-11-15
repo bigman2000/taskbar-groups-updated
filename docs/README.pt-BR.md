@@ -110,7 +110,7 @@ Os ícones ficam em cache em `/config/<Nome_Grupo>/Icons` para abertura instant�
 * **Localização (26 idiomas)**: Tradução completa da interface com seletor de idioma e READMEs sincronizados nos 26 idiomas.
 * **Painel de inicialização (`frmMain`)**: Tooltips, detecção de apps em execução, ativação de janela aberta, menu de contexto, tamanhos de ícone, rótulos, cantos arredondados do Windows 11 e navegação por teclado.
 * **Editor de grupo (`frmGroup`)**: Reordenação por arrastar e soltar com rolagem automática, seletor de ícones de `.exe`/`.dll`/imagens e suporte a Unicode.
-* **Janela principal (`frmClient`)**: Layout fixo, busca e ordenação, Visualizar, Clonar, Exportar/Importar (`.tgroup`/`.zip`), Exclusão rápida, selo `+N` e reordenação direta nos cartões.
+* **Janela principal (`frmClient`)**: Layout fixo, busca e ordenação, Visualizar, Clonar, Exportar/Importar (`.tgroup`/`.zip`), Exclusão rápida, quebra automática de ícones em múltiplas linhas e reordenação direta nos cartões.
 
 ---
 

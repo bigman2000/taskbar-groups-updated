@@ -170,11 +170,8 @@ namespace client.Forms
                 ucCategoryPanel newCategory = new ucCategoryPanel(this, category);
                 newCategory.Width = cardWidth;
                 newCategory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-                pnlExistingGroups.Height += newCategory.Height;
                 pnlExistingGroups.Controls.Add(newCategory);
-                newCategory.Top = pnlExistingGroups.Height - newCategory.Height;
                 newCategory.Show();
-                newCategory.BringToFront();
                 newCategory.MouseEnter += (sender, e) => EnterControl(sender, e, newCategory);
                 newCategory.MouseLeave += (sender, e) => LeaveControl(sender, e, newCategory);
             }
@@ -209,10 +206,16 @@ namespace client.Forms
         {
             int cardWidth = Math.Max(660, pnlGroupsScroll.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 24);
             pnlExistingGroups.Width = cardWidth;
+            int top = 0;
             foreach (Control ctrl in pnlExistingGroups.Controls)
             {
                 ctrl.Width = cardWidth;
+                if (ctrl is ucCategoryPanel card)
+                    card.UpdateLayout();
+                ctrl.Top = top;
+                top += ctrl.Height;
             }
+            pnlExistingGroups.Height = top;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
