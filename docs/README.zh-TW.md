@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="../README.md">🇬🇧 English</a> · <a href="README.de.md">🇩🇪 Deutsch</a> · <a href="README.es.md">🇪🇸 Español</a> · <a href="README.fr.md">🇫🇷 Français</a> · <a href="README.it.md">🇮🇹 Italiano</a> · <a href="README.nl.md">🇳🇱 Nederlands</a> · <a href="README.pl.md">🇵🇱 Polski</a> · <a href="README.pt-BR.md">🇧🇷 Português (Brasil)</a> · <a href="README.ru.md">🇷🇺 Русский</a> · <a href="README.uk.md">🇺🇦 Українська</a> · <a href="README.tr.md">🇹🇷 Türkçe</a> · <a href="README.az.md">🇦🇿 Azərbaycanca</a> · <a href="README.hr.md">🇭🇷 Hrvatski</a> · <a href="README.id.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.vi.md">🇻🇳 Tiếng Việt</a> · <a href="README.th.md">🇹🇭 ไทย</a> · <a href="README.ja.md">🇯🇵 日本語</a> · <a href="README.ko.md">🇰🇷 한국어</a> · <a href="README.zh-CN.md">🇨🇳 简体中文</a> · <b>🇹🇼 繁體中文</b> · <a href="README.ar.md">🇸🇦 العربية</a> · <a href="README.he.md">🇮🇱 עברית</a> · <a href="README.fa.md">🇮🇷 فارسی</a> · <a href="README.hi.md">🇮🇳 हिन्दी</a> · <a href="README.ur.md">🇵🇰 اردو</a> · <a href="README.bn.md">🇧🇩 বাংলা</a>
+  <a href="../README.md">🇬🇧&nbsp;English</a> · <a href="README.de.md">🇩🇪&nbsp;Deutsch&nbsp;(German)</a> · <a href="README.es.md">🇪🇸&nbsp;Español&nbsp;(Spanish)</a> · <a href="README.fr.md">🇫🇷&nbsp;Français&nbsp;(French)</a> · <a href="README.it.md">🇮🇹&nbsp;Italiano&nbsp;(Italian)</a> · <a href="README.nl.md">🇳🇱&nbsp;Nederlands&nbsp;(Dutch)</a> · <a href="README.pl.md">🇵🇱&nbsp;Polski&nbsp;(Polish)</a> · <a href="README.pt-BR.md">🇧🇷&nbsp;Português&nbsp;(Brasil)&nbsp;(Portuguese)</a> · <a href="README.ru.md">🇷🇺&nbsp;Русский&nbsp;(Russian)</a> · <a href="README.uk.md">🇺🇦&nbsp;Українська&nbsp;(Ukrainian)</a> · <a href="README.tr.md">🇹🇷&nbsp;Türkçe&nbsp;(Turkish)</a> · <a href="README.az.md">🇦🇿&nbsp;Azərbaycanca&nbsp;(Azerbaijani)</a> · <a href="README.hr.md">🇭🇷&nbsp;Hrvatski&nbsp;(Croatian)</a> · <a href="README.id.md">🇮🇩&nbsp;Bahasa&nbsp;Indonesia&nbsp;(Indonesian)</a> · <a href="README.vi.md">🇻🇳&nbsp;Tiếng&nbsp;Việt&nbsp;(Vietnamese)</a> · <a href="README.th.md">🇹🇭&nbsp;ไทย&nbsp;(Thai)</a> · <a href="README.ja.md">🇯🇵&nbsp;日本語&nbsp;(Japanese)</a> · <a href="README.ko.md">🇰🇷&nbsp;한국어&nbsp;(Korean)</a> · <a href="README.zh-CN.md">🇨🇳&nbsp;简体中文&nbsp;(Chinese&nbsp;Simplified)</a> · <b>🇹🇼&nbsp;繁體中文&nbsp;(Chinese&nbsp;Traditional)</b> · <a href="README.ar.md">🇸🇦&nbsp;العربية&nbsp;(Arabic)</a> · <a href="README.he.md">🇮🇱&nbsp;עברית&nbsp;(Hebrew)</a> · <a href="README.fa.md">🇮🇷&nbsp;فارسی&nbsp;(Persian)</a> · <a href="README.hi.md">🇮🇳&nbsp;हिन्दी&nbsp;(Hindi)</a> · <a href="README.ur.md">🇵🇰&nbsp;اردو&nbsp;(Urdu)</a> · <a href="README.bn.md">🇧🇩&nbsp;বাংলা&nbsp;(Bengali)</a>
 </p>
 
 <p align="center">
@@ -23,98 +23,98 @@
 
 ---
 
-## 📖 Table of Contents
+## 📖 目錄
 
-* ➤ Installation
-* ➤ Creating your first group
-* ➤ Screen/Window Documentation
-  * Main Screen
-  * Group Creation Screen
-  * Extra Notes
-* ➤ Image/Icon Caching
-* ➤ Program Shortcuts
-* ➤ Folder Structure
-* ➤ Recent Updates
-* ➤ License
-
----
-
-## 🔽 How to download Taskbar Groups
-1. Download the `.zip` file from the latest release (link above)
-2. Unpack the `.zip` file at a desired location
-3. Run `TaskbarGroups.exe` in the extracted folder
+* ➤ 安裝
+* ➤ 建立第一個群組
+* ➤ 視窗說明
+  * 主視窗
+  * 群組建立視窗
+  * 補充說明
+* ➤ 圖示快取
+* ➤ 快捷鍵
+* ➤ 資料夾結構
+* ➤ 近期更新
+* ➤ 授權條款
 
 ---
 
-## 🛠️ Creating your first group
-1. Click **"Add taskbar group"**
-2. Give the group a name and select an icon
-3. Click **"Add new shortcut"** and select `.exe` or `.lnk` files (or drag and drop `.exe`, `.lnk`, or folders into the shortcut area)
-4. Save the group
-5. Left-click on the group card to open the `Shortcuts` folder with your group shortcut selected
-6. Right-click the highlighted shortcut and select **"Pin to taskbar"**
+## 🔽 如何下載 Taskbar Groups
+1. 從最新發佈版本下載 `.zip` 壓縮檔（見上方連結）
+2. 將 `.zip` 檔案解壓縮到任意位置
+3. 執行解壓縮資料夾中的 `TaskbarGroups.exe`
 
 ---
 
-## 🖥️ Screen/Window Documentation
-Below is documentation for each window and its components.
-
-#### Main Screen
-![Group overview screen](images/main-screen.png)
-Here is the main group configuration screen opened when launching `TaskbarGroups.exe`. You can create, import, search, sort, preview, edit, clone, export, or delete groups, and switch the UI language (26 languages supported).
-
-#### Group Creation Screen
-![Group creation screen](images/group-screen.png)
-Here is the group creation/editing screen where you configure your group:
-
-* **Name the new group** — Insert any group name (including Unicode/Cyrillic characters, up to 49 characters).
-* **Width** — Sets how many shortcuts appear per row (e.g., 12 shortcuts with width 6 displays 2 rows of 6).
-* **Change Group Icon** — Click (+) or drag and drop `.png`, `.jpg`, `.ico`, `.exe`, or `.lnk` files to set the group icon.
-* **Add new shortcuts** — Click (+) or drag and drop `.exe`, `.lnk`, `.url`, or folders. Supports Windows Store apps and Steam games.
-* **Allow open-all shortcuts** — Enables launching every shortcut in the group at once using `Ctrl + Enter`.
-* **Activate running window on click** — Switches to an already running window of the app instead of opening a new instance.
-* **Show names / Icon size** — Optionally display shortcut labels under icons and choose between *Compact*, *Medium*, or *Large* icon sizes.
-* **Working Directory, Executable Path & Arguments** — Select any shortcut item to edit its executable path (helpful when an app moves to a new folder on update), working directory, launch arguments, or custom icon (including extracting icons from `.exe`/`.dll` files).
-* **Background Color & Opacity** — Choose Dark, Light, or Custom color and set transparency from 0% to 100%.
-
-#### Extra Notes
-For executables, icons are extracted directly. For `.lnk` shortcuts and Microsoft Store apps, the app resolves either the target icon or the Store app package icon automatically.
+## 🛠️ 建立第一個群組
+1. 點擊 **"新增群組"**
+2. 輸入群組名稱並選擇圖示
+3. 點擊 **"新增捷徑"** 並選擇 `.exe` 或 `.lnk` 檔案（也可直接拖放）
+4. 儲存群組
+5. 左鍵點擊群組卡片開啟 `Shortcuts` 資料夾
+6. 右鍵點擊選取的捷徑，選擇 **"釘選到工作列"**
 
 ---
 
-## 📦 Image/Icon Caching
-Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` so the launch popup opens instantaneously without re-extracting icons each time. Saving a group regenerates its icon cache.
+## 🖥️ 視窗說明
+以下是各視窗與其功能的詳細說明。
+
+#### 主視窗
+![Group overview screen](images/zh-TW/main-screen.png)
+執行 `TaskbarGroups.exe` 後開啟的主視窗。可建立、匯入、搜尋、排序、預覽、編輯、複製、匯出、刪除群組，並切換介面語言（支援 26 種語言）。
+
+#### 群組建立視窗
+![Group creation screen](images/zh-TW/group-screen.png)
+在群組建立/編輯視窗中可設定以下項目：
+
+* **群組名稱** — 可輸入任意名稱（支援繁中、Unicode 等字元，最多 49 個字元）。
+* **寬度** — 設定每列顯示的捷徑數量。
+* **變更群組圖示** — 點擊 (+) 或拖放 `.png`、`.jpg`、`.ico`、`.exe`、`.lnk` 檔案。
+* **新增捷徑** — 支援 `.exe`、`.lnk`、`.url`、資料夾、Microsoft Store 應用程式與 Steam 遊戲。
+* **允許同時開啟全部** — 啟用後可用 `Ctrl + Enter` 一次開啟群組內的所有捷徑。
+* **點擊時切換至執行中視窗** — 切換到已開啟的視窗而非重新啟動新執行個體。
+* **顯示標籤 / 圖示大小** — 可選擇顯示名稱標籤，並提供 *精簡*、*中等*、*大* 三種圖示尺寸。
+* **工作目錄、程式路徑與參數** — 支援編輯可執行檔路徑（程式更新更換資料夾時特別實用）、工作目錄、啟動參數及自訂圖示（含從 `.exe`/`.dll` 提取）。
+* **背景顏色與不透明度** — 可選深色、淺色或自訂顏色，並設定 0%–100% 透明度。
+
+#### 補充說明
+`.exe` 檔案會直接提取圖示；`.lnk` 與 Microsoft Store 應用程式會自動解析目標圖示。
 
 ---
 
-## ⌨️ Program Shortcuts
-* **Number keys `1`–`9`, `0`** — Launches the shortcut at position 1–10.
-* **Arrow keys / `Enter` / `Esc`** — Navigate between shortcuts, launch the selected one, or close the popup.
-* **`Ctrl + Enter`** — Opens all shortcuts in the group at once (when enabled in group settings).
-* **Right-click on a shortcut** — Opens a context menu: *Switch to window*, *Close window*, *Open new instance*, *Run as administrator*, *Open file location*.
+## 📦 圖示快取
+圖示會快取於 `/config/<群組名稱>/Icons`，讓啟動面板能瞬間開啟。儲存群組時會重新產生快取。
 
 ---
 
-## 📁 Folder Structure Documentation
-* **`/config`** — Stores configuration folders for each created group.
-* **`/config/<Group_Name>/Icons`** — Local icon cache for all shortcuts in the group.
-* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — Generated icon files for the group shortcut.
-* **`/config/<Group_Name>/ObjectData.xml`** — XML configuration storing shortcuts, appearance, and behavior settings.
-* **`/config/lang.txt`** — Stores the selected UI language code.
-* **`/JITComp`** — Stores compiled profile optimization data for faster startup.
-* **`/Shortcuts`** — Contains generated `.lnk` shortcuts for pinning groups to the Windows taskbar.
+## ⌨️ 快捷鍵
+* **數字鍵 `1`–`9`, `0`** — 開啟第 1–10 個捷徑。
+* **方向鍵 / `Enter` / `Esc`** — 移動選取項目、啟動或關閉面板。
+* **`Ctrl + Enter`** — 一次開啟群組內所有捷徑（需在設定中啟用）。
+* **右鍵點擊捷徑** — 開啟右鍵選單：*切換至視窗*、*關閉視窗*、*開啟新執行個體*、*以系統管理員身分執行*、*開啟檔案位置*。
 
 ---
 
-## ✨ Recent Updates
-* **Localization (26 Languages)**: Added full UI localization and a language selector in the main window, plus synchronized READMEs in all 26 languages.
-* **Launch Panel (`frmMain`)**: Added tooltips, running-app detection, *Activate running window* option, right-click context menu, configurable icon sizes (*Compact*, *Medium*, *Large*), shortcut labels, Windows 11 rounded corners, and keyboard navigation.
-* **Group Editor (`frmGroup`)**: Added drag-and-drop shortcut reordering with auto-scroll, executable path editing (with automatic working directory update), custom icon picker for `.exe`/`.dll`/images, and Unicode/Cyrillic group name support.
-* **Main Window (`frmClient`)**: Fixed layout with independent scrolling, search & sorting, modern buttons, **Preview**, **Clone**, **Export**/**Import** (`.tgroup`/`.zip`), quick **Delete**, responsive multi-row icon wrapping inside group cards (no hidden icons), and 2D drag-and-drop icon reordering.
+## 📁 資料夾結構
+* **`/config`** — 存放各群組的設定資料夾。
+* **`/config/<Group_Name>/Icons`** — 群組捷徑的本機圖示快取。
+* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — 產生的群組圖示檔案。
+* **`/config/<Group_Name>/ObjectData.xml`** — 儲存群組捷徑與外觀設定的 XML 檔案。
+* **`/config/lang.txt`** — 儲存目前選擇的介面語言代碼。
+* **`/JITComp`** — 用於加快啟動速度的編譯設定檔。
+* **`/Shortcuts`** — 存放用於釘選到 Windows 工作列的 `.lnk` 捷徑。
 
 ---
 
-## 📜 License
-This project is licensed under the [MIT License](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
+## ✨ 近期更新
+* **多語言在地化（26 種語言）**：新增完整介面翻譯、主視窗語言選擇器及同步的 26 種語言 README。
+* **啟動面板 (`frmMain`)**：新增提示文字、執行中程式偵測、啟用執行中視窗選項、右鍵選單、圖示大小選項、名稱標籤、Windows 11 圓角與鍵盤導覽。
+* **群組編輯器 (`frmGroup`)**：新增支援自動捲動的拖放排序、可執行檔路徑編輯、`.exe`/`.dll`/圖片圖示選擇器與 Unicode 支援。
+* **主視窗 (`frmClient`)**：固定頂部與底部列、搜尋與排序、預覽、複製、匯出/匯入 (`.tgroup`/`.zip`)、快速刪除、隨視窗縮放自適應的多行圖示換行及卡片內拖放排序。
+
+---
+
+## 📜 授權條款
+本專案採用 [MIT 授權條款](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE)。
 
 ---

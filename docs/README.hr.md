@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="../README.md">🇬🇧 English</a> · <a href="README.de.md">🇩🇪 Deutsch</a> · <a href="README.es.md">🇪🇸 Español</a> · <a href="README.fr.md">🇫🇷 Français</a> · <a href="README.it.md">🇮🇹 Italiano</a> · <a href="README.nl.md">🇳🇱 Nederlands</a> · <a href="README.pl.md">🇵🇱 Polski</a> · <a href="README.pt-BR.md">🇧🇷 Português (Brasil)</a> · <a href="README.ru.md">🇷🇺 Русский</a> · <a href="README.uk.md">🇺🇦 Українська</a> · <a href="README.tr.md">🇹🇷 Türkçe</a> · <a href="README.az.md">🇦🇿 Azərbaycanca</a> · <b>🇭🇷 Hrvatski</b> · <a href="README.id.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.vi.md">🇻🇳 Tiếng Việt</a> · <a href="README.th.md">🇹🇭 ไทย</a> · <a href="README.ja.md">🇯🇵 日本語</a> · <a href="README.ko.md">🇰🇷 한국어</a> · <a href="README.zh-CN.md">🇨🇳 简体中文</a> · <a href="README.zh-TW.md">🇹🇼 繁體中文</a> · <a href="README.ar.md">🇸🇦 العربية</a> · <a href="README.he.md">🇮🇱 עברית</a> · <a href="README.fa.md">🇮🇷 فارسی</a> · <a href="README.hi.md">🇮🇳 हिन्दी</a> · <a href="README.ur.md">🇵🇰 اردو</a> · <a href="README.bn.md">🇧🇩 বাংলা</a>
+  <a href="../README.md">🇬🇧&nbsp;English</a> · <a href="README.de.md">🇩🇪&nbsp;Deutsch&nbsp;(German)</a> · <a href="README.es.md">🇪🇸&nbsp;Español&nbsp;(Spanish)</a> · <a href="README.fr.md">🇫🇷&nbsp;Français&nbsp;(French)</a> · <a href="README.it.md">🇮🇹&nbsp;Italiano&nbsp;(Italian)</a> · <a href="README.nl.md">🇳🇱&nbsp;Nederlands&nbsp;(Dutch)</a> · <a href="README.pl.md">🇵🇱&nbsp;Polski&nbsp;(Polish)</a> · <a href="README.pt-BR.md">🇧🇷&nbsp;Português&nbsp;(Brasil)&nbsp;(Portuguese)</a> · <a href="README.ru.md">🇷🇺&nbsp;Русский&nbsp;(Russian)</a> · <a href="README.uk.md">🇺🇦&nbsp;Українська&nbsp;(Ukrainian)</a> · <a href="README.tr.md">🇹🇷&nbsp;Türkçe&nbsp;(Turkish)</a> · <a href="README.az.md">🇦🇿&nbsp;Azərbaycanca&nbsp;(Azerbaijani)</a> · <b>🇭🇷&nbsp;Hrvatski&nbsp;(Croatian)</b> · <a href="README.id.md">🇮🇩&nbsp;Bahasa&nbsp;Indonesia&nbsp;(Indonesian)</a> · <a href="README.vi.md">🇻🇳&nbsp;Tiếng&nbsp;Việt&nbsp;(Vietnamese)</a> · <a href="README.th.md">🇹🇭&nbsp;ไทย&nbsp;(Thai)</a> · <a href="README.ja.md">🇯🇵&nbsp;日本語&nbsp;(Japanese)</a> · <a href="README.ko.md">🇰🇷&nbsp;한국어&nbsp;(Korean)</a> · <a href="README.zh-CN.md">🇨🇳&nbsp;简体中文&nbsp;(Chinese&nbsp;Simplified)</a> · <a href="README.zh-TW.md">🇹🇼&nbsp;繁體中文&nbsp;(Chinese&nbsp;Traditional)</a> · <a href="README.ar.md">🇸🇦&nbsp;العربية&nbsp;(Arabic)</a> · <a href="README.he.md">🇮🇱&nbsp;עברית&nbsp;(Hebrew)</a> · <a href="README.fa.md">🇮🇷&nbsp;فارسی&nbsp;(Persian)</a> · <a href="README.hi.md">🇮🇳&nbsp;हिन्दी&nbsp;(Hindi)</a> · <a href="README.ur.md">🇵🇰&nbsp;اردو&nbsp;(Urdu)</a> · <a href="README.bn.md">🇧🇩&nbsp;বাংলা&nbsp;(Bengali)</a>
 </p>
 
 <p align="center">
@@ -23,98 +23,98 @@
 
 ---
 
-## 📖 Table of Contents
+## 📖 Sadržaj
 
-* ➤ Installation
-* ➤ Creating your first group
-* ➤ Screen/Window Documentation
-  * Main Screen
-  * Group Creation Screen
-  * Extra Notes
-* ➤ Image/Icon Caching
-* ➤ Program Shortcuts
-* ➤ Folder Structure
-* ➤ Recent Updates
-* ➤ License
-
----
-
-## 🔽 How to download Taskbar Groups
-1. Download the `.zip` file from the latest release (link above)
-2. Unpack the `.zip` file at a desired location
-3. Run `TaskbarGroups.exe` in the extracted folder
+* ➤ Instalacija
+* ➤ Stvaranje prve grupe
+* ➤ Dokumentacija prozora
+  * Glavni prozor
+  * Uređivač grupe
+  * Dodatne napomene
+* ➤ Predmemorija ikona
+* ➤ Tipkovnički prečaci
+* ➤ Struktura mapa
+* ➤ Nedavna ažuriranja
+* ➤ Licenca
 
 ---
 
-## 🛠️ Creating your first group
-1. Click **"Add taskbar group"**
-2. Give the group a name and select an icon
-3. Click **"Add new shortcut"** and select `.exe` or `.lnk` files (or drag and drop `.exe`, `.lnk`, or folders into the shortcut area)
-4. Save the group
-5. Left-click on the group card to open the `Shortcuts` folder with your group shortcut selected
-6. Right-click the highlighted shortcut and select **"Pin to taskbar"**
+## 🔽 Kako preuzeti Taskbar Groups
+1. Preuzmite `.zip` datoteku iz najnovijeg izdanja (poveznica iznad)
+2. Raspakirajte `.zip` arhivu u željenu mapu
+3. Pokrenite `TaskbarGroups.exe` iz raspakirane mape
 
 ---
 
-## 🖥️ Screen/Window Documentation
-Below is documentation for each window and its components.
-
-#### Main Screen
-![Group overview screen](images/main-screen.png)
-Here is the main group configuration screen opened when launching `TaskbarGroups.exe`. You can create, import, search, sort, preview, edit, clone, export, or delete groups, and switch the UI language (26 languages supported).
-
-#### Group Creation Screen
-![Group creation screen](images/group-screen.png)
-Here is the group creation/editing screen where you configure your group:
-
-* **Name the new group** — Insert any group name (including Unicode/Cyrillic characters, up to 49 characters).
-* **Width** — Sets how many shortcuts appear per row (e.g., 12 shortcuts with width 6 displays 2 rows of 6).
-* **Change Group Icon** — Click (+) or drag and drop `.png`, `.jpg`, `.ico`, `.exe`, or `.lnk` files to set the group icon.
-* **Add new shortcuts** — Click (+) or drag and drop `.exe`, `.lnk`, `.url`, or folders. Supports Windows Store apps and Steam games.
-* **Allow open-all shortcuts** — Enables launching every shortcut in the group at once using `Ctrl + Enter`.
-* **Activate running window on click** — Switches to an already running window of the app instead of opening a new instance.
-* **Show names / Icon size** — Optionally display shortcut labels under icons and choose between *Compact*, *Medium*, or *Large* icon sizes.
-* **Working Directory, Executable Path & Arguments** — Select any shortcut item to edit its executable path (helpful when an app moves to a new folder on update), working directory, launch arguments, or custom icon (including extracting icons from `.exe`/`.dll` files).
-* **Background Color & Opacity** — Choose Dark, Light, or Custom color and set transparency from 0% to 100%.
-
-#### Extra Notes
-For executables, icons are extracted directly. For `.lnk` shortcuts and Microsoft Store apps, the app resolves either the target icon or the Store app package icon automatically.
+## 🛠️ Stvaranje prve grupe
+1. Kliknite **"Dodaj grupu"**
+2. Unesite naziv grupe i odaberite ikonu
+3. Kliknite **"Dodaj prečac"** i odaberite `.exe` ili `.lnk` datoteke (ili ih povucite i ispustite)
+4. Spremite grupu
+5. Kliknite lijevom tipkom na karticu grupe za otvaranje mape `Shortcuts`
+6. Kliknite desnom tipkom na označeni prečac i odaberite **"Prikvači na programsku traku"**
 
 ---
 
-## 📦 Image/Icon Caching
-Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` so the launch popup opens instantaneously without re-extracting icons each time. Saving a group regenerates its icon cache.
+## 🖥️ Dokumentacija prozora
+U nastavku je opis svakog prozora i njegovih mogućnosti.
+
+#### Glavni prozor
+![Group overview screen](images/hr/main-screen.png)
+Glavni prozor koji se otvara pokretanjem `TaskbarGroups.exe`. Omogućuje stvaranje, uvoz, pretraživanje, sortiranje, pretpregled, uređivanje, kloniranje, izvoz, brisanje grupa i promjenu jezika sučelja (26 jezika).
+
+#### Uređivač grupe
+![Group creation screen](images/hr/group-screen.png)
+U prozoru za stvaranje i uređivanje možete konfigurirati sve postavke grupe:
+
+* **Naziv grupe** — Bilo koji naziv (podržava Unicode i ćirilicu, do 49 znakova).
+* **Širina** — Broj prečaca po retku.
+* **Promjena ikone grupe** — Kliknite (+) ili povucite `.png`, `.jpg`, `.ico`, `.exe` ili `.lnk` datoteku.
+* **Dodaj prečac** — Podržava `.exe`, `.lnk`, `.url`, mape, Microsoft Store aplikacije i Steam igre.
+* **Otvori sve odjednom** — Omogućuje pokretanje svih prečaca u grupi pomoću `Ctrl + Enter`.
+* **Aktiviraj pokrenuti prozor** — Prebacuje na već otvoreni prozor umjesto pokretanja nove instance.
+* **Prikaži nazive / Veličina ikona** — Opcionalne oznake i veličine *Kompaktno*, *Srednje* ili *Veliko*.
+* **Radna mapa, putanja datoteke i argumenti** — Uredite putanju izvršne datoteke (korisno kad se program ažurira u novu mapu), radnu mapu, argumente i prilagođenu ikonu (uključujući `.exe`/`.dll`).
+* **Boja pozadine i prozirnost** — Tamna, Svijetla ili Prilagođena tema s prozirnošću od 0% do 100%.
+
+#### Dodatne napomene
+Za izvršne datoteke ikone se učitavaju izravno; za `.lnk` i Microsoft Store aplikacije rješavaju se automatski.
 
 ---
 
-## ⌨️ Program Shortcuts
-* **Number keys `1`–`9`, `0`** — Launches the shortcut at position 1–10.
-* **Arrow keys / `Enter` / `Esc`** — Navigate between shortcuts, launch the selected one, or close the popup.
-* **`Ctrl + Enter`** — Opens all shortcuts in the group at once (when enabled in group settings).
-* **Right-click on a shortcut** — Opens a context menu: *Switch to window*, *Close window*, *Open new instance*, *Run as administrator*, *Open file location*.
+## 📦 Predmemorija ikona
+Ikone se spremaju u `/config/<Naziv_grupe>/Icons` za trenutačno otvaranje izbornika. Spremanjem grupe predmemorija se obnavlja.
 
 ---
 
-## 📁 Folder Structure Documentation
-* **`/config`** — Stores configuration folders for each created group.
-* **`/config/<Group_Name>/Icons`** — Local icon cache for all shortcuts in the group.
-* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — Generated icon files for the group shortcut.
-* **`/config/<Group_Name>/ObjectData.xml`** — XML configuration storing shortcuts, appearance, and behavior settings.
-* **`/config/lang.txt`** — Stores the selected UI language code.
-* **`/JITComp`** — Stores compiled profile optimization data for faster startup.
-* **`/Shortcuts`** — Contains generated `.lnk` shortcuts for pinning groups to the Windows taskbar.
+## ⌨️ Tipkovnički prečaci
+* **Brojčane tipke `1`–`9`, `0`** — Pokreće prečac na poziciji 1–10.
+* **Strelice / `Enter` / `Esc`** — Kretanje, pokretanje ili zatvaranje izbornika.
+* **`Ctrl + Enter`** — Otvara sve prečace u grupi odjednom (ako je uključeno).
+* **Desni klik na prečac** — Kontekstni izbornik: *Prebaci na prozor*, *Zatvori prozor*, *Otvori novu instancu*, *Pokreni kao administrator*, *Otvori lokaciju datoteke*.
 
 ---
 
-## ✨ Recent Updates
-* **Localization (26 Languages)**: Added full UI localization and a language selector in the main window, plus synchronized READMEs in all 26 languages.
-* **Launch Panel (`frmMain`)**: Added tooltips, running-app detection, *Activate running window* option, right-click context menu, configurable icon sizes (*Compact*, *Medium*, *Large*), shortcut labels, Windows 11 rounded corners, and keyboard navigation.
-* **Group Editor (`frmGroup`)**: Added drag-and-drop shortcut reordering with auto-scroll, executable path editing (with automatic working directory update), custom icon picker for `.exe`/`.dll`/images, and Unicode/Cyrillic group name support.
-* **Main Window (`frmClient`)**: Fixed layout with independent scrolling, search & sorting, modern buttons, **Preview**, **Clone**, **Export**/**Import** (`.tgroup`/`.zip`), quick **Delete**, responsive multi-row icon wrapping inside group cards (no hidden icons), and 2D drag-and-drop icon reordering.
+## 📁 Struktura mapa
+* **`/config`** — Sadrži konfiguracijske mape svih grupa.
+* **`/config/<Group_Name>/Icons`** — Lokalna predmemorija ikona grupe.
+* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — Generirane ikone grupe.
+* **`/config/<Group_Name>/ObjectData.xml`** — XML datoteka s postavkama i prečacima grupe.
+* **`/config/lang.txt`** — Sprema odabrani kod jezika sučelja.
+* **`/JITComp`** — Kompilirani profili za brže pokretanje.
+* **`/Shortcuts`** — Generirani `.lnk` prečaci za prikvačivanje na programsku traku.
 
 ---
 
-## 📜 License
-This project is licensed under the [MIT License](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
+## ✨ Nedavna ažuriranja
+* **Lokalizacija (26 jezika)**: Potpuni prijevod sučelja s odabirom jezika u glavnom prozoru i sinkronizirane README datoteke na 26 jezika.
+* **Ploča za pokretanje (`frmMain`)**: Opisi elemenata, prepoznavanje aktivnih aplikacija, aktivacija postojećeg prozora, kontekstni izbornik, veličine ikona, oznake, zaobljeni kutovi za Windows 11 i tipkovnička navigacija.
+* **Uređivač grupe (`frmGroup`)**: Povuci-i-ispusti promjena redoslijeda s automatskim pomicanjem, uređivanje putanje izvršne datoteke, odabir ikona iz `.exe`/`.dll`/slika i Unicode podrška.
+* **Glavni prozor (`frmClient`)**: Fiksni raspored, pretraživanje i sortiranje, Pretpregled, Kloniranje, Izvoz/Uvoz (`.tgroup`/`.zip`), brzo Brisanje, prilagodljivo prelamanje svih ikona u više redaka bez skrivanja i povuci-i-ispusti unutar kartice.
+
+---
+
+## 📜 Licenca
+Ovaj projekt je licenciran pod [MIT licencom](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
 
 ---

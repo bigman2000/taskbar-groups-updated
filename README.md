@@ -1,5 +1,5 @@
 <p align="center">
-  <b>🇬🇧 English</b> · <a href="docs/README.de.md">🇩🇪 Deutsch</a> · <a href="docs/README.es.md">🇪🇸 Español</a> · <a href="docs/README.fr.md">🇫🇷 Français</a> · <a href="docs/README.it.md">🇮🇹 Italiano</a> · <a href="docs/README.nl.md">🇳🇱 Nederlands</a> · <a href="docs/README.pl.md">🇵🇱 Polski</a> · <a href="docs/README.pt-BR.md">🇧🇷 Português (Brasil)</a> · <a href="docs/README.ru.md">🇷🇺 Русский</a> · <a href="docs/README.uk.md">🇺🇦 Українська</a> · <a href="docs/README.tr.md">🇹🇷 Türkçe</a> · <a href="docs/README.az.md">🇦🇿 Azərbaycanca</a> · <a href="docs/README.hr.md">🇭🇷 Hrvatski</a> · <a href="docs/README.id.md">🇮🇩 Bahasa Indonesia</a> · <a href="docs/README.vi.md">🇻🇳 Tiếng Việt</a> · <a href="docs/README.th.md">🇹🇭 ไทย</a> · <a href="docs/README.ja.md">🇯🇵 日本語</a> · <a href="docs/README.ko.md">🇰🇷 한국어</a> · <a href="docs/README.zh-CN.md">🇨🇳 简体中文</a> · <a href="docs/README.zh-TW.md">🇹🇼 繁體中文</a> · <a href="docs/README.ar.md">🇸🇦 العربية</a> · <a href="docs/README.he.md">🇮🇱 עברית</a> · <a href="docs/README.fa.md">🇮🇷 فارسی</a> · <a href="docs/README.hi.md">🇮🇳 हिन्दी</a> · <a href="docs/README.ur.md">🇵🇰 اردو</a> · <a href="docs/README.bn.md">🇧🇩 বাংলা</a>
+  <b>🇬🇧&nbsp;English</b> · <a href="docs/README.de.md">🇩🇪&nbsp;Deutsch&nbsp;(German)</a> · <a href="docs/README.es.md">🇪🇸&nbsp;Español&nbsp;(Spanish)</a> · <a href="docs/README.fr.md">🇫🇷&nbsp;Français&nbsp;(French)</a> · <a href="docs/README.it.md">🇮🇹&nbsp;Italiano&nbsp;(Italian)</a> · <a href="docs/README.nl.md">🇳🇱&nbsp;Nederlands&nbsp;(Dutch)</a> · <a href="docs/README.pl.md">🇵🇱&nbsp;Polski&nbsp;(Polish)</a> · <a href="docs/README.pt-BR.md">🇧🇷&nbsp;Português&nbsp;(Brasil)&nbsp;(Portuguese)</a> · <a href="docs/README.ru.md">🇷🇺&nbsp;Русский&nbsp;(Russian)</a> · <a href="docs/README.uk.md">🇺🇦&nbsp;Українська&nbsp;(Ukrainian)</a> · <a href="docs/README.tr.md">🇹🇷&nbsp;Türkçe&nbsp;(Turkish)</a> · <a href="docs/README.az.md">🇦🇿&nbsp;Azərbaycanca&nbsp;(Azerbaijani)</a> · <a href="docs/README.hr.md">🇭🇷&nbsp;Hrvatski&nbsp;(Croatian)</a> · <a href="docs/README.id.md">🇮🇩&nbsp;Bahasa&nbsp;Indonesia&nbsp;(Indonesian)</a> · <a href="docs/README.vi.md">🇻🇳&nbsp;Tiếng&nbsp;Việt&nbsp;(Vietnamese)</a> · <a href="docs/README.th.md">🇹🇭&nbsp;ไทย&nbsp;(Thai)</a> · <a href="docs/README.ja.md">🇯🇵&nbsp;日本語&nbsp;(Japanese)</a> · <a href="docs/README.ko.md">🇰🇷&nbsp;한국어&nbsp;(Korean)</a> · <a href="docs/README.zh-CN.md">🇨🇳&nbsp;简体中文&nbsp;(Chinese&nbsp;Simplified)</a> · <a href="docs/README.zh-TW.md">🇹🇼&nbsp;繁體中文&nbsp;(Chinese&nbsp;Traditional)</a> · <a href="docs/README.ar.md">🇸🇦&nbsp;العربية&nbsp;(Arabic)</a> · <a href="docs/README.he.md">🇮🇱&nbsp;עברית&nbsp;(Hebrew)</a> · <a href="docs/README.fa.md">🇮🇷&nbsp;فارسی&nbsp;(Persian)</a> · <a href="docs/README.hi.md">🇮🇳&nbsp;हिन्दी&nbsp;(Hindi)</a> · <a href="docs/README.ur.md">🇵🇰&nbsp;اردو&nbsp;(Urdu)</a> · <a href="docs/README.bn.md">🇧🇩&nbsp;বাংলা&nbsp;(Bengali)</a>
 </p>
 
 <p align="center">
@@ -60,11 +60,11 @@
 Below is documentation for each window and its components.
 
 #### Main Screen
-![Group overview screen](docs/images/main-screen.png)
+![Group overview screen](docs/images/en/main-screen.png)
 Here is the main group configuration screen opened when launching `TaskbarGroups.exe`. You can create, import, search, sort, preview, edit, clone, export, or delete groups, and switch the UI language (26 languages supported).
 
 #### Group Creation Screen
-![Group creation screen](docs/images/group-screen.png)
+![Group creation screen](docs/images/en/group-screen.png)
 Here is the group creation/editing screen where you configure your group:
 
 * **Name the new group** — Insert any group name (including Unicode/Cyrillic characters, up to 49 characters).

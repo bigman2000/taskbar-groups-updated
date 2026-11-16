@@ -390,9 +390,9 @@ namespace client.Forms
             this.cmbLanguage.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.cmbLanguage.ForeColor = System.Drawing.Color.White;
             this.cmbLanguage.FormattingEnabled = true;
-            this.cmbLanguage.Location = new System.Drawing.Point(504, 28);
+            this.cmbLanguage.Location = new System.Drawing.Point(444, 28);
             this.cmbLanguage.Name = "cmbLanguage";
-            this.cmbLanguage.Size = new System.Drawing.Size(160, 24);
+            this.cmbLanguage.Size = new System.Drawing.Size(220, 24);
             this.cmbLanguage.TabIndex = 16;
             this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.cmbLanguage_SelectedIndexChanged);
             // 

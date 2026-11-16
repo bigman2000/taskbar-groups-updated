@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="../README.md">🇬🇧 English</a> · <a href="README.de.md">🇩🇪 Deutsch</a> · <a href="README.es.md">🇪🇸 Español</a> · <a href="README.fr.md">🇫🇷 Français</a> · <a href="README.it.md">🇮🇹 Italiano</a> · <a href="README.nl.md">🇳🇱 Nederlands</a> · <a href="README.pl.md">🇵🇱 Polski</a> · <a href="README.pt-BR.md">🇧🇷 Português (Brasil)</a> · <a href="README.ru.md">🇷🇺 Русский</a> · <a href="README.uk.md">🇺🇦 Українська</a> · <a href="README.tr.md">🇹🇷 Türkçe</a> · <a href="README.az.md">🇦🇿 Azərbaycanca</a> · <a href="README.hr.md">🇭🇷 Hrvatski</a> · <b>🇮🇩 Bahasa Indonesia</b> · <a href="README.vi.md">🇻🇳 Tiếng Việt</a> · <a href="README.th.md">🇹🇭 ไทย</a> · <a href="README.ja.md">🇯🇵 日本語</a> · <a href="README.ko.md">🇰🇷 한국어</a> · <a href="README.zh-CN.md">🇨🇳 简体中文</a> · <a href="README.zh-TW.md">🇹🇼 繁體中文</a> · <a href="README.ar.md">🇸🇦 العربية</a> · <a href="README.he.md">🇮🇱 עברית</a> · <a href="README.fa.md">🇮🇷 فارسی</a> · <a href="README.hi.md">🇮🇳 हिन्दी</a> · <a href="README.ur.md">🇵🇰 اردو</a> · <a href="README.bn.md">🇧🇩 বাংলা</a>
+  <a href="../README.md">🇬🇧&nbsp;English</a> · <a href="README.de.md">🇩🇪&nbsp;Deutsch&nbsp;(German)</a> · <a href="README.es.md">🇪🇸&nbsp;Español&nbsp;(Spanish)</a> · <a href="README.fr.md">🇫🇷&nbsp;Français&nbsp;(French)</a> · <a href="README.it.md">🇮🇹&nbsp;Italiano&nbsp;(Italian)</a> · <a href="README.nl.md">🇳🇱&nbsp;Nederlands&nbsp;(Dutch)</a> · <a href="README.pl.md">🇵🇱&nbsp;Polski&nbsp;(Polish)</a> · <a href="README.pt-BR.md">🇧🇷&nbsp;Português&nbsp;(Brasil)&nbsp;(Portuguese)</a> · <a href="README.ru.md">🇷🇺&nbsp;Русский&nbsp;(Russian)</a> · <a href="README.uk.md">🇺🇦&nbsp;Українська&nbsp;(Ukrainian)</a> · <a href="README.tr.md">🇹🇷&nbsp;Türkçe&nbsp;(Turkish)</a> · <a href="README.az.md">🇦🇿&nbsp;Azərbaycanca&nbsp;(Azerbaijani)</a> · <a href="README.hr.md">🇭🇷&nbsp;Hrvatski&nbsp;(Croatian)</a> · <b>🇮🇩&nbsp;Bahasa&nbsp;Indonesia&nbsp;(Indonesian)</b> · <a href="README.vi.md">🇻🇳&nbsp;Tiếng&nbsp;Việt&nbsp;(Vietnamese)</a> · <a href="README.th.md">🇹🇭&nbsp;ไทย&nbsp;(Thai)</a> · <a href="README.ja.md">🇯🇵&nbsp;日本語&nbsp;(Japanese)</a> · <a href="README.ko.md">🇰🇷&nbsp;한국어&nbsp;(Korean)</a> · <a href="README.zh-CN.md">🇨🇳&nbsp;简体中文&nbsp;(Chinese&nbsp;Simplified)</a> · <a href="README.zh-TW.md">🇹🇼&nbsp;繁體中文&nbsp;(Chinese&nbsp;Traditional)</a> · <a href="README.ar.md">🇸🇦&nbsp;العربية&nbsp;(Arabic)</a> · <a href="README.he.md">🇮🇱&nbsp;עברית&nbsp;(Hebrew)</a> · <a href="README.fa.md">🇮🇷&nbsp;فارسی&nbsp;(Persian)</a> · <a href="README.hi.md">🇮🇳&nbsp;हिन्दी&nbsp;(Hindi)</a> · <a href="README.ur.md">🇵🇰&nbsp;اردو&nbsp;(Urdu)</a> · <a href="README.bn.md">🇧🇩&nbsp;বাংলা&nbsp;(Bengali)</a>
 </p>
 
 <p align="center">
@@ -23,98 +23,98 @@
 
 ---
 
-## 📖 Table of Contents
+## 📖 Daftar Isi
 
-* ➤ Installation
-* ➤ Creating your first group
-* ➤ Screen/Window Documentation
-  * Main Screen
-  * Group Creation Screen
-  * Extra Notes
-* ➤ Image/Icon Caching
-* ➤ Program Shortcuts
-* ➤ Folder Structure
-* ➤ Recent Updates
-* ➤ License
-
----
-
-## 🔽 How to download Taskbar Groups
-1. Download the `.zip` file from the latest release (link above)
-2. Unpack the `.zip` file at a desired location
-3. Run `TaskbarGroups.exe` in the extracted folder
+* ➤ Instalasi
+* ➤ Membuat grup pertama
+* ➤ Dokumentasi Jendela
+  * Layar Utama
+  * Layar Pembuatan Grup
+  * Catatan Tambahan
+* ➤ Cache Ikon
+* ➤ Pintasan Keyboard
+* ➤ Struktur Folder
+* ➤ Pembaruan Terbaru
+* ➤ Lisensi
 
 ---
 
-## 🛠️ Creating your first group
-1. Click **"Add taskbar group"**
-2. Give the group a name and select an icon
-3. Click **"Add new shortcut"** and select `.exe` or `.lnk` files (or drag and drop `.exe`, `.lnk`, or folders into the shortcut area)
-4. Save the group
-5. Left-click on the group card to open the `Shortcuts` folder with your group shortcut selected
-6. Right-click the highlighted shortcut and select **"Pin to taskbar"**
+## 🔽 Cara mengunduh Taskbar Groups
+1. Unduh file `.zip` dari rilis terbaru (tautan di atas)
+2. Ekstrak file `.zip` ke lokasi yang diinginkan
+3. Jalankan `TaskbarGroups.exe` di folder hasil ekstrak
 
 ---
 
-## 🖥️ Screen/Window Documentation
-Below is documentation for each window and its components.
-
-#### Main Screen
-![Group overview screen](images/main-screen.png)
-Here is the main group configuration screen opened when launching `TaskbarGroups.exe`. You can create, import, search, sort, preview, edit, clone, export, or delete groups, and switch the UI language (26 languages supported).
-
-#### Group Creation Screen
-![Group creation screen](images/group-screen.png)
-Here is the group creation/editing screen where you configure your group:
-
-* **Name the new group** — Insert any group name (including Unicode/Cyrillic characters, up to 49 characters).
-* **Width** — Sets how many shortcuts appear per row (e.g., 12 shortcuts with width 6 displays 2 rows of 6).
-* **Change Group Icon** — Click (+) or drag and drop `.png`, `.jpg`, `.ico`, `.exe`, or `.lnk` files to set the group icon.
-* **Add new shortcuts** — Click (+) or drag and drop `.exe`, `.lnk`, `.url`, or folders. Supports Windows Store apps and Steam games.
-* **Allow open-all shortcuts** — Enables launching every shortcut in the group at once using `Ctrl + Enter`.
-* **Activate running window on click** — Switches to an already running window of the app instead of opening a new instance.
-* **Show names / Icon size** — Optionally display shortcut labels under icons and choose between *Compact*, *Medium*, or *Large* icon sizes.
-* **Working Directory, Executable Path & Arguments** — Select any shortcut item to edit its executable path (helpful when an app moves to a new folder on update), working directory, launch arguments, or custom icon (including extracting icons from `.exe`/`.dll` files).
-* **Background Color & Opacity** — Choose Dark, Light, or Custom color and set transparency from 0% to 100%.
-
-#### Extra Notes
-For executables, icons are extracted directly. For `.lnk` shortcuts and Microsoft Store apps, the app resolves either the target icon or the Store app package icon automatically.
+## 🛠️ Membuat grup pertama Anda
+1. Klik **"Tambah grup"**
+2. Beri nama grup dan pilih ikon
+3. Klik **"Tambah pintasan"** dan pilih file `.exe` atau `.lnk` (atau seret dan lepas)
+4. Simpan grup
+5. Klik kiri kartu grup untuk membuka folder `Shortcuts`
+6. Klik kanan pintasan yang disorot lalu pilih **"Sematkan ke taskbar"**
 
 ---
 
-## 📦 Image/Icon Caching
-Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` so the launch popup opens instantaneously without re-extracting icons each time. Saving a group regenerates its icon cache.
+## 🖥️ Dokumentasi Jendela
+Berikut adalah penjelasan setiap jendela dan komponennya.
+
+#### Layar Utama
+![Group overview screen](images/id/main-screen.png)
+Layar utama saat membuka `TaskbarGroups.exe`. Anda dapat membuat, mengimpor, mencari, mengurutkan, melihat pratinjau, mengedit, menduplikat, mengekspor, menghapus grup, serta mengganti bahasa antarmuka (26 bahasa).
+
+#### Layar Pembuatan Grup
+![Group creation screen](images/id/group-screen.png)
+Di layar pembuatan/pengeditan grup, Anda dapat mengonfigurasi grup:
+
+* **Nama grup** — Masukkan nama apa saja (mendukung Unicode/Sirilik, maksimal 49 karakter).
+* **Lebar** — Menentukan jumlah pintasan per baris.
+* **Ubah ikon grup** — Klik (+) atau seret file `.png`, `.jpg`, `.ico`, `.exe`, atau `.lnk`.
+* **Tambah pintasan** — Mendukung `.exe`, `.lnk`, `.url`, folder, aplikasi Microsoft Store, dan game Steam.
+* **Buka semua sekaligus** — Membuka seluruh pintasan dalam grup menggunakan `Ctrl + Enter`.
+* **Aktifkan jendela berjalan** — Beralih ke jendela yang sudah terbuka alih-alih membuka instans baru.
+* **Tampilkan label / Ukuran ikon** — Label opsional serta ukuran *Ringkas*, *Sedang*, atau *Besar*.
+* **Direktori kerja, jalur file & argumen** — Ubah jalur file program (berguna saat pembaruan aplikasi pindah folder), direktori kerja, argumen, dan ikon kustom (termasuk dari `.exe`/`.dll`).
+* **Warna latar & opasitas** — Gelap, Terang, atau Kustom dengan transparansi 0%–100%.
+
+#### Catatan Tambahan
+Ikon dari file `.exe` diambil langsung; untuk `.lnk` dan aplikasi Microsoft Store diselesaikan secara otomatis.
 
 ---
 
-## ⌨️ Program Shortcuts
-* **Number keys `1`–`9`, `0`** — Launches the shortcut at position 1–10.
-* **Arrow keys / `Enter` / `Esc`** — Navigate between shortcuts, launch the selected one, or close the popup.
-* **`Ctrl + Enter`** — Opens all shortcuts in the group at once (when enabled in group settings).
-* **Right-click on a shortcut** — Opens a context menu: *Switch to window*, *Close window*, *Open new instance*, *Run as administrator*, *Open file location*.
+## 📦 Cache Ikon
+Ikon disimpan secara lokal di `/config/<Nama_Grup>/Icons` agar menu terbuka seketika. Menyimpan grup akan membuat ulang cache.
 
 ---
 
-## 📁 Folder Structure Documentation
-* **`/config`** — Stores configuration folders for each created group.
-* **`/config/<Group_Name>/Icons`** — Local icon cache for all shortcuts in the group.
-* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — Generated icon files for the group shortcut.
-* **`/config/<Group_Name>/ObjectData.xml`** — XML configuration storing shortcuts, appearance, and behavior settings.
-* **`/config/lang.txt`** — Stores the selected UI language code.
-* **`/JITComp`** — Stores compiled profile optimization data for faster startup.
-* **`/Shortcuts`** — Contains generated `.lnk` shortcuts for pinning groups to the Windows taskbar.
+## ⌨️ Pintasan Keyboard
+* **Tombol angka `1`–`9`, `0`** — Membuka pintasan pada posisi 1–10.
+* **Tombol panah / `Enter` / `Esc`** — Navigasi, jalankan, atau tutup menu.
+* **`Ctrl + Enter`** — Membuka semua pintasan dalam grup sekaligus (jika diaktifkan).
+* **Klik kanan pada pintasan** — Menu konteks: *Beralih ke jendela*, *Tutup jendela*, *Buka instans baru*, *Jalankan sebagai administrator*, *Buka lokasi file*.
 
 ---
 
-## ✨ Recent Updates
-* **Localization (26 Languages)**: Added full UI localization and a language selector in the main window, plus synchronized READMEs in all 26 languages.
-* **Launch Panel (`frmMain`)**: Added tooltips, running-app detection, *Activate running window* option, right-click context menu, configurable icon sizes (*Compact*, *Medium*, *Large*), shortcut labels, Windows 11 rounded corners, and keyboard navigation.
-* **Group Editor (`frmGroup`)**: Added drag-and-drop shortcut reordering with auto-scroll, executable path editing (with automatic working directory update), custom icon picker for `.exe`/`.dll`/images, and Unicode/Cyrillic group name support.
-* **Main Window (`frmClient`)**: Fixed layout with independent scrolling, search & sorting, modern buttons, **Preview**, **Clone**, **Export**/**Import** (`.tgroup`/`.zip`), quick **Delete**, responsive multi-row icon wrapping inside group cards (no hidden icons), and 2D drag-and-drop icon reordering.
+## 📁 Struktur Folder
+* **`/config`** — Menyimpan folder konfigurasi untuk setiap grup.
+* **`/config/<Group_Name>/Icons`** — Cache ikon lokal untuk grup.
+* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — Ikon yang dihasilkan untuk grup.
+* **`/config/<Group_Name>/ObjectData.xml`** — Konfigurasi XML untuk pintasan dan pengaturan grup.
+* **`/config/lang.txt`** — Menyimpan kode bahasa yang dipilih.
+* **`/JITComp`** — Profil terkompilasi untuk startup lebih cepat.
+* **`/Shortcuts`** — Pintasan `.lnk` untuk disematkan ke taskbar Windows.
 
 ---
 
-## 📜 License
-This project is licensed under the [MIT License](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
+## ✨ Pembaruan Terbaru
+* **Lokalisasi (26 Bahasa)**: Terjemahan antarmuka lengkap dengan pemilih bahasa di jendela utama serta README yang disinkronkan dalam 26 bahasa.
+* **Panel Peluncuran (`frmMain`)**: Tooltip, deteksi aplikasi aktif, opsi aktifkan jendela berjalan, menu konteks klik kanan, ukuran ikon, label, sudut membulat Windows 11, dan navigasi keyboard.
+* **Editor Grup (`frmGroup`)**: Pengurutan seret-dan-lepas dengan gulir otomatis, pengeditan jalur file program, pemilih ikon `.exe`/`.dll`/gambar, dan dukungan Unicode.
+* **Jendela Utama (`frmClient`)**: Tata letak tetap, pencarian & pengurutan, Pratinjau, Duplikat, Ekspor/Impor (`.tgroup`/`.zip`), Hapus cepat, pembungkusan ikon multi-baris responsif tanpa pemotongan, dan pengurutan seret-dan-lepas di kartu.
+
+---
+
+## 📜 Lisensi
+Proyek ini dilisensikan di bawah [Lisensi MIT](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
 
 ---

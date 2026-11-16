@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="../README.md">🇬🇧 English</a> · <a href="README.de.md">🇩🇪 Deutsch</a> · <a href="README.es.md">🇪🇸 Español</a> · <a href="README.fr.md">🇫🇷 Français</a> · <a href="README.it.md">🇮🇹 Italiano</a> · <a href="README.nl.md">🇳🇱 Nederlands</a> · <a href="README.pl.md">🇵🇱 Polski</a> · <a href="README.pt-BR.md">🇧🇷 Português (Brasil)</a> · <a href="README.ru.md">🇷🇺 Русский</a> · <a href="README.uk.md">🇺🇦 Українська</a> · <a href="README.tr.md">🇹🇷 Türkçe</a> · <a href="README.az.md">🇦🇿 Azərbaycanca</a> · <a href="README.hr.md">🇭🇷 Hrvatski</a> · <a href="README.id.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.vi.md">🇻🇳 Tiếng Việt</a> · <a href="README.th.md">🇹🇭 ไทย</a> · <a href="README.ja.md">🇯🇵 日本語</a> · <a href="README.ko.md">🇰🇷 한국어</a> · <a href="README.zh-CN.md">🇨🇳 简体中文</a> · <a href="README.zh-TW.md">🇹🇼 繁體中文</a> · <b>🇸🇦 العربية</b> · <a href="README.he.md">🇮🇱 עברית</a> · <a href="README.fa.md">🇮🇷 فارسی</a> · <a href="README.hi.md">🇮🇳 हिन्दी</a> · <a href="README.ur.md">🇵🇰 اردو</a> · <a href="README.bn.md">🇧🇩 বাংলা</a>
+  <a href="../README.md">🇬🇧&nbsp;English</a> · <a href="README.de.md">🇩🇪&nbsp;Deutsch&nbsp;(German)</a> · <a href="README.es.md">🇪🇸&nbsp;Español&nbsp;(Spanish)</a> · <a href="README.fr.md">🇫🇷&nbsp;Français&nbsp;(French)</a> · <a href="README.it.md">🇮🇹&nbsp;Italiano&nbsp;(Italian)</a> · <a href="README.nl.md">🇳🇱&nbsp;Nederlands&nbsp;(Dutch)</a> · <a href="README.pl.md">🇵🇱&nbsp;Polski&nbsp;(Polish)</a> · <a href="README.pt-BR.md">🇧🇷&nbsp;Português&nbsp;(Brasil)&nbsp;(Portuguese)</a> · <a href="README.ru.md">🇷🇺&nbsp;Русский&nbsp;(Russian)</a> · <a href="README.uk.md">🇺🇦&nbsp;Українська&nbsp;(Ukrainian)</a> · <a href="README.tr.md">🇹🇷&nbsp;Türkçe&nbsp;(Turkish)</a> · <a href="README.az.md">🇦🇿&nbsp;Azərbaycanca&nbsp;(Azerbaijani)</a> · <a href="README.hr.md">🇭🇷&nbsp;Hrvatski&nbsp;(Croatian)</a> · <a href="README.id.md">🇮🇩&nbsp;Bahasa&nbsp;Indonesia&nbsp;(Indonesian)</a> · <a href="README.vi.md">🇻🇳&nbsp;Tiếng&nbsp;Việt&nbsp;(Vietnamese)</a> · <a href="README.th.md">🇹🇭&nbsp;ไทย&nbsp;(Thai)</a> · <a href="README.ja.md">🇯🇵&nbsp;日本語&nbsp;(Japanese)</a> · <a href="README.ko.md">🇰🇷&nbsp;한국어&nbsp;(Korean)</a> · <a href="README.zh-CN.md">🇨🇳&nbsp;简体中文&nbsp;(Chinese&nbsp;Simplified)</a> · <a href="README.zh-TW.md">🇹🇼&nbsp;繁體中文&nbsp;(Chinese&nbsp;Traditional)</a> · <b>🇸🇦&nbsp;العربية&nbsp;(Arabic)</b> · <a href="README.he.md">🇮🇱&nbsp;עברית&nbsp;(Hebrew)</a> · <a href="README.fa.md">🇮🇷&nbsp;فارسی&nbsp;(Persian)</a> · <a href="README.hi.md">🇮🇳&nbsp;हिन्दी&nbsp;(Hindi)</a> · <a href="README.ur.md">🇵🇰&nbsp;اردو&nbsp;(Urdu)</a> · <a href="README.bn.md">🇧🇩&nbsp;বাংলা&nbsp;(Bengali)</a>
 </p>
 
 <p align="center">
@@ -23,98 +23,98 @@
 
 ---
 
-## 📖 Table of Contents
+## 📖 جدول المحتويات
 
-* ➤ Installation
-* ➤ Creating your first group
-* ➤ Screen/Window Documentation
-  * Main Screen
-  * Group Creation Screen
-  * Extra Notes
-* ➤ Image/Icon Caching
-* ➤ Program Shortcuts
-* ➤ Folder Structure
-* ➤ Recent Updates
-* ➤ License
-
----
-
-## 🔽 How to download Taskbar Groups
-1. Download the `.zip` file from the latest release (link above)
-2. Unpack the `.zip` file at a desired location
-3. Run `TaskbarGroups.exe` in the extracted folder
+* ➤ التثبيت
+* ➤ إنشاء مجموعتك الأولى
+* ➤ توثيق النوافذ
+  * الشاشة الرئيسية
+  * شاشة إنشاء المجموعة
+  * ملاحظات إضافية
+* ➤ تخزين الأيقونات المؤقت
+* ➤ اختصارات لوحة المفاتيح
+* ➤ بنية المجلدات
+* ➤ التحديثات الأخيرة
+* ➤ الترخيص
 
 ---
 
-## 🛠️ Creating your first group
-1. Click **"Add taskbar group"**
-2. Give the group a name and select an icon
-3. Click **"Add new shortcut"** and select `.exe` or `.lnk` files (or drag and drop `.exe`, `.lnk`, or folders into the shortcut area)
-4. Save the group
-5. Left-click on the group card to open the `Shortcuts` folder with your group shortcut selected
-6. Right-click the highlighted shortcut and select **"Pin to taskbar"**
+## 🔽 كيفية تنزيل Taskbar Groups
+1. قم بتنزيل ملف `.zip` من أحدث إصدار (الرابط أعلاه)
+2. فك ضغط ملف `.zip` في المجلد الذي تريده
+3. شغّل ملف `TaskbarGroups.exe` داخل المجلد المستخرج
 
 ---
 
-## 🖥️ Screen/Window Documentation
-Below is documentation for each window and its components.
-
-#### Main Screen
-![Group overview screen](images/main-screen.png)
-Here is the main group configuration screen opened when launching `TaskbarGroups.exe`. You can create, import, search, sort, preview, edit, clone, export, or delete groups, and switch the UI language (26 languages supported).
-
-#### Group Creation Screen
-![Group creation screen](images/group-screen.png)
-Here is the group creation/editing screen where you configure your group:
-
-* **Name the new group** — Insert any group name (including Unicode/Cyrillic characters, up to 49 characters).
-* **Width** — Sets how many shortcuts appear per row (e.g., 12 shortcuts with width 6 displays 2 rows of 6).
-* **Change Group Icon** — Click (+) or drag and drop `.png`, `.jpg`, `.ico`, `.exe`, or `.lnk` files to set the group icon.
-* **Add new shortcuts** — Click (+) or drag and drop `.exe`, `.lnk`, `.url`, or folders. Supports Windows Store apps and Steam games.
-* **Allow open-all shortcuts** — Enables launching every shortcut in the group at once using `Ctrl + Enter`.
-* **Activate running window on click** — Switches to an already running window of the app instead of opening a new instance.
-* **Show names / Icon size** — Optionally display shortcut labels under icons and choose between *Compact*, *Medium*, or *Large* icon sizes.
-* **Working Directory, Executable Path & Arguments** — Select any shortcut item to edit its executable path (helpful when an app moves to a new folder on update), working directory, launch arguments, or custom icon (including extracting icons from `.exe`/`.dll` files).
-* **Background Color & Opacity** — Choose Dark, Light, or Custom color and set transparency from 0% to 100%.
-
-#### Extra Notes
-For executables, icons are extracted directly. For `.lnk` shortcuts and Microsoft Store apps, the app resolves either the target icon or the Store app package icon automatically.
+## 🛠️ إنشاء مجموعتك الأولى
+1. انقر على **"إضافة مجموعة"**
+2. أدخل اسماً للمجموعة واختر أيقونة
+3. انقر على **"إضافة اختصار"** واختر ملفات `.exe` أو `.lnk` (أو اسحبها وأفلتها)
+4. احفظ المجموعة
+5. انقر بزر الماوس الأيسر على بطاقة المجموعة لفتح مجلد `Shortcuts`
+6. انقر بزر الماوس الأيمن على الاختصار المحدد واختر **"تثبيت على شريط المهام"**
 
 ---
 
-## 📦 Image/Icon Caching
-Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` so the launch popup opens instantaneously without re-extracting icons each time. Saving a group regenerates its icon cache.
+## 🖥️ توثيق النوافذ
+فيما يلي شرح لكل نافذة وعناصرها.
+
+#### الشاشة الرئيسية
+![Group overview screen](images/ar/main-screen.png)
+الشاشة الرئيسية التي تظهر عند تشغيل `TaskbarGroups.exe`. يمكنك إنشاء المجموعات واستيرادها والبحث فيها وفرزها ومعاينتها وتعديلها واستنساخها وتصديرها وحذفها وتبديل لغة الواجهة (26 لغة).
+
+#### شاشة إنشاء المجموعة
+![Group creation screen](images/ar/group-screen.png)
+في شاشة إنشاء وتعديل المجموعة يمكنك ضبط الإعدادات التالية:
+
+* **اسم المجموعة** — أي اسم تريده (يدعم Unicode والأحرف العربية والروسية، حتى 49 حرفاً).
+* **العرض** — يحدد عدد الاختصارات في كل صف.
+* **تغيير أيقونة المجموعة** — انقر على (+) أو اسحب ملفات `.png` أو `.jpg` أو `.ico` أو `.exe` أو `.lnk`.
+* **إضافة اختصار** — يدعم `.exe` و`.lnk` و`.url` والمجلدات وتطبيقات Microsoft Store وألعاب Steam.
+* **فتح جميع الاختصارات دفعة واحدة** — يسمح بتشغيل جميع اختصارات المجموعة معاً عبر `Ctrl + Enter`.
+* **تنشيط النافذة قيد التشغيل** — ينتقل إلى النافذة المفتوحة بالفعل بدلاً من فتح نسخة جديدة.
+* **إظهار التسميات / حجم الأيقونة** — تسميات اختيارية وأحجام *مضغوط* أو *متوسط* أو *كبير*.
+* **دليل العمل، مسار الملف والوسائط** — تعديل مسار الملف التنفيذي (مفيد عند انتقال البرنامج لمجلد جديد بعد التحديث)، دليل العمل، وسائط التشغيل، والأيقونة المخصصة (بما في ذلك الاستخراج من `.exe`/`.dll`).
+* **لون الخلفية والشفافية** — داكن أو فاتح أو مخصص مع شفافية من 0% إلى 100%.
+
+#### ملاحظات إضافية
+تُستخرج الأيقونات من ملفات `.exe` مباشرة؛ أما `.lnk` وتطبيقات Microsoft Store فيتم التعرف عليها تلقائياً.
 
 ---
 
-## ⌨️ Program Shortcuts
-* **Number keys `1`–`9`, `0`** — Launches the shortcut at position 1–10.
-* **Arrow keys / `Enter` / `Esc`** — Navigate between shortcuts, launch the selected one, or close the popup.
-* **`Ctrl + Enter`** — Opens all shortcuts in the group at once (when enabled in group settings).
-* **Right-click on a shortcut** — Opens a context menu: *Switch to window*, *Close window*, *Open new instance*, *Run as administrator*, *Open file location*.
+## 📦 تخزين الأيقونات المؤقت
+تُحفظ الأيقونات مؤقتاً في `/config/<اسم_المجموعة>/Icons` لفتح القائمة فوراً. حفظ المجموعة يعيد إنشاء الذاكرة المؤقتة.
 
 ---
 
-## 📁 Folder Structure Documentation
-* **`/config`** — Stores configuration folders for each created group.
-* **`/config/<Group_Name>/Icons`** — Local icon cache for all shortcuts in the group.
-* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — Generated icon files for the group shortcut.
-* **`/config/<Group_Name>/ObjectData.xml`** — XML configuration storing shortcuts, appearance, and behavior settings.
-* **`/config/lang.txt`** — Stores the selected UI language code.
-* **`/JITComp`** — Stores compiled profile optimization data for faster startup.
-* **`/Shortcuts`** — Contains generated `.lnk` shortcuts for pinning groups to the Windows taskbar.
+## ⌨️ اختصارات لوحة المفاتيح
+* **مفاتيح الأرقام `1`–`9`، `0`** — تشغيل الاختصار في الموضع 1–10.
+* **الأسهم / `Enter` / `Esc`** — التنقل أو التشغيل أو إغلاق القائمة.
+* **`Ctrl + Enter`** — فتح جميع اختصارات المجموعة دفعة واحدة (عند التفعيل).
+* **النقر بزر الماوس الأيمن على اختصار** — قائمة سياقية: *التبديل إلى النافذة*، *إغلاق النافذة*، *فتح نسخة جديدة*، *تشغيل كمسؤول*، *فتح موقع الملف*.
 
 ---
 
-## ✨ Recent Updates
-* **Localization (26 Languages)**: Added full UI localization and a language selector in the main window, plus synchronized READMEs in all 26 languages.
-* **Launch Panel (`frmMain`)**: Added tooltips, running-app detection, *Activate running window* option, right-click context menu, configurable icon sizes (*Compact*, *Medium*, *Large*), shortcut labels, Windows 11 rounded corners, and keyboard navigation.
-* **Group Editor (`frmGroup`)**: Added drag-and-drop shortcut reordering with auto-scroll, executable path editing (with automatic working directory update), custom icon picker for `.exe`/`.dll`/images, and Unicode/Cyrillic group name support.
-* **Main Window (`frmClient`)**: Fixed layout with independent scrolling, search & sorting, modern buttons, **Preview**, **Clone**, **Export**/**Import** (`.tgroup`/`.zip`), quick **Delete**, responsive multi-row icon wrapping inside group cards (no hidden icons), and 2D drag-and-drop icon reordering.
+## 📁 بنية المجلدات
+* **`/config`** — يحتوي على مجلدات الإعدادات لكل مجموعة.
+* **`/config/<Group_Name>/Icons`** — الذاكرة المؤقتة المحلية لأيقونات المجموعة.
+* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — ملفات الأيقونة المنشأة للمجموعة.
+* **`/config/<Group_Name>/ObjectData.xml`** — ملف XML يحفظ الاختصارات وإعدادات المجموعة.
+* **`/config/lang.txt`** — يحفظ رمز لغة الواجهة المحددة.
+* **`/JITComp`** — ملفات تعريف مترجمة لتسريع بدء التشغيل.
+* **`/Shortcuts`** — اختصارات `.lnk` المنشأة للتثبيت على شريط مهام Windows.
 
 ---
 
-## 📜 License
-This project is licensed under the [MIT License](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
+## ✨ التحديثات الأخيرة
+* **التعريب والترجمة (26 لغة)**: ترجمة كاملة للواجهة مع محدد لغة في النافذة الرئيسية وملفات README متزامنة بـ 26 لغة.
+* **لوحة التشغيل (`frmMain`)**: تلميحات الأدوات، اكتشاف التطبيقات النشطة، تنشيط النافذة المفتوحة، قائمة السياق، أحجام الأيقونات، التسميات، زوايا Windows 11 الدائرية والتنقل بلوحة المفاتيح.
+* **محرر المجموعة (`frmGroup`)**: إعادة الترتيب بالسحب والإفلات مع التمرير التلقائي، تعديل مسار الملف التنفيذي، منتقي أيقونات `.exe`/`.dll`/الصور ودعم Unicode.
+* **النافذة الرئيسية (`frmClient`)**: تخطيط ثابت، بحث وفرز، معاينة، استنساخ، تصدير/استيراد (`.tgroup`/`.zip`)، حذف سريع، التفاف تلقائي للأيقونات على عدة أسطر حسب حجم النافذة وإعادة الترتيب بالسحب والإفلات داخل البطاقة.
+
+---
+
+## 📜 الترخيص
+هذا المشروع مرخص بموجب [رخصة MIT](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
 
 ---

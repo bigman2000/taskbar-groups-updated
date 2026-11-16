@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="../README.md">🇬🇧 English</a> · <a href="README.de.md">🇩🇪 Deutsch</a> · <a href="README.es.md">🇪🇸 Español</a> · <a href="README.fr.md">🇫🇷 Français</a> · <a href="README.it.md">🇮🇹 Italiano</a> · <a href="README.nl.md">🇳🇱 Nederlands</a> · <a href="README.pl.md">🇵🇱 Polski</a> · <a href="README.pt-BR.md">🇧🇷 Português (Brasil)</a> · <a href="README.ru.md">🇷🇺 Русский</a> · <a href="README.uk.md">🇺🇦 Українська</a> · <a href="README.tr.md">🇹🇷 Türkçe</a> · <b>🇦🇿 Azərbaycanca</b> · <a href="README.hr.md">🇭🇷 Hrvatski</a> · <a href="README.id.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.vi.md">🇻🇳 Tiếng Việt</a> · <a href="README.th.md">🇹🇭 ไทย</a> · <a href="README.ja.md">🇯🇵 日本語</a> · <a href="README.ko.md">🇰🇷 한국어</a> · <a href="README.zh-CN.md">🇨🇳 简体中文</a> · <a href="README.zh-TW.md">🇹🇼 繁體中文</a> · <a href="README.ar.md">🇸🇦 العربية</a> · <a href="README.he.md">🇮🇱 עברית</a> · <a href="README.fa.md">🇮🇷 فارسی</a> · <a href="README.hi.md">🇮🇳 हिन्दी</a> · <a href="README.ur.md">🇵🇰 اردو</a> · <a href="README.bn.md">🇧🇩 বাংলা</a>
+  <a href="../README.md">🇬🇧&nbsp;English</a> · <a href="README.de.md">🇩🇪&nbsp;Deutsch&nbsp;(German)</a> · <a href="README.es.md">🇪🇸&nbsp;Español&nbsp;(Spanish)</a> · <a href="README.fr.md">🇫🇷&nbsp;Français&nbsp;(French)</a> · <a href="README.it.md">🇮🇹&nbsp;Italiano&nbsp;(Italian)</a> · <a href="README.nl.md">🇳🇱&nbsp;Nederlands&nbsp;(Dutch)</a> · <a href="README.pl.md">🇵🇱&nbsp;Polski&nbsp;(Polish)</a> · <a href="README.pt-BR.md">🇧🇷&nbsp;Português&nbsp;(Brasil)&nbsp;(Portuguese)</a> · <a href="README.ru.md">🇷🇺&nbsp;Русский&nbsp;(Russian)</a> · <a href="README.uk.md">🇺🇦&nbsp;Українська&nbsp;(Ukrainian)</a> · <a href="README.tr.md">🇹🇷&nbsp;Türkçe&nbsp;(Turkish)</a> · <b>🇦🇿&nbsp;Azərbaycanca&nbsp;(Azerbaijani)</b> · <a href="README.hr.md">🇭🇷&nbsp;Hrvatski&nbsp;(Croatian)</a> · <a href="README.id.md">🇮🇩&nbsp;Bahasa&nbsp;Indonesia&nbsp;(Indonesian)</a> · <a href="README.vi.md">🇻🇳&nbsp;Tiếng&nbsp;Việt&nbsp;(Vietnamese)</a> · <a href="README.th.md">🇹🇭&nbsp;ไทย&nbsp;(Thai)</a> · <a href="README.ja.md">🇯🇵&nbsp;日本語&nbsp;(Japanese)</a> · <a href="README.ko.md">🇰🇷&nbsp;한국어&nbsp;(Korean)</a> · <a href="README.zh-CN.md">🇨🇳&nbsp;简体中文&nbsp;(Chinese&nbsp;Simplified)</a> · <a href="README.zh-TW.md">🇹🇼&nbsp;繁體中文&nbsp;(Chinese&nbsp;Traditional)</a> · <a href="README.ar.md">🇸🇦&nbsp;العربية&nbsp;(Arabic)</a> · <a href="README.he.md">🇮🇱&nbsp;עברית&nbsp;(Hebrew)</a> · <a href="README.fa.md">🇮🇷&nbsp;فارسی&nbsp;(Persian)</a> · <a href="README.hi.md">🇮🇳&nbsp;हिन्दी&nbsp;(Hindi)</a> · <a href="README.ur.md">🇵🇰&nbsp;اردو&nbsp;(Urdu)</a> · <a href="README.bn.md">🇧🇩&nbsp;বাংলা&nbsp;(Bengali)</a>
 </p>
 
 <p align="center">
@@ -23,98 +23,98 @@
 
 ---
 
-## 📖 Table of Contents
+## 📖 Mündəricat
 
-* ➤ Installation
-* ➤ Creating your first group
-* ➤ Screen/Window Documentation
-  * Main Screen
-  * Group Creation Screen
-  * Extra Notes
-* ➤ Image/Icon Caching
-* ➤ Program Shortcuts
-* ➤ Folder Structure
-* ➤ Recent Updates
-* ➤ License
-
----
-
-## 🔽 How to download Taskbar Groups
-1. Download the `.zip` file from the latest release (link above)
-2. Unpack the `.zip` file at a desired location
-3. Run `TaskbarGroups.exe` in the extracted folder
+* ➤ Quraşdırma
+* ➤ İlk qrupun yaradılması
+* ➤ Pəncərələrin sənədləşməsi
+  * Əsas pəncərə
+  * Qrup redaktoru
+  * Əlavə qeydlər
+* ➤ İkonların keşlənməsi
+* ➤ Qısayol düymələri
+* ➤ Qovluq strukturu
+* ➤ Son yeniliklər
+* ➤ Lisenziya
 
 ---
 
-## 🛠️ Creating your first group
-1. Click **"Add taskbar group"**
-2. Give the group a name and select an icon
-3. Click **"Add new shortcut"** and select `.exe` or `.lnk` files (or drag and drop `.exe`, `.lnk`, or folders into the shortcut area)
-4. Save the group
-5. Left-click on the group card to open the `Shortcuts` folder with your group shortcut selected
-6. Right-click the highlighted shortcut and select **"Pin to taskbar"**
+## 🔽 Taskbar Groups necə yüklənir
+1. Ən son buraxılışdan `.zip` faylını yükləyin (yuxarıdakı keçid)
+2. Arxivi istədiyiniz qovluğa çıxarın
+3. Çıxarılmış qovluqdakı `TaskbarGroups.exe` faylını işə salın
 
 ---
 
-## 🖥️ Screen/Window Documentation
-Below is documentation for each window and its components.
-
-#### Main Screen
-![Group overview screen](images/main-screen.png)
-Here is the main group configuration screen opened when launching `TaskbarGroups.exe`. You can create, import, search, sort, preview, edit, clone, export, or delete groups, and switch the UI language (26 languages supported).
-
-#### Group Creation Screen
-![Group creation screen](images/group-screen.png)
-Here is the group creation/editing screen where you configure your group:
-
-* **Name the new group** — Insert any group name (including Unicode/Cyrillic characters, up to 49 characters).
-* **Width** — Sets how many shortcuts appear per row (e.g., 12 shortcuts with width 6 displays 2 rows of 6).
-* **Change Group Icon** — Click (+) or drag and drop `.png`, `.jpg`, `.ico`, `.exe`, or `.lnk` files to set the group icon.
-* **Add new shortcuts** — Click (+) or drag and drop `.exe`, `.lnk`, `.url`, or folders. Supports Windows Store apps and Steam games.
-* **Allow open-all shortcuts** — Enables launching every shortcut in the group at once using `Ctrl + Enter`.
-* **Activate running window on click** — Switches to an already running window of the app instead of opening a new instance.
-* **Show names / Icon size** — Optionally display shortcut labels under icons and choose between *Compact*, *Medium*, or *Large* icon sizes.
-* **Working Directory, Executable Path & Arguments** — Select any shortcut item to edit its executable path (helpful when an app moves to a new folder on update), working directory, launch arguments, or custom icon (including extracting icons from `.exe`/`.dll` files).
-* **Background Color & Opacity** — Choose Dark, Light, or Custom color and set transparency from 0% to 100%.
-
-#### Extra Notes
-For executables, icons are extracted directly. For `.lnk` shortcuts and Microsoft Store apps, the app resolves either the target icon or the Store app package icon automatically.
+## 🛠️ İlk qrupunuzu yaradın
+1. **"Qrup əlavə et"** düyməsinə klikləyin
+2. Qrupa ad verin və ikon seçin
+3. **"Qısa yol əlavə et"** düyməsinə klikləyin və `.exe` və ya `.lnk` fayllarını seçin (və ya sürükləyib buraxın)
+4. Qrupu yadda saxlayın
+5. `Shortcuts` qovluğunu açmaq üçün qrup kartına sol klikləyin
+6. Seçilmiş qısa yola sağ klikləyin və **"Tapşırıq panelinə bərkit"** seçin
 
 ---
 
-## 📦 Image/Icon Caching
-Icon caching stores extracted icons locally inside `/config/<Group_Name>/Icons` so the launch popup opens instantaneously without re-extracting icons each time. Saving a group regenerates its icon cache.
+## 🖥️ Pəncərələrin sənədləşməsi
+Aşağıda hər bir pəncərə və onun elementləri haqqında məlumat verilir.
+
+#### Əsas pəncərə
+![Group overview screen](images/az/main-screen.png)
+`TaskbarGroups.exe` işə salındıqda açılan əsas pəncərədir. Burada qruplar yarada, idxal edə, axtara, çeşidləyə, önizləyə, redaktə edə, klonlaya, ixrac edə, silə və interfeys dilini dəyişə bilərsiniz (26 dil).
+
+#### Qrup redaktoru
+![Group creation screen](images/az/group-screen.png)
+Qrup yaratma və redaktə pəncərəsində bütün parametrləri tənzimləyə bilərsiniz:
+
+* **Qrup adı** — İstənilən ad (Unicode və kiril əlifbası dəstəklənir, maks. 49 simvol).
+* **Eni** — Hər sətirdə göstəriləcək qısa yolların sayı.
+* **Qrup ikonunu dəyiş** — (+) üzərinə klikləyin və ya `.png`, `.jpg`, `.ico`, `.exe`, `.lnk` faylını sürükləyin.
+* **Qısa yol əlavə et** — `.exe`, `.lnk`, `.url`, qovluqlar, Microsoft Store tətbiqləri və Steam oyunlarını dəstəkləyir.
+* **Hamısını birlikdə aç** — `Ctrl + Enter` ilə qrupdakı bütün qısa yolları eyni anda açmağa imkan verir.
+* **Açıq pəncərəni aktivləşdir** — Yeni nüsxə açmaq əvəzinə artıq işləyən pəncərəyə keçid edir.
+* **Adları göstər / İkon ölçüsü** — İstəyə bağlı ad etiketləri və *Kiçik*, *Orta*, *Böyük* ölçüləri.
+* **İş qovluğu, proqram yolu və arqumentlər** — İcra olunan faylın yolunu (proqram yenilənəndə yeni qovluğa köçdükdə faydalıdır), iş qovluğunu, parametrləri və xüsusi ikonu (`.exe`/`.dll` daxil) tənzimləyin.
+* **Fon rəngi və şəffaflıq** — Tünd, Açıq və ya Fərdi rəng və 0%–100% şəffaflıq.
+
+#### Əlavə qeydlər
+`.exe` fayllarından ikon birbaşa çıxarılır; `.lnk` və Microsoft Store tətbiqləri üçün avtomatik müəyyən edilir.
 
 ---
 
-## ⌨️ Program Shortcuts
-* **Number keys `1`–`9`, `0`** — Launches the shortcut at position 1–10.
-* **Arrow keys / `Enter` / `Esc`** — Navigate between shortcuts, launch the selected one, or close the popup.
-* **`Ctrl + Enter`** — Opens all shortcuts in the group at once (when enabled in group settings).
-* **Right-click on a shortcut** — Opens a context menu: *Switch to window*, *Close window*, *Open new instance*, *Run as administrator*, *Open file location*.
+## 📦 İkonların keşlənməsi
+İkonlar `/config/<Qrup_Adı>/Icons` qovluğunda keşlənir ki, menyu dərhal açılsın. Qrupu yadda saxladıqda keş yenilənir.
 
 ---
 
-## 📁 Folder Structure Documentation
-* **`/config`** — Stores configuration folders for each created group.
-* **`/config/<Group_Name>/Icons`** — Local icon cache for all shortcuts in the group.
-* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — Generated icon files for the group shortcut.
-* **`/config/<Group_Name>/ObjectData.xml`** — XML configuration storing shortcuts, appearance, and behavior settings.
-* **`/config/lang.txt`** — Stores the selected UI language code.
-* **`/JITComp`** — Stores compiled profile optimization data for faster startup.
-* **`/Shortcuts`** — Contains generated `.lnk` shortcuts for pinning groups to the Windows taskbar.
+## ⌨️ Qısayol düymələri
+* **Rəqəm düymələri `1`–`9`, `0`** — 1–10-cu mövqedəki qısa yolu açır.
+* **Ox düymələri / `Enter` / `Esc`** — Naviqasiya, işə salma və ya menyunu bağlama.
+* **`Ctrl + Enter`** — Qrupdakı bütün qısa yolları eyni anda açır (aktivdirsə).
+* **Qısa yola sağ klik** — Kontekst menyusu: *Pəncərəyə keç*, *Pəncərəni bağla*, *Yeni nüsxə aç*, *Administrator kimi işə sal*, *Faylın yerini aç*.
 
 ---
 
-## ✨ Recent Updates
-* **Localization (26 Languages)**: Added full UI localization and a language selector in the main window, plus synchronized READMEs in all 26 languages.
-* **Launch Panel (`frmMain`)**: Added tooltips, running-app detection, *Activate running window* option, right-click context menu, configurable icon sizes (*Compact*, *Medium*, *Large*), shortcut labels, Windows 11 rounded corners, and keyboard navigation.
-* **Group Editor (`frmGroup`)**: Added drag-and-drop shortcut reordering with auto-scroll, executable path editing (with automatic working directory update), custom icon picker for `.exe`/`.dll`/images, and Unicode/Cyrillic group name support.
-* **Main Window (`frmClient`)**: Fixed layout with independent scrolling, search & sorting, modern buttons, **Preview**, **Clone**, **Export**/**Import** (`.tgroup`/`.zip`), quick **Delete**, responsive multi-row icon wrapping inside group cards (no hidden icons), and 2D drag-and-drop icon reordering.
+## 📁 Qovluq strukturu
+* **`/config`** — Yaradılmış bütün qrupların konfiqurasiya qovluqları.
+* **`/config/<Group_Name>/Icons`** — Qrupun lokal ikon keşi.
+* **`/config/<Group_Name>/GroupIcon.ico / GroupImage.png`** — Qrup üçün yaradılmış ikon faylları.
+* **`/config/<Group_Name>/ObjectData.xml`** — Qrup parametrlərini və qısa yolları saxlayan XML faylı.
+* **`/config/lang.txt`** — Seçilmiş interfeys dilinin kodunu saxlayır.
+* **`/JITComp`** — Daha sürətli açılış üçün tərtib edilmiş profillər.
+* **`/Shortcuts`** — Tapşırıq panelinə bərkitmək üçün `.lnk` qısa yolları.
 
 ---
 
-## 📜 License
-This project is licensed under the [MIT License](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE).
+## ✨ Son yeniliklər
+* **Lokallaşdırma (26 dil)**: Əsas pəncərədə dil seçicisi ilə tam interfeys tərcüməsi və 26 dildə sinxronlaşdırılmış README faylları.
+* **Başlatma paneli (`frmMain`)**: İpucları, işləyən tətbiqlərin aşkarlanması, açıq pəncərəni aktivləşdirmə, kontekst menyusu, ikon ölçüləri, etiketlər, Windows 11 yuvarlaq küncləri və klaviatura naviqasiyası.
+* **Qrup redaktoru (`frmGroup`)**: Avtomatik sürüşdürmə ilə sürüklə-burax sıralama, proqram yolunun redaktəsi, `.exe`/`.dll`/şəkillərdən ikon seçimi və Unicode dəstəyi.
+* **Əsas pəncərə (`frmClient`)**: Sabit düzən, axtarış və çeşidləmə, Önizləmə, Klonlama, İxrac/İdxal (`.tgroup`/`.zip`), sürətli Silmə, pəncərə ölçüsünə uyğun çoxsətirli ikon düzülüşü və kart daxilində sürüklə-burax sıralama.
+
+---
+
+## 📜 Lisenziya
+Bu layihə [MIT Lisenziyası](https://github.com/bigman2000/taskbar-groups-updated/blob/master/LICENSE) altında yayımlanır.
 
 ---
