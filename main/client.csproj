@@ -264,4 +264,16 @@
   <PropertyGroup>
     <AllowedReferenceRelatedFileExtensions>Microsoft.WindowsAPICodePack.xml</AllowedReferenceRelatedFileExtensions>
   </PropertyGroup>
+  <Target Name="PrepareVersion" BeforeTargets="BeforeBuild">
+    <PropertyGroup>
+      <_VersionFile>$(MSBuildProjectDirectory)\..\VERSION</_VersionFile>
+      <_GeneratedVersionFile>$(IntermediateOutputPath)GeneratedAssemblyVersion.cs</_GeneratedVersionFile>
+      <_ShouldIncrement Condition="'$(Configuration)' == 'Release' and '$(SkipVersionIncrement)' != 'true' and '$(CI)' != 'true'">true</_ShouldIncrement>
+      <_ShouldIncrement Condition="'$(_ShouldIncrement)' == ''">false</_ShouldIncrement>
+    </PropertyGroup>
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;$q = [char]34; $vf = '$(_VersionFile)'; $gf = '$(_GeneratedVersionFile)'; $inc = [bool]::Parse('$(_ShouldIncrement)'); $v = if (Test-Path $vf) { (Get-Content $vf -Raw).Trim() } else { '0.3.0.0' }; $parts = $v.Split('.'); while ($parts.Count -lt 4) { $parts += '0' }; if ($inc) { $parts[3] = ([int]$parts[3] + 1).ToString(); $v = ($parts[0..3] -join '.'); [System.IO.File]::WriteAllText($vf, $v + [Environment]::NewLine) } else { $v = ($parts[0..3] -join '.') }; $content = '[assembly: System.Reflection.AssemblyVersion(' + $q + $v + $q + ')]' + [Environment]::NewLine + '[assembly: System.Reflection.AssemblyFileVersion(' + $q + $v + $q + ')]' + [Environment]::NewLine; $dir = [System.IO.Path]::GetDirectoryName($gf); if ($dir -and -not (Test-Path $dir)) { New-Item -ItemType Directory -Force -Path $dir | Out-Null }; if (-not (Test-Path $gf) -or (Get-Content $gf -Raw) -ne $content) { [System.IO.File]::WriteAllText($gf, $content) }&quot;" />
+    <ItemGroup>
+      <Compile Include="$(_GeneratedVersionFile)" />
+    </ItemGroup>
+  </Target>
 </Project>
