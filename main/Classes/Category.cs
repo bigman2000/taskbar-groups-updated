@@ -127,7 +127,7 @@ namespace client.Classes
             // Tricks Windows to think they are from different applications even though they are from the same .exe
             ShellLink.InstallShortcut(
                 Path.GetFullPath(@System.AppDomain.CurrentDomain.FriendlyName),
-                "tjackenpacken.taskbarGroup.menu." + this.Name,
+                "bigman2000.taskbarGroupUpdated.menu." + this.Name,
                  path + " shortcut",
                  Path.GetFullPath(@path),
                  Path.GetFullPath(path + @"\GroupIcon.ico"),

@@ -45,7 +45,7 @@ namespace client.User_controls
             picGroupIcon.BackgroundImage = Category.LoadIconImage();
 
             cmdPreview.Text = Localization.T("btn_preview");
-            cmdDelete.Text = Localization.T("btn_edit_group");
+            cmdEditGroup.Text = Localization.T("btn_edit_group");
             cmdClone.Text = Localization.T("btn_clone");
             cmdExport.Text = Localization.T("btn_export");
             cmdRemove.Text = Localization.T("btn_delete");
@@ -317,7 +317,7 @@ namespace client.User_controls
             previewForm.Activate();
         }
 
-        private void cmdDelete_Click(object sender, EventArgs e)
+        private void cmdEditGroup_Click(object sender, EventArgs e)
         {
             frmGroup editGroup = new frmGroup(Client, Category);
             editGroup.Show();
@@ -360,7 +360,7 @@ namespace client.User_controls
                 string finalLnk = Path.GetFullPath(Path.Combine(MainPath.path, "Shortcuts", shortcutDisplayName + ".lnk"));
                 ShellLink.InstallShortcut(
                     Path.GetFullPath(AppDomain.CurrentDomain.FriendlyName),
-                    "tjackenpacken.taskbarGroup.menu." + newName,
+                    "bigman2000.taskbarGroupUpdated.menu." + newName,
                     targetDir + " shortcut",
                     Path.GetFullPath(targetDir),
                     Path.GetFullPath(Path.Combine(targetDir, "GroupIcon.ico")),

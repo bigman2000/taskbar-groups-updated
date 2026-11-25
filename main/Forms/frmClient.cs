@@ -54,16 +54,16 @@ namespace client.Forms
         public void ApplyLocalization()
         {
             this.Text = Localization.T("app_title");
-            label1.Text = Localization.T("app_title");
-            label2.Text = Localization.T("app_subtitle");
-            label3.Text = Localization.T("help_when_opens");
+            lblAppTitle.Text = Localization.T("app_title");
+            lblAppSubtitle.Text = Localization.T("app_subtitle");
+            lblHelpWhenOpens.Text = Localization.T("help_when_opens");
             lblHelp1.Text = Localization.T("help_step1");
             lblHelp2.Text = Localization.T("help_step2");
             lblHelp3.Text = Localization.T("help_step3");
-            label4.Text = Localization.T("issues_title");
-            label5.Text = Localization.T("issues_prompt");
+            lblIssuesTitle.Text = Localization.T("issues_title");
+            lblIssuesPrompt.Text = Localization.T("issues_prompt");
             githubLink.Text = Localization.T("issues_link");
-            label6.Text = Localization.T("current_version");
+            lblCurrentVersion.Text = Localization.T("current_version");
             githubLabel.Text = Localization.T("latest_version");
             if (latestVersionStatusKey != null)
                 githubVersion.Text = Localization.T(latestVersionStatusKey);
@@ -315,7 +315,7 @@ namespace client.Forms
                 string finalLnk = Path.GetFullPath(Path.Combine(MainPath.path, "Shortcuts", shortcutDisplayName + ".lnk"));
                 ShellLink.InstallShortcut(
                     Path.GetFullPath(AppDomain.CurrentDomain.FriendlyName),
-                    "tjackenpacken.taskbarGroup.menu." + finalName,
+                    "bigman2000.taskbarGroupUpdated.menu." + finalName,
                     targetDir + " shortcut",
                     Path.GetFullPath(targetDir),
                     Path.GetFullPath(Path.Combine(targetDir, "GroupIcon.ico")),

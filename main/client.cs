@@ -1,4 +1,4 @@
-﻿using client.Forms;
+using client.Forms;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -68,15 +68,15 @@ namespace client
 
             if (arguments.Length > 1) // Checks for additional arguments; opens either main application or taskbar drawer application
             {
-                // Sets the AppUserModelID to tjackenpacken.taskbarGroup.menu.groupName
+                // Sets the AppUserModelID to bigman2000.taskbarGroupUpdated.menu.groupName
                 // Distinguishes each shortcut process from one another to prevent them from stacking with the main application
-                SetCurrentProcessExplicitAppUserModelID("tjackenpacken.taskbarGroup.menu."+ arguments[1]);
+                SetCurrentProcessExplicitAppUserModelID("bigman2000.taskbarGroupUpdated.menu." + arguments[1]);
 
                 Application.Run(new frmMain(arguments[1], cursorX, cursorY));
             } else
             {
                 // See comment above
-                SetCurrentProcessExplicitAppUserModelID("tjackenpacken.taskbarGroup.main");
+                SetCurrentProcessExplicitAppUserModelID("bigman2000.taskbarGroupUpdated.main");
                 Application.Run(new frmClient());
             }
         }

@@ -1,4 +1,4 @@
-namespace client.Forms
+﻿namespace client.Forms
 {
     partial class frmGroup
     {
@@ -29,7 +29,7 @@ namespace client.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGroup));
-            this.lblWith = new System.Windows.Forms.Label();
+            this.lblWidth = new System.Windows.Forms.Label();
             this.lblErrorNum = new System.Windows.Forms.Label();
             this.lblNum = new System.Windows.Forms.Label();
             this.lblErrorIcon = new System.Windows.Forms.Label();
@@ -41,8 +41,8 @@ namespace client.Forms
             this.cmdAddGroupIcon = new System.Windows.Forms.PictureBox();
             this.lblAddGroupIcon = new System.Windows.Forms.Label();
             this.lblAddGroupIconDesc = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblShortcutsDivider = new System.Windows.Forms.Label();
+            this.lblGroupNameLine = new System.Windows.Forms.Label();
             this.txtGroupName = new System.Windows.Forms.TextBox();
             this.pnlAddShortcut = new System.Windows.Forms.Panel();
             this.cmdAddShortcut = new System.Windows.Forms.PictureBox();
@@ -59,7 +59,7 @@ namespace client.Forms
             this.pnlAllowOpenAll = new System.Windows.Forms.CheckBox();
             this.lblOpacityTooltip = new System.Windows.Forms.Label();
             this.lblOpacity = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblOpacityLine = new System.Windows.Forms.Label();
             this.pnlCustomColor = new System.Windows.Forms.Panel();
             this.radioCustom = new System.Windows.Forms.RadioButton();
             this.radioDark = new System.Windows.Forms.RadioButton();
@@ -74,12 +74,12 @@ namespace client.Forms
             this.picShortcutIcon = new System.Windows.Forms.PictureBox();
             this.cmdSelectShortcutIcon = new System.Windows.Forms.Button();
             this.cmdResetShortcutIcon = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblArgumentsLine = new System.Windows.Forms.Label();
+            this.lblWorkingDirectoryLine = new System.Windows.Forms.Label();
             this.cmdSelectDirectory = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblWorkingDirectory = new System.Windows.Forms.Label();
             this.pnlWorkingDirectory = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblArguments = new System.Windows.Forms.Label();
             this.pnlArgumentTextbox = new System.Windows.Forms.TextBox();
             this.lblShortcutPath = new System.Windows.Forms.Label();
             this.pnlShortcutPath = new System.Windows.Forms.TextBox();
@@ -95,17 +95,17 @@ namespace client.Forms
             ((System.ComponentModel.ISupportInitialize)(this.picShortcutIcon)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblWith
+            // lblWidth
             // 
-            this.lblWith.AutoSize = true;
-            this.lblWith.BackColor = System.Drawing.Color.Transparent;
-            this.lblWith.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.lblWith.ForeColor = System.Drawing.Color.White;
-            this.lblWith.Location = new System.Drawing.Point(447, 23);
-            this.lblWith.Name = "lblWith";
-            this.lblWith.Size = new System.Drawing.Size(64, 25);
-            this.lblWith.TabIndex = 40;
-            this.lblWith.Text = "Width:";
+            this.lblWidth.AutoSize = true;
+            this.lblWidth.BackColor = System.Drawing.Color.Transparent;
+            this.lblWidth.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lblWidth.ForeColor = System.Drawing.Color.White;
+            this.lblWidth.Location = new System.Drawing.Point(447, 23);
+            this.lblWidth.Name = "lblWidth";
+            this.lblWidth.Size = new System.Drawing.Size(64, 25);
+            this.lblWidth.TabIndex = 40;
+            this.lblWidth.Text = "Width:";
             // 
             // lblErrorNum
             // 
@@ -258,25 +258,25 @@ namespace client.Forms
             this.lblAddGroupIconDesc.MouseEnter += new System.EventHandler(this.pnlGroupIcon_MouseEnter);
             this.lblAddGroupIconDesc.MouseLeave += new System.EventHandler(this.pnlGroupIcon_MouseLeave);
             // 
-            // label4
+            // lblShortcutsDivider
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label4.Location = new System.Drawing.Point(45, 182);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(500, 1);
-            this.label4.TabIndex = 32;
+            this.lblShortcutsDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblShortcutsDivider.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShortcutsDivider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblShortcutsDivider.Location = new System.Drawing.Point(45, 182);
+            this.lblShortcutsDivider.Name = "lblShortcutsDivider";
+            this.lblShortcutsDivider.Size = new System.Drawing.Size(500, 1);
+            this.lblShortcutsDivider.TabIndex = 32;
             // 
-            // label2
+            // lblGroupNameLine
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label2.Location = new System.Drawing.Point(45, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(500, 1);
-            this.label2.TabIndex = 31;
+            this.lblGroupNameLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblGroupNameLine.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGroupNameLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblGroupNameLine.Location = new System.Drawing.Point(45, 69);
+            this.lblGroupNameLine.Name = "lblGroupNameLine";
+            this.lblGroupNameLine.Size = new System.Drawing.Size(500, 1);
+            this.lblGroupNameLine.TabIndex = 31;
             // 
             // txtGroupName
             // 
@@ -364,7 +364,7 @@ namespace client.Forms
             this.pnlColor.Controls.Add(this.pnlAllowOpenAll);
             this.pnlColor.Controls.Add(this.lblOpacityTooltip);
             this.pnlColor.Controls.Add(this.lblOpacity);
-            this.pnlColor.Controls.Add(this.label1);
+            this.pnlColor.Controls.Add(this.lblOpacityLine);
             this.pnlColor.Controls.Add(this.pnlCustomColor);
             this.pnlColor.Controls.Add(this.radioCustom);
             this.pnlColor.Controls.Add(this.radioDark);
@@ -503,15 +503,15 @@ namespace client.Forms
             this.lblOpacity.Text = "10";
             this.lblOpacity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // lblOpacityLine
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label1.Location = new System.Drawing.Point(189, 122);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 1);
-            this.label1.TabIndex = 49;
+            this.lblOpacityLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblOpacityLine.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpacityLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblOpacityLine.Location = new System.Drawing.Point(189, 122);
+            this.lblOpacityLine.Name = "lblOpacityLine";
+            this.lblOpacityLine.Size = new System.Drawing.Size(45, 1);
+            this.lblOpacityLine.TabIndex = 49;
             // 
             // pnlCustomColor
             // 
@@ -622,12 +622,12 @@ namespace client.Forms
             this.pnlArguments.Controls.Add(this.picShortcutIcon);
             this.pnlArguments.Controls.Add(this.cmdSelectShortcutIcon);
             this.pnlArguments.Controls.Add(this.cmdResetShortcutIcon);
-            this.pnlArguments.Controls.Add(this.label7);
-            this.pnlArguments.Controls.Add(this.label6);
+            this.pnlArguments.Controls.Add(this.lblArgumentsLine);
+            this.pnlArguments.Controls.Add(this.lblWorkingDirectoryLine);
             this.pnlArguments.Controls.Add(this.cmdSelectDirectory);
-            this.pnlArguments.Controls.Add(this.label5);
+            this.pnlArguments.Controls.Add(this.lblWorkingDirectory);
             this.pnlArguments.Controls.Add(this.pnlWorkingDirectory);
-            this.pnlArguments.Controls.Add(this.label3);
+            this.pnlArguments.Controls.Add(this.lblArguments);
             this.pnlArguments.Controls.Add(this.pnlArgumentTextbox);
             this.pnlArguments.Controls.Add(this.lblShortcutPath);
             this.pnlArguments.Controls.Add(this.pnlShortcutPath);
@@ -691,25 +691,25 @@ namespace client.Forms
             this.cmdResetShortcutIcon.Visible = false;
             this.cmdResetShortcutIcon.Click += new System.EventHandler(this.cmdResetShortcutIcon_Click);
             // 
-            // label7
+            // lblArgumentsLine
             // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label7.Location = new System.Drawing.Point(26, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(440, 1);
-            this.label7.TabIndex = 53;
+            this.lblArgumentsLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblArgumentsLine.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArgumentsLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblArgumentsLine.Location = new System.Drawing.Point(26, 48);
+            this.lblArgumentsLine.Name = "lblArgumentsLine";
+            this.lblArgumentsLine.Size = new System.Drawing.Size(440, 1);
+            this.lblArgumentsLine.TabIndex = 53;
             // 
-            // label6
+            // lblWorkingDirectoryLine
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label6.Location = new System.Drawing.Point(26, 138);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(335, 1);
-            this.label6.TabIndex = 50;
+            this.lblWorkingDirectoryLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblWorkingDirectoryLine.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorkingDirectoryLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblWorkingDirectoryLine.Location = new System.Drawing.Point(26, 138);
+            this.lblWorkingDirectoryLine.Name = "lblWorkingDirectoryLine";
+            this.lblWorkingDirectoryLine.Size = new System.Drawing.Size(335, 1);
+            this.lblWorkingDirectoryLine.TabIndex = 50;
             // 
             // cmdSelectDirectory
             // 
@@ -726,16 +726,16 @@ namespace client.Forms
             this.cmdSelectDirectory.UseVisualStyleBackColor = false;
             this.cmdSelectDirectory.Click += new System.EventHandler(this.cmdSelectDirectory_Click);
             // 
-            // label5
+            // lblWorkingDirectory
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(23, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 20);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "Working Directory:";
+            this.lblWorkingDirectory.AutoSize = true;
+            this.lblWorkingDirectory.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblWorkingDirectory.ForeColor = System.Drawing.Color.White;
+            this.lblWorkingDirectory.Location = new System.Drawing.Point(23, 98);
+            this.lblWorkingDirectory.Name = "lblWorkingDirectory";
+            this.lblWorkingDirectory.Size = new System.Drawing.Size(132, 20);
+            this.lblWorkingDirectory.TabIndex = 51;
+            this.lblWorkingDirectory.Text = "Working Directory:";
             // 
             // pnlWorkingDirectory
             // 
@@ -750,16 +750,16 @@ namespace client.Forms
             this.pnlWorkingDirectory.TabIndex = 50;
             this.pnlWorkingDirectory.TextChanged += new System.EventHandler(this.pnlWorkingDirectory_TextChanged);
             // 
-            // label3
+            // lblArguments
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(23, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Arguments:";
+            this.lblArguments.AutoSize = true;
+            this.lblArguments.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblArguments.ForeColor = System.Drawing.Color.White;
+            this.lblArguments.Location = new System.Drawing.Point(23, 8);
+            this.lblArguments.Name = "lblArguments";
+            this.lblArguments.Size = new System.Drawing.Size(84, 20);
+            this.lblArguments.TabIndex = 1;
+            this.lblArguments.Text = "Arguments:";
             // 
             // pnlArgumentTextbox
             // 
@@ -836,7 +836,7 @@ namespace client.Forms
             this.Controls.Add(this.pnlEnd);
             this.Controls.Add(this.pnlAddShortcut);
             this.Controls.Add(this.pnlColor);
-            this.Controls.Add(this.lblWith);
+            this.Controls.Add(this.lblWidth);
             this.Controls.Add(this.lblErrorNum);
             this.Controls.Add(this.cmdWidthDown);
             this.Controls.Add(this.lblNum);
@@ -844,9 +844,9 @@ namespace client.Forms
             this.Controls.Add(this.lblErrorTitle);
             this.Controls.Add(this.pnlShortcuts);
             this.Controls.Add(this.pnlGroupIcon);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblShortcutsDivider);
             this.Controls.Add(this.cmdWidthUp);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblGroupNameLine);
             this.Controls.Add(this.txtGroupName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGroup";
@@ -873,7 +873,7 @@ namespace client.Forms
 
         #endregion
 
-        private System.Windows.Forms.Label lblWith;
+        private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.Label lblErrorNum;
         private System.Windows.Forms.Button cmdWidthDown;
         private System.Windows.Forms.Label lblNum;
@@ -886,9 +886,9 @@ namespace client.Forms
         private System.Windows.Forms.PictureBox cmdAddGroupIcon;
         private System.Windows.Forms.Label lblAddGroupIcon;
         private System.Windows.Forms.Label lblAddGroupIconDesc;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblShortcutsDivider;
         private System.Windows.Forms.Button cmdWidthUp;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblGroupNameLine;
         private System.Windows.Forms.TextBox txtGroupName;
         private System.Windows.Forms.Panel pnlAddShortcut;
         private System.Windows.Forms.Label lblErrorShortcut;
@@ -903,20 +903,20 @@ namespace client.Forms
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.Panel pnlCustomColor;
         private System.Windows.Forms.Label lblOpacityTooltip;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblOpacityLine;
         private System.Windows.Forms.Label lblPercent;
         private System.Windows.Forms.Label lblOpacity;
         private System.Windows.Forms.Button numOpacDown;
         private System.Windows.Forms.Button numOpacUp;
         private System.Windows.Forms.Panel pnlArguments;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblArguments;
         private System.Windows.Forms.TextBox pnlArgumentTextbox;
         private System.Windows.Forms.CheckBox pnlAllowOpenAll;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblWorkingDirectory;
         private System.Windows.Forms.TextBox pnlWorkingDirectory;
         private System.Windows.Forms.Button cmdSelectDirectory;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblWorkingDirectoryLine;
+        private System.Windows.Forms.Label lblArgumentsLine;
         private System.Windows.Forms.Label lblShortcutIcon;
         private System.Windows.Forms.PictureBox picShortcutIcon;
         private System.Windows.Forms.Button cmdSelectShortcutIcon;

@@ -1,4 +1,4 @@
-namespace client.Forms
+﻿namespace client.Forms
 {
     partial class frmClient
     {
@@ -20,15 +20,15 @@ namespace client.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClient));
             this.pnlLeftColumn = new System.Windows.Forms.Panel();
             this.pnlVersionInfo = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblCurrentVersion = new System.Windows.Forms.Label();
             this.currentVersion = new System.Windows.Forms.Label();
             this.githubVersion = new System.Windows.Forms.LinkLabel();
             this.githubLink = new System.Windows.Forms.LinkLabel();
             this.githubLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblIssuesTitle = new System.Windows.Forms.Label();
+            this.lblIssuesPrompt = new System.Windows.Forms.Label();
             this.pnlHelp = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblHelpWhenOpens = new System.Windows.Forms.Label();
             this.lblHelp1 = new System.Windows.Forms.Label();
             this.lblHelp3 = new System.Windows.Forms.Label();
             this.lblHelp2 = new System.Windows.Forms.Label();
@@ -39,21 +39,21 @@ namespace client.Forms
             this.pnlBottomMain = new System.Windows.Forms.Panel();
             this.cmdAddGroupBtn = new global::client.Classes.ModernButton();
             this.cmdImportGroup = new global::client.Classes.ModernButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblSearchHint = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmdClearSearch = new global::client.Classes.ModernButton();
             this.cmbSort = new System.Windows.Forms.ComboBox();
             this.cmbLanguage = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAppSubtitle = new System.Windows.Forms.Label();
+            this.lblAppTitle = new System.Windows.Forms.Label();
             this.pnlLeftColumn.SuspendLayout();
             this.pnlVersionInfo.SuspendLayout();
             this.pnlHelp.SuspendLayout();
             this.pnlRightArea.SuspendLayout();
             this.pnlGroupsScroll.SuspendLayout();
             this.pnlBottomMain.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLeftColumn
@@ -72,29 +72,29 @@ namespace client.Forms
             // pnlVersionInfo
             // 
             this.pnlVersionInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlVersionInfo.Controls.Add(this.label6);
+            this.pnlVersionInfo.Controls.Add(this.lblCurrentVersion);
             this.pnlVersionInfo.Controls.Add(this.currentVersion);
             this.pnlVersionInfo.Controls.Add(this.githubVersion);
             this.pnlVersionInfo.Controls.Add(this.githubLink);
             this.pnlVersionInfo.Controls.Add(this.githubLabel);
-            this.pnlVersionInfo.Controls.Add(this.label4);
-            this.pnlVersionInfo.Controls.Add(this.label5);
+            this.pnlVersionInfo.Controls.Add(this.lblIssuesTitle);
+            this.pnlVersionInfo.Controls.Add(this.lblIssuesPrompt);
             this.pnlVersionInfo.Location = new System.Drawing.Point(8, 520);
             this.pnlVersionInfo.Name = "pnlVersionInfo";
             this.pnlVersionInfo.Size = new System.Drawing.Size(288, 178);
             this.pnlVersionInfo.TabIndex = 18;
             // 
-            // label6
+            // lblCurrentVersion
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(60, 101);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 19);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Current Version:";
+            this.lblCurrentVersion.AutoSize = true;
+            this.lblCurrentVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lblCurrentVersion.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblCurrentVersion.ForeColor = System.Drawing.Color.Silver;
+            this.lblCurrentVersion.Location = new System.Drawing.Point(60, 101);
+            this.lblCurrentVersion.Name = "lblCurrentVersion";
+            this.lblCurrentVersion.Size = new System.Drawing.Size(108, 19);
+            this.lblCurrentVersion.TabIndex = 19;
+            this.lblCurrentVersion.Text = "Current Version:";
             // 
             // currentVersion
             // 
@@ -147,32 +147,32 @@ namespace client.Forms
             this.githubLabel.TabIndex = 13;
             this.githubLabel.Text = "Latest Version:";
             // 
-            // label4
+            // lblIssuesTitle
             // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 1);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(243, 27);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Have issues/bugs?";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIssuesTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblIssuesTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblIssuesTitle.ForeColor = System.Drawing.Color.White;
+            this.lblIssuesTitle.Location = new System.Drawing.Point(18, 1);
+            this.lblIssuesTitle.Name = "lblIssuesTitle";
+            this.lblIssuesTitle.Size = new System.Drawing.Size(243, 27);
+            this.lblIssuesTitle.TabIndex = 17;
+            this.lblIssuesTitle.Text = "Have issues/bugs?";
+            this.lblIssuesTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lblIssuesPrompt
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(18, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(243, 24);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Please report them to the Github";
+            this.lblIssuesPrompt.BackColor = System.Drawing.Color.Transparent;
+            this.lblIssuesPrompt.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblIssuesPrompt.ForeColor = System.Drawing.Color.Silver;
+            this.lblIssuesPrompt.Location = new System.Drawing.Point(18, 34);
+            this.lblIssuesPrompt.Name = "lblIssuesPrompt";
+            this.lblIssuesPrompt.Size = new System.Drawing.Size(243, 24);
+            this.lblIssuesPrompt.TabIndex = 14;
+            this.lblIssuesPrompt.Text = "Please report them to the Github";
             // 
             // pnlHelp
             // 
-            this.pnlHelp.Controls.Add(this.label3);
+            this.pnlHelp.Controls.Add(this.lblHelpWhenOpens);
             this.pnlHelp.Controls.Add(this.lblHelp1);
             this.pnlHelp.Controls.Add(this.lblHelp3);
             this.pnlHelp.Controls.Add(this.lblHelp2);
@@ -182,17 +182,17 @@ namespace client.Forms
             this.pnlHelp.TabIndex = 17;
             this.pnlHelp.Visible = false;
             // 
-            // label3
+            // lblHelpWhenOpens
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(22, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 26);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "When the folder opens:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHelpWhenOpens.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelpWhenOpens.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblHelpWhenOpens.ForeColor = System.Drawing.Color.White;
+            this.lblHelpWhenOpens.Location = new System.Drawing.Point(22, 19);
+            this.lblHelpWhenOpens.Name = "lblHelpWhenOpens";
+            this.lblHelpWhenOpens.Size = new System.Drawing.Size(243, 26);
+            this.lblHelpWhenOpens.TabIndex = 17;
+            this.lblHelpWhenOpens.Text = "When the folder opens:";
+            this.lblHelpWhenOpens.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHelp1
             // 
@@ -244,7 +244,7 @@ namespace client.Forms
             this.pnlRightArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             this.pnlRightArea.Controls.Add(this.pnlGroupsScroll);
             this.pnlRightArea.Controls.Add(this.pnlBottomMain);
-            this.pnlRightArea.Controls.Add(this.panel1);
+            this.pnlRightArea.Controls.Add(this.pnlHeader);
             this.pnlRightArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRightArea.Location = new System.Drawing.Point(305, 0);
             this.pnlRightArea.Name = "pnlRightArea";
@@ -308,20 +308,20 @@ namespace client.Forms
             this.cmdImportGroup.Text = "Import group";
             this.cmdImportGroup.Click += new System.EventHandler(this.cmdImportGroup_Click);
             // 
-            // panel1
+            // pnlHeader
             // 
-            this.panel1.Controls.Add(this.lblSearchHint);
-            this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.cmdClearSearch);
-            this.panel1.Controls.Add(this.cmbSort);
-            this.panel1.Controls.Add(this.cmbLanguage);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(695, 148);
-            this.panel1.TabIndex = 2;
+            this.pnlHeader.Controls.Add(this.lblSearchHint);
+            this.pnlHeader.Controls.Add(this.txtSearch);
+            this.pnlHeader.Controls.Add(this.cmdClearSearch);
+            this.pnlHeader.Controls.Add(this.cmbSort);
+            this.pnlHeader.Controls.Add(this.cmbLanguage);
+            this.pnlHeader.Controls.Add(this.lblAppSubtitle);
+            this.pnlHeader.Controls.Add(this.lblAppTitle);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(695, 148);
+            this.pnlHeader.TabIndex = 2;
             // 
             // lblSearchHint
             // 
@@ -396,29 +396,29 @@ namespace client.Forms
             this.cmbLanguage.TabIndex = 16;
             this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.cmbLanguage_SelectedIndexChanged);
             // 
-            // label2
+            // lblAppSubtitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.label2.Location = new System.Drawing.Point(28, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(480, 19);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Group your favourite programs and pin them to the taskbar for easy access";
+            this.lblAppSubtitle.AutoSize = true;
+            this.lblAppSubtitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblAppSubtitle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.lblAppSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.lblAppSubtitle.Location = new System.Drawing.Point(28, 72);
+            this.lblAppSubtitle.Name = "lblAppSubtitle";
+            this.lblAppSubtitle.Size = new System.Drawing.Size(480, 19);
+            this.lblAppSubtitle.TabIndex = 12;
+            this.lblAppSubtitle.Text = "Group your favourite programs and pin them to the taskbar for easy access";
             // 
-            // label1
+            // lblAppTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 40);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Taskbar Groups";
+            this.lblAppTitle.AutoSize = true;
+            this.lblAppTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblAppTitle.Font = new System.Drawing.Font("Segoe UI", 21.75F);
+            this.lblAppTitle.ForeColor = System.Drawing.Color.White;
+            this.lblAppTitle.Location = new System.Drawing.Point(24, 24);
+            this.lblAppTitle.Name = "lblAppTitle";
+            this.lblAppTitle.Size = new System.Drawing.Size(212, 40);
+            this.lblAppTitle.TabIndex = 11;
+            this.lblAppTitle.Text = "Taskbar Groups";
             // 
             // frmClient
             // 
@@ -441,17 +441,17 @@ namespace client.Forms
             this.pnlRightArea.ResumeLayout(false);
             this.pnlGroupsScroll.ResumeLayout(false);
             this.pnlBottomMain.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
         }
 
         #endregion
 
         private System.Windows.Forms.Panel pnlLeftColumn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAppTitle;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Label lblAppSubtitle;
         private System.Windows.Forms.Panel pnlRightArea;
         private System.Windows.Forms.Panel pnlGroupsScroll;
         private System.Windows.Forms.Panel pnlExistingGroups;
@@ -468,14 +468,14 @@ namespace client.Forms
         private System.Windows.Forms.Label lblHelp3;
         private System.Windows.Forms.Label lblHelp2;
         private System.Windows.Forms.Label lblHelp1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblHelpWhenOpens;
         private System.Windows.Forms.Panel pnlVersionInfo;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblIssuesPrompt;
+        private System.Windows.Forms.Label lblIssuesTitle;
         private System.Windows.Forms.Label githubLabel;
         private System.Windows.Forms.LinkLabel githubLink;
         private System.Windows.Forms.LinkLabel githubVersion;
         private System.Windows.Forms.Label currentVersion;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblCurrentVersion;
     }
 }

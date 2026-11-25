@@ -1,4 +1,4 @@
-using ChinhDo.Transactions;
+﻿using ChinhDo.Transactions;
 using client.Classes;
 using client.User_controls;
 using IWshRuntimeLibrary;
@@ -71,7 +71,7 @@ namespace client.Forms
         private void ApplyLocalization()
         {
             this.Text = IsNew ? Localization.T("frm_new_group") : Localization.T("frm_edit_group");
-            lblWith.Text = Localization.T("lbl_width") + ":";
+            lblWidth.Text = Localization.T("lbl_width") + ":";
             lblAddGroupIcon.Text = Localization.T("lbl_change_group_icon");
             lblAddGroupIconDesc.Text = Localization.T("lbl_change_group_icon_desc");
             lblAddShortcut.Text = Localization.T("lbl_add_shortcut");
@@ -83,11 +83,11 @@ namespace client.Forms
             chkActivateRunning.Text = Localization.T("chk_activate_running");
             chkShowLabels.Text = Localization.T("chk_show_labels");
             lblIconSize.Text = Localization.T("lbl_icon_size") + ":";
-            label3.Text = Localization.T("lbl_arguments") + ":";
+            lblArguments.Text = Localization.T("lbl_arguments") + ":";
             lblShortcutIcon.Text = Localization.T("lbl_icon");
             cmdSelectShortcutIcon.Text = Localization.T("btn_select_icon");
             cmdResetShortcutIcon.Text = Localization.T("btn_reset");
-            label5.Text = Localization.T("lbl_working_dir") + ":";
+            lblWorkingDirectory.Text = Localization.T("lbl_working_dir") + ":";
             cmdSelectDirectory.Text = Localization.T("btn_select_dir");
             lblShortcutPath.Text = Localization.T("lbl_executable_path") + ":";
             cmdSelectShortcutPath.Text = Localization.T("btn_select_file");

@@ -1,4 +1,4 @@
-namespace client.User_controls
+﻿namespace client.User_controls
 {
     partial class ucCategoryPanel
     {
@@ -20,7 +20,7 @@ namespace client.User_controls
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
             this.cmdPreview = new global::client.Classes.ModernButton();
-            this.cmdDelete = new global::client.Classes.ModernButton();
+            this.cmdEditGroup = new global::client.Classes.ModernButton();
             this.cmdClone = new global::client.Classes.ModernButton();
             this.cmdExport = new global::client.Classes.ModernButton();
             this.cmdRemove = new global::client.Classes.ModernButton();
@@ -85,20 +85,20 @@ namespace client.User_controls
             this.cmdPreview.Text = "Preview";
             this.cmdPreview.Click += new System.EventHandler(this.cmdPreview_Click);
             // 
-            // cmdDelete (Edit group)
+            // cmdEditGroup (Edit group)
             // 
-            this.cmdDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.cmdDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.cmdDelete.CornerRadius = 6;
-            this.cmdDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.cmdDelete.ForeColor = System.Drawing.Color.White;
-            this.cmdDelete.Location = new System.Drawing.Point(540, 14);
-            this.cmdDelete.Name = "cmdDelete";
-            this.cmdDelete.Size = new System.Drawing.Size(102, 28);
-            this.cmdDelete.TabIndex = 20;
-            this.cmdDelete.Text = "Edit group";
-            this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
+            this.cmdEditGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdEditGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.cmdEditGroup.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.cmdEditGroup.CornerRadius = 6;
+            this.cmdEditGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.cmdEditGroup.ForeColor = System.Drawing.Color.White;
+            this.cmdEditGroup.Location = new System.Drawing.Point(540, 14);
+            this.cmdEditGroup.Name = "cmdEditGroup";
+            this.cmdEditGroup.Size = new System.Drawing.Size(102, 28);
+            this.cmdEditGroup.TabIndex = 20;
+            this.cmdEditGroup.Text = "Edit group";
+            this.cmdEditGroup.Click += new System.EventHandler(this.cmdEditGroup_Click);
             // 
             // cmdClone
             // 
@@ -166,7 +166,7 @@ namespace client.User_controls
             this.Controls.Add(this.cmdClone);
             this.Controls.Add(this.cmdExport);
             this.Controls.Add(this.cmdRemove);
-            this.Controls.Add(this.cmdDelete);
+            this.Controls.Add(this.cmdEditGroup);
             this.Controls.Add(this.lblTitle);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ucCategoryPanel";
@@ -182,7 +182,7 @@ namespace client.User_controls
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblCount;
         private global::client.Classes.ModernButton cmdPreview;
-        private global::client.Classes.ModernButton cmdDelete;
+        private global::client.Classes.ModernButton cmdEditGroup;
         private global::client.Classes.ModernButton cmdClone;
         private global::client.Classes.ModernButton cmdExport;
         private global::client.Classes.ModernButton cmdRemove;
